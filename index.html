@@ -137,8 +137,16 @@
     color: #fff; font-weight: 800; font-size: 16.5px; padding: 18px 30px; border-radius: 100px; width: 100%; max-width: 380px;
     box-shadow: 0 12px 32px -8px rgba(6,199,85,0.5); transition: transform 0.2s var(--ease);
   }
-  .btn-line:active { transform: translateY(1px) scale(0.99); }
+  .btn-line:active { transform: translateY(1px) scale(0.99); animation: none; }
   .btn-line svg { width: 22px; height: 22px; flex: none; }
+
+  /* Breathing pulse on LINE buttons */
+  .btn-line { animation: linepulse 2.4s var(--ease) infinite; }
+  @keyframes linepulse {
+    0%, 100% { transform: scale(1); box-shadow: 0 12px 32px -8px rgba(6,199,85,0.5), 0 0 0 0 rgba(6,199,85,0.45); }
+    50%      { transform: scale(1.035); box-shadow: 0 16px 38px -8px rgba(6,199,85,0.55), 0 0 0 14px rgba(6,199,85,0); }
+  }
+  @media (prefers-reduced-motion: reduce) { .btn-line { animation: none; } }
 
   /* Section heading */
   .head { text-align: center; max-width: 620px; margin: 0 auto 34px; }
@@ -248,7 +256,12 @@
     border-top: 1px solid var(--line); transform: translateY(120%); transition: transform 0.4s var(--ease);
   }
   .sticky-cta.show { transform: none; }
-  .sticky-cta .btn-line { max-width: none; padding: 15px; font-size: 15.5px; box-shadow: none; }
+  .sticky-cta .btn-line { max-width: none; padding: 15px; font-size: 15.5px; box-shadow: none; animation: linepulse-sticky 2.4s var(--ease) infinite; }
+  @keyframes linepulse-sticky {
+    0%, 100% { transform: scale(1); }
+    50%      { transform: scale(1.018); }
+  }
+  @media (prefers-reduced-motion: reduce) { .sticky-cta .btn-line { animation: none; } }
 
   @media (min-width: 700px) {
     .section { padding: 92px 0; }
