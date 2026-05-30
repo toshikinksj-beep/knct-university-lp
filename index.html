@@ -86,7 +86,7 @@
   .nav-cta svg { width: 15px; height: 15px; }
 
   /* Top banner */
-  .banner { position: relative; width: 100%; height: 44vh; min-height: 320px; max-height: 460px; overflow: hidden; background: #0a0a0a; margin-top: -58px; }
+  .banner { position: relative; width: 100%; height: 44vh; min-height: 320px; max-height: 460px; overflow: hidden; background: #0a0a0a; margin-top: 0; }
   .banner-media { position: absolute; inset: 0; overflow: hidden; }
   .banner-media img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 78%; transform-origin: 50% 60%; will-change: transform; animation: kenburns 34s ease-in-out infinite; }
   @keyframes kenburns {
@@ -275,17 +275,6 @@
 </style>
 </head>
 <body id="top">
-
-<!-- NAV -->
-<header class="nav" id="nav">
-  <div class="wrap nav-inner">
-    <a href="#top" class="brand">KNCT UNIVERSITY</a>
-    <a href="#" class="nav-cta" data-line>
-      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 5.82 2 10.5c0 2.7 1.5 5.1 3.86 6.66-.1.4-.62 2.3-.7 2.62 0 0-.02.1.05.15.07.04.15 0 .15 0 .2-.03 2.4-1.6 3.4-2.27.43.06.87.09 1.32.09 5.52 0 10-3.82 10-8.5S17.52 2 12 2z"/></svg>
-      無料特典を受け取る
-    </a>
-  </div>
-</header>
 
 <!-- TOP BANNER -->
 <section class="banner" aria-label="KNCT UNIVERSITY community">
@@ -501,12 +490,10 @@
   }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
   document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
 
-  // Nav shadow + sticky CTA
-  var nav = document.getElementById('nav'), sticky = document.getElementById('stickyCta'), hero = document.querySelector('.hero');
+  // Sticky CTA appears after the banner
+  var sticky = document.getElementById('stickyCta'), banner = document.querySelector('.banner');
   window.addEventListener('scroll', function(){
-    var y = window.scrollY;
-    nav.classList.toggle('scrolled', y > 8);
-    sticky.classList.toggle('show', y > hero.offsetHeight - 160);
+    sticky.classList.toggle('show', window.scrollY > banner.offsetHeight - 80);
   }, { passive: true });
 </script>
 </body>
