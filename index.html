@@ -3,315 +3,391 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-<title>KNCT UNIVERSITY｜SNSで発信しなくても、収益化できる時代へ。</title>
-<meta name="description" content="「フォロワー0」「経験0」からでも、クリエイターの裏側で収益を作る——オペレーターという仕事を学ぶKNCT UNIVERSITY。LINE追加で無料特典を配布中。" />
-<meta property="og:title" content="SNSで発信しなくても、収益化できる時代へ。｜KNCT UNIVERSITY" />
-<meta property="og:description" content="発信する人ではなく売上を作る人。オペレーターという働き方を学ぶ。LINEで無料特典配布中。" />
+<title>KNCT UNIVERSITY｜発信する人ではなく、売上を作る人へ。</title>
+<meta name="description" content="「フォロワー0」「経験0」からでも、クリエイターの裏側で収益を作る——オペレーターという仕事を学ぶKNCT UNIVERSITY。動画で学ぶ、実践で稼ぐ。LINE追加で無料特典を配布中。" />
+<meta property="og:title" content="発信する人ではなく、売上を作る人へ。｜KNCT UNIVERSITY" />
+<meta property="og:description" content="発信する人ではなく売上を作る人。オペレーターという働き方を学ぶ実践コミュニティ。LINEで無料特典配布中。" />
 <meta property="og:type" content="website" />
 <meta property="og:image" content="assets/og-image.png" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:image" content="assets/og-image.png" />
-<meta name="theme-color" content="#000000" />
+<meta name="theme-color" content="#050505" />
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
 <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png" />
 <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
 <link rel="manifest" href="site.webmanifest" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://i.ytimg.com" />
+<link rel="preconnect" href="https://www.youtube-nocookie.com" />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet" />
 <style>
   :root {
-    --bg: #ffffff;
-    --fg: #0a0a0a;
-    --muted: #6b6b6b;
-    --faint: #9a9a9a;
-    --line: #ececec;
-    --line-strong: #d8d8d8;
-    --surface: #fafafa;
-    --surface-2: #f4f4f4;
-    --black: #0a0a0a;
-    --cream: #ECE7D3;
-    --radius: 18px;
-    --maxw: 720px;
+    /* Black-based premium palette */
+    --bg: #0c0c0e;
+    --bg-2: #131317;
+    --surface: #17171b;
+    --surface-2: #1e1e23;
+    --line: rgba(255,255,255,0.12);
+    --line-strong: rgba(255,255,255,0.22);
+    --fg: #f7f4ec;
+    --muted: rgba(247,244,236,0.74);
+    --faint: rgba(247,244,236,0.48);
+
+    /* Cream / champagne accents */
+    --gold: #e6dfc9;
+    --gold-2: #f4efdd;
+    --gold-deep: #cdc4a8;
+    --champ: #ECE7D3;
+    --gold-grad: linear-gradient(135deg, #f6f1e1 0%, #e6dfc9 50%, #d2c9ac 100%);
+
     --line-green: #06c755;
+    --radius: 18px;
+    --maxw: 760px;
     --ease: cubic-bezier(0.22, 1, 0.36, 1);
     --font: "Inter", "Noto Sans JP", -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+    --serif: var(--font);
+    --display: var(--font);
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
   html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
   body {
-    font-family: var(--font); background: var(--bg); color: var(--fg); line-height: 1.78;
+    font-family: var(--font); background: var(--bg); color: var(--fg); line-height: 1.85;
     font-feature-settings: "palt" 1; letter-spacing: 0.01em; overflow-x: hidden;
     -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
   }
-  ::selection { background: var(--fg); color: var(--bg); }
+  ::selection { background: var(--gold); color: #0a0a0a; }
   a { color: inherit; text-decoration: none; }
+  img { display: block; max-width: 100%; }
 
   .wrap { width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 22px; }
 
-  h1, h2, h3, h4 { letter-spacing: -0.01em; font-weight: 800; line-height: 1.45; }
+  h1, h2, h3, h4 { letter-spacing: 0.01em; font-weight: 800; line-height: 1.5; }
+
+  /* Gold text */
+  .gold { background: var(--gold-grad); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
 
   .eyebrow {
-    display: inline-flex; align-items: center; gap: 8px; font-size: 11.5px; font-weight: 700;
-    letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted);
-    padding: 7px 13px; border: 1px solid var(--line-strong); border-radius: 100px; background: var(--bg);
+    display: inline-flex; align-items: center; gap: 9px; font-size: 11px; font-weight: 700;
+    letter-spacing: 0.24em; text-transform: uppercase; color: var(--gold-2);
+    padding: 8px 16px; border: 1px solid var(--line-strong); border-radius: 100px;
+    background: rgba(236,231,211,0.06);
   }
-  .eyebrow .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--fg); display: inline-block; }
+  .eyebrow .dot { width: 5px; height: 5px; border-radius: 50%; background: var(--gold); display: inline-block; box-shadow: 0 0 10px 1px rgba(236,231,211,0.7); }
 
-  .section { padding: 64px 0; }
+  .section { padding: 76px 0; position: relative; }
   .section.tight { padding-top: 0; }
 
+  /* Subtle gold hairline divider */
+  .rule { width: 100%; max-width: 120px; height: 1px; margin: 0 auto; background: linear-gradient(90deg, transparent, var(--gold), transparent); opacity: 0.6; }
+
   /* Reveal */
-  .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.7s var(--ease), transform 0.7s var(--ease); }
+  .reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.8s var(--ease), transform 0.8s var(--ease); }
   .reveal.in { opacity: 1; transform: none; }
   @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } html { scroll-behavior: auto; } }
 
-  /* Nav */
+  /* ===== Nav ===== */
   header.nav {
-    position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.78);
-    backdrop-filter: saturate(180%) blur(20px); -webkit-backdrop-filter: saturate(180%) blur(20px);
-    border-bottom: 1px solid transparent; transition: border-color 0.3s ease;
+    position: sticky; top: 0; z-index: 100; background: rgba(6,6,6,0.72);
+    backdrop-filter: saturate(160%) blur(20px); -webkit-backdrop-filter: saturate(160%) blur(20px);
+    border-bottom: 1px solid transparent; transition: border-color 0.3s ease, background 0.3s ease;
   }
   header.nav.scrolled { border-bottom: 1px solid var(--line); }
-  .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 58px; }
-  .brand { display: flex; align-items: center; gap: 9px; font-weight: 900; font-size: 14px; white-space: nowrap; letter-spacing: 0.02em; }
-  .brand .mark { width: 26px; height: 26px; border-radius: 7px; background: var(--black); color: var(--cream); display: grid; place-items: center; font-size: 13px; font-weight: 900; overflow: hidden; }
-  .brand .mark img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 60px; }
+  .brand { display: inline-flex; align-items: center; }
+  .brand img { height: 44px; width: auto; display: block; }
   .nav-cta {
     display: inline-flex; align-items: center; gap: 7px; white-space: nowrap; background: var(--line-green);
-    color: #fff; font-weight: 800; font-size: 12.5px; padding: 9px 16px; border-radius: 100px; transition: transform 0.2s var(--ease);
+    color: #fff; font-weight: 800; font-size: 12.5px; padding: 10px 17px; border-radius: 100px; transition: transform 0.2s var(--ease);
   }
   .nav-cta:active { transform: scale(0.96); }
   .nav-cta svg { width: 15px; height: 15px; }
 
-  /* Top banner */
-  .banner { position: relative; width: 100%; height: 44vh; min-height: 320px; max-height: 460px; overflow: hidden; background: #0a0a0a; margin-top: 0; }
-  .banner-media { position: absolute; inset: 0; overflow: hidden; }
-  .banner-media img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 90%; transform-origin: 50% 60%; will-change: transform; animation: kenburns 34s ease-in-out infinite; }
-  @keyframes kenburns {
-    0%   { transform: scale(1.12) translate3d(-1.6%, 0.6%, 0); }
-    50%  { transform: scale(1.2) translate3d(1.6%, -1%, 0); }
-    100% { transform: scale(1.12) translate3d(-1.6%, 0.6%, 0); }
-  }
-  @media (prefers-reduced-motion: reduce) { .banner-media img { animation: none; transform: scale(1.06); } }
-  .banner-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10,10,10,0.55) 0%, rgba(10,10,10,0.18) 26%, rgba(10,10,10,0.30) 60%, rgba(255,255,255,0) 86%, var(--bg) 100%); }
-  .banner-content { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 40px 22px 62px; z-index: 1; }
-  .banner-content .bk { font-size: clamp(42px, 14vw, 88px); font-weight: 900; letter-spacing: 0.01em; line-height: 0.92; color: var(--cream); text-shadow: 0 2px 36px rgba(0,0,0,0.5); }
-  .banner-content .bk2 { font-size: clamp(15px, 4.8vw, 27px); font-weight: 800; letter-spacing: 0.36em; padding-left: 0.36em; margin-top: 8px; color: var(--cream); text-shadow: 0 2px 24px rgba(0,0,0,0.5); }
-  .banner-content .bline { width: 36px; height: 2px; background: var(--cream); opacity: 0.8; border-radius: 2px; margin: 18px 0 14px; }
-  .banner-content .btag { margin-top: 16px; font-size: clamp(11px, 3vw, 13px); font-weight: 700; letter-spacing: 0.06em; color: rgba(255,255,255,0.92); text-shadow: 0 1px 18px rgba(0,0,0,0.6); }
-
-  /* Hero */
-  .hero { position: relative; padding: 30px 0 64px; overflow: hidden; text-align: center; }
+  /* ===== Hero ===== */
+  .hero { position: relative; padding: 46px 0 70px; overflow: hidden; text-align: center; }
   .hero::before {
-    content: ""; position: absolute; inset: 0; z-index: -1;
-    background: radial-gradient(900px 420px at 50% -10%, rgba(0,0,0,0.05), transparent 70%), linear-gradient(180deg, var(--surface) 0%, var(--bg) 60%);
+    content: ""; position: absolute; inset: 0; z-index: -2;
+    background:
+      radial-gradient(700px 380px at 50% -6%, rgba(236,231,211,0.16), transparent 70%),
+      radial-gradient(900px 600px at 50% 120%, rgba(236,231,211,0.05), transparent 70%),
+      var(--bg);
   }
   .hero-grid {
-    position: absolute; inset: 0; z-index: -1; opacity: 0.4;
-    background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
-    background-size: 60px 60px;
-    mask-image: radial-gradient(620px 360px at 50% 10%, #000 30%, transparent 75%);
-    -webkit-mask-image: radial-gradient(620px 360px at 50% 10%, #000 30%, transparent 75%);
+    position: absolute; inset: 0; z-index: -1; opacity: 0.5;
+    background-image: linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+    background-size: 64px 64px;
+    mask-image: radial-gradient(680px 460px at 50% 8%, #000 25%, transparent 78%);
+    -webkit-mask-image: radial-gradient(680px 460px at 50% 8%, #000 25%, transparent 78%);
   }
+  .hero-logo { height: clamp(60px, 17vw, 88px); width: auto; margin: 0 auto; }
   .hero h1 {
-    font-size: clamp(28px, 7.6vw, 46px); font-weight: 900; line-height: 1.4; letter-spacing: -0.02em;
-    margin: 24px auto 0; max-width: 15em;
+    font-family: var(--serif); font-size: clamp(28px, 7.4vw, 48px); font-weight: 900; line-height: 1.5; letter-spacing: 0.01em;
+    margin: 22px auto 0; max-width: 16em;
   }
   .hero h1 .hl { position: relative; white-space: nowrap; }
-  .hero h1 .hl::after { content: ""; position: absolute; left: -2%; right: -2%; bottom: 0.08em; height: 0.32em; background: var(--fg); opacity: 0.1; z-index: -1; border-radius: 2px; }
-  .hero .lead { font-size: clamp(15px, 4vw, 18px); color: var(--fg); margin: 22px auto 0; max-width: 24em; font-weight: 700; }
-  .hero .lead b { background: linear-gradient(transparent 65%, rgba(6,199,85,0.22) 65%); }
-  .hero .modes { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin: 22px auto 0; }
-  .hero .modes span { font-size: 13px; font-weight: 700; color: var(--muted); border: 1px solid var(--line-strong); border-radius: 100px; padding: 6px 14px; background: var(--bg); }
-  .hero .desc { font-size: 14.5px; color: var(--muted); margin: 26px auto 0; max-width: 26em; font-weight: 500; }
-  .hero .desc b { color: var(--fg); font-weight: 700; }
-  .hero .desc .descgap { display: block; height: 12px; }
+  .hero .lead { font-size: clamp(14.5px, 3.9vw, 17px); color: var(--muted); margin: 22px auto 0; max-width: 26em; font-weight: 500; }
+  .hero .lead b { color: var(--fg); font-weight: 700; }
 
-  /* CTA block */
-  .cta-block { margin-top: 36px; display: flex; flex-direction: column; align-items: center; gap: 10px; }
-  .cta-ribbon { font-size: 13.5px; font-weight: 800; color: var(--fg); letter-spacing: 0.02em; }
-  .cta-sub { font-size: 12.5px; color: var(--faint); font-weight: 500; }
+  /* ===== Video player (facade) ===== */
+  .video {
+    position: relative; width: 100%; aspect-ratio: 16 / 9; border-radius: 20px; overflow: hidden;
+    cursor: pointer; background: #000; border: 1px solid var(--line-strong);
+    box-shadow: 0 40px 80px -40px rgba(0,0,0,0.9), 0 0 0 1px rgba(236,231,211,0.10);
+  }
+  .video.hero-video { max-width: 680px; margin: 34px auto 0; box-shadow: 0 50px 110px -45px rgba(0,0,0,0.95), 0 0 0 1px rgba(236,231,211,0.22); }
+  .video::after {
+    content: ""; position: absolute; inset: 0; border-radius: 20px; pointer-events: none;
+    box-shadow: inset 0 0 0 1px rgba(236,231,211,0.18);
+  }
+  .video-thumb { width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s var(--ease), filter 0.5s ease; }
+  .video-veil { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0.18), rgba(0,0,0,0.45)); transition: opacity 0.4s ease; }
+  .video:hover .video-thumb { transform: scale(1.04); }
+  .video-play {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    width: 74px; height: 74px; border-radius: 50%; border: none; cursor: pointer;
+    background: var(--gold-grad); display: grid; place-items: center;
+    box-shadow: 0 14px 40px -8px rgba(236,231,211,0.6); transition: transform 0.25s var(--ease);
+  }
+  .video-play::before { content: ""; position: absolute; inset: -10px; border-radius: 50%; border: 1px solid rgba(236,231,211,0.45); animation: ripple 2.6s var(--ease) infinite; }
+  @keyframes ripple { 0% { transform: scale(1); opacity: 0.7; } 100% { transform: scale(1.5); opacity: 0; } }
+  .video:hover .video-play { transform: translate(-50%, -50%) scale(1.07); }
+  .video-play svg { width: 28px; height: 28px; color: #0a0a0a; margin-left: 4px; }
+  .video-label {
+    position: absolute; left: 16px; bottom: 14px; right: 16px; z-index: 2; text-align: left;
+    font-size: 12.5px; font-weight: 700; color: #fff; letter-spacing: 0.02em;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.8); display: flex; align-items: center; gap: 8px;
+  }
+  .video-label .lp { font-family: var(--display); font-size: 11px; letter-spacing: 0.22em; color: var(--gold-2); text-transform: uppercase; }
+  .video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+  @media (prefers-reduced-motion: reduce) { .video-play::before { animation: none; } }
+
+  /* ===== CTA block ===== */
+  .cta-block { margin-top: 40px; display: flex; flex-direction: column; align-items: center; gap: 11px; }
+  .cta-ribbon { font-size: 13.5px; font-weight: 800; color: var(--gold-2); letter-spacing: 0.04em; }
+  .cta-sub { font-size: 12px; color: var(--faint); font-weight: 500; }
   .btn-line {
     display: inline-flex; align-items: center; justify-content: center; gap: 10px; background: var(--line-green);
-    color: #fff; font-weight: 800; font-size: 16.5px; padding: 18px 30px; border-radius: 100px; width: 100%; max-width: 380px;
-    box-shadow: 0 12px 32px -8px rgba(6,199,85,0.5); transition: transform 0.2s var(--ease);
+    color: #fff; font-weight: 800; font-size: 16.5px; padding: 18px 30px; border-radius: 100px; width: 100%; max-width: 400px;
+    box-shadow: 0 18px 40px -12px rgba(6,199,85,0.55); transition: transform 0.2s var(--ease);
   }
   .btn-line:active { transform: translateY(1px) scale(0.99); animation: none; }
   .btn-line svg { width: 22px; height: 22px; flex: none; }
-
-  /* Breathing pulse on LINE buttons */
-  .btn-line { animation: linepulse 2.4s var(--ease) infinite; }
+  .btn-line { animation: linepulse 2.6s var(--ease) infinite; }
   @keyframes linepulse {
-    0%, 100% { transform: scale(1); box-shadow: 0 12px 32px -8px rgba(6,199,85,0.5), 0 0 0 0 rgba(6,199,85,0.45); }
-    50%      { transform: scale(1.035); box-shadow: 0 16px 38px -8px rgba(6,199,85,0.55), 0 0 0 14px rgba(6,199,85,0); }
+    0%, 100% { transform: scale(1); box-shadow: 0 18px 40px -12px rgba(6,199,85,0.55), 0 0 0 0 rgba(6,199,85,0.4); }
+    50%      { transform: scale(1.03); box-shadow: 0 22px 46px -12px rgba(6,199,85,0.6), 0 0 0 14px rgba(6,199,85,0); }
   }
   @media (prefers-reduced-motion: reduce) { .btn-line { animation: none; } }
 
-  /* Section heading */
-  .head { text-align: center; max-width: 620px; margin: 0 auto 34px; }
-  .head h2 { font-size: clamp(23px, 6vw, 33px); font-weight: 900; line-height: 1.45; }
-  .head h2 .sm { display: block; font-size: 0.62em; color: var(--muted); font-weight: 800; margin-top: 8px; }
-  .head p { color: var(--muted); font-size: 14.5px; margin-top: 14px; }
+  /* ===== Section heading ===== */
+  .head { text-align: center; max-width: 640px; margin: 0 auto 38px; }
+  .head h2 { font-family: var(--serif); font-size: clamp(23px, 6vw, 34px); font-weight: 900; line-height: 1.55; }
+  .head h2 .sm { display: block; font-size: 0.6em; color: var(--gold-2); font-weight: 600; margin-top: 10px; letter-spacing: 0.04em; }
+  .head p { color: var(--muted); font-size: 14.5px; margin-top: 16px; }
+  .head .eyebrow { margin-bottom: 18px; }
 
-  /* Worry cards */
+  /* ===== Worry cards ===== */
   .worries { display: grid; gap: 14px; }
-  .worry { border: 1px solid var(--line); border-radius: var(--radius); padding: 26px 24px; background: var(--bg); }
-  .worry h3 { display: flex; gap: 11px; align-items: flex-start; font-size: 17.5px; font-weight: 800; line-height: 1.5; }
-  .worry h3 .ck { color: var(--line-green); flex: none; margin-top: 2px; }
+  .worry { border: 1px solid var(--line); border-radius: var(--radius); padding: 26px 24px; background: var(--surface); transition: border-color 0.3s ease; }
+  .worry:hover { border-color: var(--line-strong); }
+  .worry h3 { display: flex; gap: 12px; align-items: flex-start; font-size: 17px; font-weight: 800; line-height: 1.6; color: var(--fg); }
+  .worry h3 .ck { color: var(--gold); flex: none; margin-top: 2px; }
   .worry h3 .ck svg { width: 20px; height: 20px; }
   .worry p { color: var(--muted); font-size: 14.5px; margin-top: 14px; }
   .worry p + p { margin-top: 10px; }
   .worry ul { list-style: none; margin-top: 12px; display: grid; gap: 8px; }
   .worry ul li { position: relative; padding-left: 18px; color: var(--muted); font-size: 14.5px; }
-  .worry ul li::before { content: ""; position: absolute; left: 2px; top: 0.7em; width: 5px; height: 5px; border-radius: 50%; background: var(--line-strong); }
+  .worry ul li::before { content: ""; position: absolute; left: 2px; top: 0.8em; width: 5px; height: 5px; border-radius: 50%; background: var(--gold); }
 
-  /* Callout (light) */
-  .callout { text-align: center; max-width: 560px; margin: 32px auto 0; font-size: clamp(17px, 4.6vw, 21px); font-weight: 800; line-height: 1.7; }
-  .callout .q { color: var(--line-green); }
+  .callout { text-align: center; max-width: 580px; margin: 36px auto 0; font-family: var(--serif); font-size: clamp(17px, 4.6vw, 22px); font-weight: 600; line-height: 1.85; }
+  .callout .q { color: var(--gold-2); }
 
-  /* Dark block */
-  .darkblock { background: var(--black); color: #fff; border-radius: 26px; padding: 48px 26px; position: relative; overflow: hidden; }
-  .darkblock::before { content: ""; position: absolute; inset: 0; opacity: 0.5; background-image: linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px); background-size: 38px 38px; mask-image: radial-gradient(440px 280px at 50% 0%, #000, transparent 80%); -webkit-mask-image: radial-gradient(440px 280px at 50% 0%, #000, transparent 80%); }
-  .darkblock .inner { position: relative; }
-  .darkblock .eyebrow { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.18); color: #fff; }
-  .darkblock .eyebrow .dot { background: #fff; }
-  .darkblock h2 { color: #fff; font-size: clamp(23px, 6vw, 33px); font-weight: 900; line-height: 1.45; }
-  .darkblock p { color: rgba(255,255,255,0.72); font-size: 15px; }
-
-  /* 発信する人 / 売上を作る人 */
-  .vs { display: grid; grid-template-columns: 1fr; gap: 14px; max-width: 620px; margin: 30px auto 0; }
-  .vs-card { border-radius: 18px; padding: 24px 22px; border: 1px solid rgba(255,255,255,0.12); }
-  .vs-card.front { background: rgba(255,255,255,0.04); }
-  .vs-card.back { background: linear-gradient(180deg, rgba(255,255,255,0.16), rgba(255,255,255,0.05)); border-color: rgba(255,255,255,0.3); box-shadow: 0 20px 50px -30px rgba(255,255,255,0.4); }
-  .vs-tag { display: inline-flex; align-items: center; gap: 7px; font-size: 11.5px; font-weight: 800; letter-spacing: 0.06em; padding: 6px 12px; border-radius: 100px; margin-bottom: 15px; }
-  .vs-card.front .vs-tag { background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.65); }
-  .vs-card.back .vs-tag { background: #fff; color: var(--black); }
-  .vs-card h4 { font-size: 18px; font-weight: 900; margin-bottom: 14px; }
-  .vs-card.front h4 { color: rgba(255,255,255,0.7); }
-  .vs-card.back h4 { color: #fff; }
-  .vs-list { list-style: none; display: grid; gap: 10px; }
+  /* ===== Operator (vs) ===== */
+  .vs { display: grid; grid-template-columns: 1fr; gap: 14px; max-width: 640px; margin: 32px auto 0; }
+  .vs-card { border-radius: 18px; padding: 26px 24px; border: 1px solid var(--line); position: relative; overflow: hidden; }
+  .vs-card.front { background: var(--surface); }
+  .vs-card.back { background: linear-gradient(165deg, rgba(236,231,211,0.16), rgba(236,231,211,0.03)); border-color: rgba(236,231,211,0.42); box-shadow: 0 30px 60px -34px rgba(236,231,211,0.4); }
+  .vs-tag { display: inline-flex; align-items: center; gap: 7px; font-size: 11px; font-weight: 800; letter-spacing: 0.1em; padding: 6px 13px; border-radius: 100px; margin-bottom: 16px; text-transform: uppercase; }
+  .vs-card.front .vs-tag { background: rgba(255,255,255,0.06); color: var(--faint); }
+  .vs-card.back .vs-tag { background: var(--gold-grad); color: #0a0a0a; }
+  .vs-card h4 { font-family: var(--serif); font-size: 19px; font-weight: 700; margin-bottom: 16px; }
+  .vs-card.front h4 { color: var(--muted); }
+  .vs-card.back h4 { color: var(--fg); }
+  .vs-list { list-style: none; display: grid; gap: 11px; }
   .vs-list li { display: flex; gap: 10px; align-items: flex-start; font-size: 14px; line-height: 1.6; }
   .vs-list li svg { width: 17px; height: 17px; flex: none; margin-top: 3px; }
-  .vs-card.front .vs-list li { color: rgba(255,255,255,0.5); }
-  .vs-card.front .vs-list li svg { color: rgba(255,255,255,0.4); }
-  .vs-card.back .vs-list li { color: rgba(255,255,255,0.92); }
-  .vs-card.back .vs-list li svg { color: #fff; }
-  .vs-divider { text-align: center; color: rgba(255,255,255,0.45); font-weight: 800; font-size: 13px; letter-spacing: 0.1em; }
-  .note-strong { text-align: center; margin: 30px auto 0; max-width: 520px; position: relative; }
-  .note-strong p { color: rgba(255,255,255,0.6); font-size: 14.5px; }
-  .note-strong strong { display: block; color: #fff; font-size: clamp(19px, 5vw, 24px); font-weight: 900; margin-top: 8px; }
+  .vs-card.front .vs-list li { color: var(--faint); }
+  .vs-card.front .vs-list li svg { color: var(--faint); }
+  .vs-card.back .vs-list li { color: var(--fg); }
+  .vs-card.back .vs-list li svg { color: var(--gold-2); }
+  .vs-divider { text-align: center; color: var(--gold); font-weight: 800; font-size: 15px; }
+  .note-strong { text-align: center; margin: 34px auto 0; max-width: 540px; }
+  .note-strong p { color: var(--muted); font-size: 14.5px; }
+  .note-strong strong { display: block; font-family: var(--serif); color: var(--fg); font-size: clamp(19px, 5vw, 25px); font-weight: 900; margin-top: 10px; }
+  .note-strong strong .gold { font-weight: 800; }
 
-  /* Big number / income */
-  .bignum { text-align: center; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); padding: 36px 24px; max-width: 520px; margin: 0 auto; }
-  .bignum .pre { font-size: 14px; color: var(--muted); font-weight: 600; }
-  .bignum .fig { font-size: clamp(48px, 14vw, 76px); font-weight: 900; letter-spacing: -0.03em; line-height: 1.05; margin: 6px 0; }
-  .bignum .fig small { font-size: 0.42em; font-weight: 800; }
-  .bignum .post { font-size: 14px; color: var(--muted); font-weight: 600; }
-  .income-conc { text-align: center; max-width: 520px; margin: 28px auto 0; font-size: clamp(17px, 4.6vw, 21px); font-weight: 800; line-height: 1.7; }
+  /* ===== Testimonials ===== */
+  .tm-feature { max-width: 680px; margin: 0 auto; }
+  .tm-quote { text-align: center; max-width: 600px; margin: 26px auto 0; font-family: var(--serif); font-size: clamp(16px, 4.4vw, 20px); font-weight: 600; line-height: 1.9; color: var(--fg); }
+  .tm-quote .mark { color: var(--gold); font-family: var(--display); font-size: 1.6em; line-height: 0; vertical-align: -0.2em; }
+  .tm-by { text-align: center; margin-top: 18px; font-size: 13px; color: var(--gold-2); font-weight: 700; letter-spacing: 0.04em; }
 
-  /* Cases */
-  .cases { display: grid; gap: 16px; }
-  .case { border: 1px solid var(--line); border-radius: var(--radius); padding: 26px 24px; background: var(--bg); transition: transform 0.3s var(--ease), box-shadow 0.3s; }
-  .case:hover { transform: translateY(-3px); box-shadow: 0 18px 40px -26px rgba(0,0,0,0.25); }
-  .case .tag { font-size: 12px; font-weight: 800; letter-spacing: 0.04em; color: var(--muted); }
-  .case .tag b { color: var(--fg); }
-  .case .result { display: inline-block; font-size: clamp(22px, 6vw, 30px); font-weight: 900; letter-spacing: -0.02em; margin: 12px 0 4px; line-height: 1.3; border-bottom: 4px solid rgba(6,199,85,0.35); }
-  .case p { color: var(--muted); font-size: 14.5px; margin-top: 12px; }
+  /* Testimonial grid (video frames + future placeholders) */
+  .tm-grid { display: grid; grid-template-columns: 1fr; gap: 16px; margin-top: 40px; }
+  .tm-item { display: flex; flex-direction: column; gap: 14px; }
+  .tm-meta { display: flex; align-items: center; gap: 13px; }
+  .tm-ava { width: 44px; height: 44px; border-radius: 50%; background: var(--gold-grad); color: #0a0a0a; display: grid; place-items: center; font-weight: 900; font-size: 16px; flex: none; box-shadow: 0 6px 18px -6px rgba(236,231,211,0.6); }
+  .tm-name { font-size: 14.5px; font-weight: 800; color: var(--fg); line-height: 1.3; }
+  .tm-role { font-size: 12px; color: var(--faint); font-weight: 500; }
+  .tm-result { margin-left: auto; font-family: var(--serif); font-size: 15px; font-weight: 700; color: var(--gold-2); white-space: nowrap; }
 
-  /* Why list */
-  .why-list { display: grid; gap: 11px; max-width: 480px; margin: 0 auto; }
-  .why-list li { list-style: none; display: flex; gap: 13px; align-items: center; font-size: 15.5px; font-weight: 700; padding: 16px 20px; border: 1px solid var(--line); border-radius: 14px; background: var(--bg); }
-  .why-list li .ck { width: 26px; height: 26px; border-radius: 8px; background: var(--black); color: #fff; display: grid; place-items: center; flex: none; }
+  /* Placeholder slot for future videos */
+  .video.placeholder {
+    cursor: default; display: grid; place-items: center; text-align: center;
+    background: repeating-linear-gradient(45deg, rgba(255,255,255,0.02) 0 14px, rgba(255,255,255,0.04) 14px 28px);
+    border: 1px dashed var(--line-strong);
+  }
+  .video.placeholder::after { box-shadow: none; }
+  .ph-inner { color: var(--faint); }
+  .ph-inner .ph-ic { width: 46px; height: 46px; border-radius: 50%; border: 1px solid var(--line-strong); display: grid; place-items: center; margin: 0 auto 12px; color: var(--gold); }
+  .ph-inner .ph-ic svg { width: 22px; height: 22px; }
+  .ph-inner p { font-size: 12.5px; font-weight: 600; letter-spacing: 0.04em; }
+
+  /* ===== Cases (text testimonials) ===== */
+  .cases { display: grid; gap: 16px; margin-top: 14px; }
+  .case { border: 1px solid var(--line); border-radius: var(--radius); padding: 28px 24px; background: var(--surface); transition: transform 0.3s var(--ease), border-color 0.3s; position: relative; overflow: hidden; }
+  .case::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: var(--gold-grad); opacity: 0.85; }
+  .case:hover { transform: translateY(-3px); border-color: rgba(236,231,211,0.4); }
+  .case .ctop { display: flex; align-items: center; gap: 12px; }
+  .case .cava { width: 40px; height: 40px; border-radius: 50%; background: rgba(236,231,211,0.14); color: var(--gold-2); display: grid; place-items: center; font-weight: 900; font-size: 15px; flex: none; }
+  .case .tag { font-size: 12px; font-weight: 700; letter-spacing: 0.04em; color: var(--faint); }
+  .case .tag b { color: var(--fg); font-size: 14px; display: block; font-weight: 800; }
+  .case .result { display: inline-block; font-family: var(--serif); font-size: clamp(21px, 5.6vw, 29px); font-weight: 700; letter-spacing: 0.01em; margin: 16px 0 4px; line-height: 1.35; }
+  .case .result .gold { font-weight: 800; }
+  .case p { color: var(--muted); font-size: 14px; margin-top: 12px; line-height: 1.85; }
+  .case .stars { color: var(--gold); font-size: 13px; letter-spacing: 0.15em; margin-top: 6px; }
+
+  /* Testimonial cards (voices) */
+  .tcards { display: grid; grid-template-columns: 1fr; gap: 14px; margin-top: 14px; }
+  .tcard { border: 1px solid var(--line); border-radius: var(--radius); padding: 26px 24px; background: var(--surface); position: relative; overflow: hidden; transition: transform 0.3s var(--ease), border-color 0.3s; display: flex; flex-direction: column; }
+  .tcard::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: var(--gold-grad); opacity: 0.8; }
+  .tcard:hover { transform: translateY(-3px); border-color: rgba(236,231,211,0.4); }
+  .tcard .tstars { color: var(--gold); font-size: 13px; letter-spacing: 0.15em; }
+  .tcard .tquote { color: var(--muted); font-size: 14px; line-height: 1.9; margin-top: 12px; flex: 1; }
+  .tcard .tauthor { display: flex; align-items: center; gap: 12px; margin-top: 18px; padding-top: 16px; border-top: 1px solid var(--line); }
+  .tcard .tava { width: 46px; height: 46px; border-radius: 50%; flex: none; overflow: hidden; display: grid; place-items: center; background: var(--gold-grad); color: #0a0a0a; font-weight: 900; font-size: 17px; box-shadow: 0 6px 18px -6px rgba(236,231,211,0.55); }
+  .tcard .tava img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .tcard .tname { font-size: 14.5px; font-weight: 800; color: var(--fg); line-height: 1.3; }
+  .tcard .trole { font-size: 12px; color: var(--gold-2); font-weight: 600; margin-top: 2px; }
+  .tdisclaimer { color: var(--faint); font-size: 11.5px; line-height: 1.8; max-width: 40em; margin: 26px auto 0; text-align: center; }
+
+  /* Stat strip */
+  .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; max-width: 600px; margin: 0 auto 8px; }
+  .stat { text-align: center; padding: 22px 10px; border: 1px solid var(--line); border-radius: 16px; background: var(--surface); }
+  .stat .fig { font-family: var(--serif); font-size: clamp(26px, 8vw, 40px); font-weight: 900; line-height: 1; }
+  .stat .fig small { font-size: 0.46em; font-weight: 700; }
+  .stat .lb { font-size: 11.5px; color: var(--muted); font-weight: 600; margin-top: 8px; letter-spacing: 0.02em; }
+
+  /* ===== Why list ===== */
+  .why-list { display: grid; gap: 11px; max-width: 500px; margin: 0 auto; }
+  .why-list li { list-style: none; display: flex; gap: 14px; align-items: center; font-size: 15.5px; font-weight: 700; padding: 17px 22px; border: 1px solid var(--line); border-radius: 14px; background: var(--surface); color: var(--fg); }
+  .why-list li .ck { width: 28px; height: 28px; border-radius: 9px; background: var(--gold-grad); color: #0a0a0a; display: grid; place-items: center; flex: none; }
   .why-list li .ck svg { width: 15px; height: 15px; }
-  .why-emph { text-align: center; max-width: 520px; margin: 0 auto 30px; font-size: clamp(20px, 5.4vw, 27px); font-weight: 900; }
+  .why-emph { text-align: center; max-width: 540px; margin: 0 auto 18px; font-family: var(--serif); font-size: clamp(21px, 5.6vw, 30px); font-weight: 900; }
 
-  /* Offer benefits */
-  .offer-list { list-style: none; display: grid; gap: 11px; max-width: 460px; margin: 24px auto 0; }
-  .offer-list li { display: flex; gap: 12px; align-items: center; font-size: 15px; font-weight: 600; }
-  .offer-list li .ck { color: var(--line-green); flex: none; }
+  /* ===== Offer ===== */
+  .offer-list { list-style: none; display: grid; gap: 12px; max-width: 480px; margin: 26px auto 0; }
+  .offer-list li { display: flex; gap: 13px; align-items: center; font-size: 15px; font-weight: 600; color: var(--fg); }
+  .offer-list li .ck { color: var(--gold); flex: none; }
   .offer-list li .ck svg { width: 20px; height: 20px; }
 
-  /* Final */
-  .final { background: var(--black); color: #fff; border-radius: 26px; padding: 52px 26px; text-align: center; position: relative; overflow: hidden; }
-  .final::before { content: ""; position: absolute; inset: 0; background: radial-gradient(560px 300px at 50% 0%, rgba(6,199,85,0.2), transparent 70%); }
+  /* ===== Final ===== */
+  .final { background: linear-gradient(180deg, var(--surface) 0%, var(--bg-2) 100%); color: #fff; border-radius: 28px; padding: 56px 28px; text-align: center; position: relative; overflow: hidden; border: 1px solid var(--line); }
+  .final::before { content: ""; position: absolute; inset: 0; background: radial-gradient(560px 320px at 50% 0%, rgba(236,231,211,0.22), transparent 70%); }
+  .final::after { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
   .final .inner { position: relative; }
-  .final .eyebrow { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.18); color: #fff; }
-  .final .eyebrow .dot { background: var(--line-green); }
-  .final h2 { color: #fff; font-size: clamp(24px, 6.4vw, 34px); font-weight: 900; margin-top: 18px; }
-  .final p { color: rgba(255,255,255,0.7); font-size: 14.5px; margin: 14px auto 0; max-width: 24em; }
-  .final .cta-block { margin-top: 30px; }
-  .final .cta-ribbon { color: #fff; }
-  .final .micro { margin-top: 16px; font-size: 12px; color: rgba(255,255,255,0.45); }
+  .final h2 { font-family: var(--serif); color: #fff; font-size: clamp(24px, 6.4vw, 35px); font-weight: 900; margin-top: 20px; line-height: 1.55; }
+  .final p { color: var(--muted); font-size: 14.5px; margin: 16px auto 0; max-width: 25em; }
+  .final .cta-block { margin-top: 32px; }
+  .final .micro { margin-top: 18px; font-size: 12px; color: var(--faint); }
 
-  /* Footer */
-  footer { padding: 44px 0 120px; border-top: 1px solid var(--line); text-align: center; }
-  .foot-brand { display: inline-flex; align-items: center; gap: 9px; font-weight: 900; }
-  .foot-copy { font-size: 12px; color: var(--faint); margin-top: 12px; }
+  /* ===== Footer ===== */
+  footer { padding: 50px 0 120px; border-top: 1px solid var(--line); text-align: center; }
+  .foot-brand { display: inline-flex; flex-direction: column; align-items: center; gap: 4px; font-weight: 900; letter-spacing: 0.1em; }
+  .foot-brand small { font-family: var(--display); font-weight: 600; font-size: 11px; letter-spacing: 0.34em; color: var(--gold-2); }
+  .foot-copy { font-size: 12px; color: var(--faint); margin-top: 14px; }
 
-  /* Sticky mobile CTA */
+  /* ===== Sticky mobile CTA ===== */
   .sticky-cta {
     position: fixed; left: 0; right: 0; bottom: 0; z-index: 90; padding: 12px 16px calc(12px + env(safe-area-inset-bottom));
-    background: rgba(255,255,255,0.85); backdrop-filter: saturate(180%) blur(18px); -webkit-backdrop-filter: saturate(180%) blur(18px);
+    background: rgba(6,6,6,0.82); backdrop-filter: saturate(160%) blur(18px); -webkit-backdrop-filter: saturate(160%) blur(18px);
     border-top: 1px solid var(--line); transform: translateY(120%); transition: transform 0.4s var(--ease);
   }
   .sticky-cta.show { transform: none; }
-  .sticky-cta .btn-line { max-width: none; padding: 15px; font-size: 15.5px; box-shadow: none; animation: linepulse-sticky 2.4s var(--ease) infinite; }
-  @keyframes linepulse-sticky {
-    0%, 100% { transform: scale(1); }
-    50%      { transform: scale(1.018); }
-  }
+  .sticky-cta .btn-line { max-width: none; padding: 15px; font-size: 15.5px; box-shadow: 0 -2px 20px rgba(6,199,85,0.2); animation: linepulse-sticky 2.6s var(--ease) infinite; }
+  @keyframes linepulse-sticky { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.015); } }
   @media (prefers-reduced-motion: reduce) { .sticky-cta .btn-line { animation: none; } }
 
-  @media (min-width: 700px) {
-    .section { padding: 92px 0; }
-    .worries { grid-template-columns: 1fr; }
+  @media (min-width: 720px) {
+    .section { padding: 104px 0; }
     .vs { grid-template-columns: 1fr 1fr; }
     .vs-divider { display: none; }
-    .darkblock, .final { padding: 64px 44px; }
+    .tm-grid { grid-template-columns: 1fr 1fr; }
+    .tcards { grid-template-columns: 1fr 1fr; }
+    .final { padding: 72px 48px; }
     .sticky-cta { display: none; }
   }
 </style>
 </head>
 <body id="top">
 
-<!-- TOP BANNER -->
-<section class="banner" aria-label="KNCT UNIVERSITY community">
-  <div class="banner-media">
-    <img src="assets/community.jpg" alt="KNCT UNIVERSITY コミュニティの集合写真" width="1920" height="1460" fetchpriority="high" />
+<!-- NAV -->
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a href="#top" class="brand" aria-label="KNCT UNIVERSITY">
+      <img src="assets/icon-512.png" alt="KNCT UNIVERSITY" />
+    </a>
+    <a href="#" class="nav-cta" data-line>
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 5.82 2 10.5c0 2.7 1.5 5.1 3.86 6.66-.1.4-.62 2.3-.7 2.62 0 0-.02.1.05.15.07.04.15 0 .15 0 .2-.03 2.4-1.6 3.4-2.27.43.06.87.09 1.32.09 5.52 0 10-3.82 10-8.5S17.52 2 12 2z"/></svg>
+      LINEを追加する
+    </a>
   </div>
-  <div class="banner-overlay"></div>
-  <div class="banner-content">
-    <div class="bk">KNCT</div>
-    <div class="bk2">UNIVERSITY</div>
-    <div class="btag">SNS収益化を学ぶ実践コミュニティ</div>
-  </div>
-</section>
+</header>
 
 <!-- HERO -->
 <section class="hero">
   <div class="hero-grid"></div>
   <div class="wrap">
-    <h1 class="reveal" style="margin-top:8px;">SNSで発信しなくても、<br><span class="hl">収益化できる</span>時代へ。</h1>
-    <p class="lead reveal">「フォロワー0」「経験0」からでも<br><b>クリエイターの裏側で収益を作るスキル</b>を学ぶ。</p>
+    <img class="hero-logo reveal" src="assets/og-image.png" alt="KNCT UNIVERSITY" width="300" height="300" />
+    <h1 class="reveal">発信する人ではなく、<br><span class="hl gold">売上を作る人</span>へ。</h1>
+    <p class="lead reveal">「フォロワー0」「経験0」からでも、<br><b>クリエイターの裏側で収益を生み出す</b>——<br>オペレーターという働き方。</p>
+
+    <!-- MAIN VIDEO -->
+    <div class="video hero-video reveal" data-yt="1hsTWlT9HQ0">
+      <img class="video-thumb" src="https://i.ytimg.com/vi/1hsTWlT9HQ0/maxresdefault.jpg" alt="オペレーターとは何かを解説する動画" loading="eager" width="1280" height="720" />
+      <div class="video-veil"></div>
+      <button class="video-play" aria-label="動画を再生">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+      </button>
+      <div class="video-label"><span class="lp">Watch</span>「オペレーター」とは何かがわかる動画</div>
+    </div>
+
     <div class="cta-block reveal">
       <span class="cta-ribbon">＼ まずは無料特典を受け取る ／</span>
       <a href="#" class="btn-line" data-line>
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 5.82 2 10.5c0 2.7 1.5 5.1 3.86 6.66-.1.4-.62 2.3-.7 2.62 0 0-.02.1.05.15.07.04.15 0 .15 0 .2-.03 2.4-1.6 3.4-2.27.43.06.87.09 1.32.09 5.52 0 10-3.82 10-8.5S17.52 2 12 2z"/></svg>
         LINEを追加する
       </a>
-      <span class="cta-sub">LINE追加で限定コンテンツ配布中</span>
+      <span class="cta-sub">LINE追加で限定コンテンツを無料配布中</span>
     </div>
-    <p class="desc reveal">SNSクリエイターの裏側で、<br><b>売上を生み出すオペレーターへ。</b><span class="descgap"></span>KNCT UNIVERSITYは、<br><b>90日で実践・収益化を目指すプログラム</b>です。</p>
-    <div class="modes reveal"><span>会社員のままでも</span><span>副業でも</span><span>起業前でも</span></div>
   </div>
 </section>
 
 <!-- WORRIES -->
-<section class="section">
+<section class="section tight">
   <div class="wrap">
-    <div class="head reveal"><h2>こんな悩み、<br>ありませんか？</h2></div>
+    <div class="head reveal"><div class="rule" style="margin-bottom:26px;"></div><h2>こんな悩み、<br>ありませんか？</h2></div>
     <div class="worries">
       <div class="worry reveal">
         <h3><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>会社員だけど、この先ずっと今の働き方でいいのか不安</h3>
@@ -341,78 +417,176 @@
 <!-- WHAT IS OPERATOR -->
 <section class="section tight">
   <div class="wrap">
-    <div class="darkblock reveal">
-      <div class="inner">
-        <div class="head" style="margin-bottom:24px;">
-          <span class="eyebrow"><span class="dot"></span>オペレーターとは？</span>
-          <h2 style="margin-top:18px;">「発信する人」ではなく、<br>売上を作る人。</h2>
-        </div>
-        <p style="text-align:center;max-width:30em;margin:0 auto;">今、SNSクリエイターは大量にいます。でも、<b style="color:#fff;">売上を作れる人は圧倒的に少ない。</b>多くのクリエイターは「収益化の設計」がないからです。</p>
+    <div class="head reveal">
+      <span class="eyebrow"><span class="dot"></span>What is an Operator</span>
+      <h2 style="margin-top:18px;">「発信する人」ではなく、<br><span class="gold">売上を作る人</span>。</h2>
+      <p>今、SNSクリエイターは大量にいます。でも、<b style="color:var(--fg);font-weight:700;">売上を作れる人は圧倒的に少ない。</b>多くのクリエイターは「収益化の設計」がないからです。</p>
+    </div>
 
-        <div class="vs">
-          <div class="vs-card front">
-            <span class="vs-tag">クリエイター</span>
-            <h4>発信する人</h4>
-            <ul class="vs-list">
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/></svg>フォロワーは増える</li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/></svg>再生数も出る</li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg>でも、売上がない</li>
-            </ul>
-          </div>
-          <div class="vs-divider">↓</div>
-          <div class="vs-card back">
-            <span class="vs-tag">オペレーター</span>
-            <h4>売上を作る人</h4>
-            <ul class="vs-list">
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>商品設計・導線・販売・セールス</li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>仕組み化を行う</li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>クリエイターと組み、売上を共に作る</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="note-strong">
-          <p>SNS運用代行ではありません。ただ投稿を作る仕事でもありません。</p>
-          <strong>「ビジネスを作る側」です。</strong>
-        </div>
+    <div class="vs">
+      <div class="vs-card front reveal">
+        <span class="vs-tag">Creator</span>
+        <h4>発信する人</h4>
+        <ul class="vs-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/></svg>フォロワーは増える</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/></svg>再生数も出る</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg>でも、売上がない</li>
+        </ul>
       </div>
+      <div class="vs-divider reveal">▼</div>
+      <div class="vs-card back reveal">
+        <span class="vs-tag">Operator</span>
+        <h4>売上を作る人</h4>
+        <ul class="vs-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>商品設計・導線・販売・セールス</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>仕組み化を行う</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>クリエイターと組み、売上を共に作る</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="note-strong reveal">
+      <p>SNS運用代行ではありません。ただ投稿を作る仕事でもありません。</p>
+      <strong>あなたは<span class="gold">「ビジネスを作る側」</span>になる。</strong>
     </div>
   </div>
 </section>
 
-<!-- CASES -->
+<!-- TESTIMONIALS -->
 <section class="section tight">
   <div class="wrap">
     <div class="head reveal">
-      <span class="eyebrow"><span class="dot"></span>実際の結果</span>
-      <h2 style="margin-top:18px;">未経験・SNS経験ゼロでも、<br>結果が出ています。</h2>
+      <span class="eyebrow"><span class="dot"></span>Real Stories</span>
+      <h2 style="margin-top:18px;">未経験・SNS経験ゼロでも、<br><span class="gold">結果が出ています。</span></h2>
+      <p>知識だけでは終わらせない。実際に案件を動かし、売上を作った受講生の声。</p>
     </div>
-    <div class="cases">
-      <div class="case reveal">
-        <div class="tag">Case 1 ｜ <b>Yuukiさん</b></div>
-        <span class="result">開始1ヶ月で 80万円 売上達成</span>
-        <p>SNS経験ゼロ・ビジネス経験ゼロ。それでもサポートしたクリエイターと契約し、初月から約25万円の報酬。フォロワー数を追うのではなく、ターゲットの見極めとポジショニングというオペレーターの基本を実践したことが、そのままマネタイズにつながりました。</p>
+
+    <!-- Featured video testimonial -->
+    <div class="tm-feature">
+      <div class="video reveal" data-yt="gjc7hgcprKM">
+        <img class="video-thumb" src="https://i.ytimg.com/vi/gjc7hgcprKM/maxresdefault.jpg" alt="受講生インタビュー動画" loading="lazy" width="1280" height="720" />
+        <div class="video-veil"></div>
+        <button class="video-play" aria-label="動画を再生">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        </button>
+        <div class="video-label"><span class="lp">Interview</span>ショウコさんのリアルな声を見る</div>
       </div>
-      <div class="case reveal">
-        <div class="tag">Case 2 ｜ <b>Komotakuさん</b></div>
-        <span class="result">入会3日で契約獲得</span>
-        <p>フィットネス系クリエイターと契約。さらに別案件では頭金5万円を獲得。「知識だけ」で終わらず、実際に案件を動かしながら学ぶ環境があります。</p>
+      <p class="tm-quote reveal"><span class="mark">“</span>知識を入れるだけのスクールとは全く違った。<br>実際に案件を動かしながら学べたから、<br><span class="gold">気づいたら売上が立っていた。</span><span class="mark">”</span></p>
+      <div class="tm-by reveal">— ショウコさん｜KNCT UNIVERSITY 受講生</div>
+    </div>
+
+    <!-- Voices: all testimonials -->
+    <div class="tcards">
+      <div class="tcard reveal">
+        <div class="tstars">★★★★★</div>
+        <p class="tquote">アカウント・コンテンツすべてゼロからのスタートでした。実例を分解しながら素直に実行した結果、初月でフォロワー380人まで成長。サッカー選手向け英語コーチングのサポート案件にも繋がりました。</p>
+        <div class="tauthor">
+          <div class="tava"><img src="assets/people/yuuki.jpg" alt="Yuuki さん" loading="lazy" /></div>
+          <div><div class="tname">Yuuki さん</div><div class="trole">英語コーチング支援</div></div>
+        </div>
       </div>
-      <div class="case reveal">
-        <div class="tag">Case 3 ｜ <b>Yoneさん</b></div>
-        <span class="result">5月の売上 150万円 達成</span>
-        <p>ICPの設計、刺さるオファーの作り方、痛みの言語化といったオペレーターのマインドセットを習得し、3ヶ月でオペレーター契約を3件獲得。さらに自身も、90日でパーソナルブランドを構築する1on1コーチングを販売し、5月は売上150万円を達成。今後はローチケット商品へと事業を広げつつ、オペレーター事業も拡大していきます。</p>
+
+      <div class="tcard reveal">
+        <div class="tstars">★★★★★</div>
+        <p class="tquote">入会して3日目、学んだ対話・提案の進め方をそのまま実践し、フィットネス系クリエイターさんとの初契約まで進めました。その後2人目のクリエイターさんとも契約に至り、コミュニケーション設計とオファー設計を組み合わせた、自分なりの提案の型ができてきた手応えがあります。</p>
+        <div class="tauthor">
+          <div class="tava">K</div>
+          <div><div class="tname">komotaku さん</div><div class="trole">クリエイター支援</div></div>
+        </div>
+      </div>
+
+      <div class="tcard reveal">
+        <div class="tstars">★★★★★</div>
+        <p class="tquote">クリエイターさんの1日イベントの企画運営に裏方として参加。学んだことを実践し、初めて案件支援を経験できました。現場に出ると、自信のつき方が違います。</p>
+        <div class="tauthor">
+          <div class="tava"><img src="assets/people/ryoma.jpg" alt="Ryoma さん" loading="lazy" /></div>
+          <div><div class="tname">Ryoma さん</div><div class="trole">クリエイターイベント支援</div></div>
+        </div>
+      </div>
+
+      <div class="tcard reveal">
+        <div class="tstars">★★★★★</div>
+        <p class="tquote">フィットネス系とガイドツアー系、2人のクリエイターさんと並行して支援契約を結びました。どちらもアカウントもサービスもゼロからの立ち上げで、未経験領域ですが、学びを実践に変える機会として向き合っています。</p>
+        <div class="tauthor">
+          <div class="tava"><img src="assets/people/kai.jpg" alt="Kai さん" loading="lazy" /></div>
+          <div><div class="tname">Kai さん</div><div class="trole">フィットネス・ツアー支援</div></div>
+        </div>
+      </div>
+
+      <div class="tcard reveal">
+        <div class="tstars">★★★★★</div>
+        <p class="tquote">フィットネスに続き、英語クリエイターさんとも支援契約を結ぶことができました。4ヶ月前は「オペレーター」という言葉さえ知らなかった自分でも、業界を問わずに学びを活かせる。それがこのスキルの価値だと感じています。</p>
+        <div class="tauthor">
+          <div class="tava"><img src="assets/people/taiyo.jpg" alt="Taiyo さん" loading="lazy" /></div>
+          <div><div class="tname">Taiyo さん</div><div class="trole">英語クリエイター支援</div></div>
+        </div>
+      </div>
+
+      <div class="tcard reveal">
+        <div class="tstars">★★★★★</div>
+        <p class="tquote">整体事業のお客様だった国際薬膳師の方が、マンツーマン薬膳レッスンを始めたいけれど集客・オファー・商品設計の進め方が分からない、と。学んできたフレームをそのまま使って、お試しサポートから関係性を作り始めています。</p>
+        <div class="tauthor">
+          <div class="tava">T</div>
+          <div><div class="tname">Takumi さん</div><div class="trole">薬膳師支援</div></div>
+        </div>
+      </div>
+
+      <div class="tcard reveal">
+        <div class="tstars">★★★★★</div>
+        <p class="tquote">フォロワー4万人の方には相手にされないだろう、と思いながら恐る恐るDMを送りました。実際にお話を聞いてみると、進め方が分からず一人で抱えていた状態だったとのこと。今は支援者として並走しています。</p>
+        <div class="tauthor">
+          <div class="tava">U</div>
+          <div><div class="tname">Uta さん</div><div class="trole">クリエイター支援</div></div>
+        </div>
+      </div>
+
+      <div class="tcard reveal">
+        <div class="tstars">★★★★★</div>
+        <p class="tquote">海外ママのクリエイターさんとの面談から、3ヶ月の支援契約をいただきました。アメリカの夏休みに向けて、5月中にローンチして最初の成約までサポートする形で並走しています。緊張した初面談で「何者ですか?」と聞かれた反省点もありますが、一歩進めて嬉しいです。</p>
+        <div class="tauthor">
+          <div class="tava"><img src="assets/people/kanna.jpg" alt="Kanna さん" loading="lazy" /></div>
+          <div><div class="tname">Kanna さん</div><div class="trole">海外ママクリエイター支援</div></div>
+        </div>
+      </div>
+
+      <div class="tcard reveal">
+        <div class="tstars">★★★★★</div>
+        <p class="tquote">旦那さんのアカウントで、初めてのオンライン収益化に挑戦。30〜40代男性向けの腕トレ完全ガイドをEbook形式で提供し、最初の売上が立ちました。さらにクリエイターと共に、約35万円の売上を上げることにも成功。正しいやり方を教えてくれる環境と、第三者の目線で意見をくれる仲間のおかげです。</p>
+        <div class="tauthor">
+          <div class="tava"><img src="assets/people/sakiko.jpg" alt="Sakiko さん" loading="lazy" /></div>
+          <div><div class="tname">Sakiko さん</div><div class="trole">Ebook販売支援</div></div>
+        </div>
+      </div>
+
+      <div class="tcard reveal">
+        <div class="tstars">★★★★★</div>
+        <p class="tquote">KNCTに入ってから、Whopでのコミュニティ形成を進めることができました。外資エアライン面接対策の発信で、競合が有料化している情報も積極的にGIVEする方針で運用。少しずつ信頼が積み上がり、個別相談会の参加率も大きく伸びました。「データ」と「情報」を区別する発信の考え方が、結果につながったと感じています。</p>
+        <div class="tauthor">
+          <div class="tava"><img src="assets/people/aya.jpg" alt="Aya さん" loading="lazy" /></div>
+          <div><div class="tname">Aya さん</div><div class="trole">外資エアライン面接対策</div></div>
+        </div>
+      </div>
+
+      <div class="tcard reveal">
+        <div class="tstars">★★★★★</div>
+        <p class="tquote">ICPの設計、刺さるオファーの作り方、痛みの言語化といったオペレーターのマインドセットを習得し、3ヶ月でオペレーター契約を3件獲得。さらに自身も、90日でパーソナルブランドを構築する1on1コーチングを販売し、5月は売上150万円を達成しました。今後はローチケット商品へと事業を広げつつ、オペレーター事業も拡大していきます。</p>
+        <div class="tauthor">
+          <div class="tava">Y</div>
+          <div><div class="tname">Yone さん</div><div class="trole">オペレーター・1on1コーチング</div></div>
+        </div>
       </div>
     </div>
+
+    <p class="tdisclaimer">※ 掲載している体験談は受講者個人の感想であり、すべての方に同様の結果を保証するものではありません。学習成果は、各受講者の取り組みや状況により異なります。</p>
   </div>
 </section>
 
 <!-- WHY -->
 <section class="section tight">
   <div class="wrap">
-    <div class="head reveal"><h2>なぜ、結果が出るのか？</h2><p>理由はシンプルです。</p></div>
-    <div class="why-emph reveal">見るだけで<br>終わらないから。</div>
-    <p style="text-align:center;color:var(--muted);font-size:14.5px;max-width:24em;margin:0 auto 26px;" class="reveal">よくあるスクールは、動画教材を渡して終了。でもKNCT UNIVERSITYは違います。<b style="color:var(--fg);font-weight:700;">一緒に作る。</b></p>
+    <div class="head reveal"><div class="rule" style="margin-bottom:26px;"></div><h2>なぜ、結果が出るのか？</h2><p>理由はシンプルです。</p></div>
+    <div class="why-emph reveal">見るだけで<br><span class="gold">終わらない</span>から。</div>
+    <p style="text-align:center;color:var(--muted);font-size:14.5px;max-width:25em;margin:0 auto 30px;" class="reveal">よくあるスクールは、動画教材を渡して終了。でもKNCT UNIVERSITYは違います。<b style="color:var(--fg);font-weight:700;">一緒に作る。</b></p>
     <ul class="why-list">
       <li class="reveal"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>毎日のライブセッション</li>
       <li class="reveal"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>メンター添削</li>
@@ -420,7 +594,7 @@
       <li class="reveal"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>実践環境</li>
       <li class="reveal"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>リアル案件ベース</li>
     </ul>
-    <p style="text-align:center;color:var(--muted);font-size:14.5px;margin-top:24px;" class="reveal">「頑張ってください」ではなく、共に実装。だから未経験でも前に進めます。</p>
+    <p style="text-align:center;color:var(--muted);font-size:14.5px;margin-top:26px;" class="reveal">「頑張ってください」ではなく、共に実装。だから未経験でも前に進めます。</p>
   </div>
 </section>
 
@@ -428,9 +602,9 @@
 <section class="section tight">
   <div class="wrap">
     <div class="head reveal">
-      <span class="eyebrow"><span class="dot"></span>無料特典</span>
+      <span class="eyebrow"><span class="dot"></span>Free Gift</span>
       <h2 style="margin-top:18px;">まずは無料で<br>受け取ってください</h2>
-      <p>KNCT UNIVERSITYでは、LINE限定で<br><b style="color:var(--fg);font-weight:700;">有料級の特典コンテンツ</b><br>を無料配布しています。</p>
+      <p>KNCT UNIVERSITYでは、LINE限定で<br><b style="color:var(--fg);font-weight:700;">有料級の特典コンテンツ</b>を無料配布しています。</p>
     </div>
     <p style="text-align:center;font-size:14px;color:var(--muted);font-weight:600;" class="reveal">さらにLINEでは、今後こんな情報も配信予定：</p>
     <ul class="offer-list">
@@ -440,7 +614,7 @@
       <li class="reveal"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>最新情報</li>
       <li class="reveal"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>限定ライブ案内</li>
     </ul>
-    <p style="text-align:center;font-size:14.5px;color:var(--muted);max-width:24em;margin:26px auto 0;" class="reveal">「自分にもできるか知りたい」そう思った方は、まず無料で情報を受け取ってください。<b style="color:var(--fg);font-weight:700;">無理な営業はありません。</b></p>
+    <p style="text-align:center;font-size:14.5px;color:var(--muted);max-width:25em;margin:28px auto 0;" class="reveal">「自分にもできるか知りたい」そう思った方は、まず無料で情報を受け取ってください。<b style="color:var(--fg);font-weight:700;">無理な営業はありません。</b></p>
   </div>
 </section>
 
@@ -449,13 +623,15 @@
   <div class="wrap">
     <div class="final reveal">
       <div class="inner">
-        <span class="eyebrow"><span class="dot"></span>無料特典はこちら</span>
-        <h2>LINE追加で<br>限定コンテンツを受け取る</h2>
+        <span class="eyebrow"><span class="dot"></span>Join Free</span>
+        <h2>LINE追加で<br><span class="gold">限定コンテンツ</span>を受け取る</h2>
+        <p>発信する人で終わるか、売上を作る人になるか。<br>その一歩は、ここから始まります。</p>
         <div class="cta-block">
           <a href="#" class="btn-line" data-line>
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 5.82 2 10.5c0 2.7 1.5 5.1 3.86 6.66-.1.4-.62 2.3-.7 2.62 0 0-.02.1.05.15.07.04.15 0 .15 0 .2-.03 2.4-1.6 3.4-2.27.43.06.87.09 1.32.09 5.52 0 10-3.82 10-8.5S17.52 2 12 2z"/></svg>
             LINEを追加する
           </a>
+          <span class="micro">登録は30秒・無料 / いつでも解除できます</span>
         </div>
       </div>
     </div>
@@ -465,7 +641,7 @@
 <!-- FOOTER -->
 <footer>
   <div class="wrap">
-    <div class="foot-brand">KNCT UNIVERSITY</div>
+    <div class="foot-brand"><img src="assets/og-image.png" alt="KNCT UNIVERSITY" style="height:56px;width:auto;" /></div>
     <div class="foot-copy">© 2026 KNCT UNIVERSITY. All rights reserved.</div>
   </div>
 </footer>
@@ -483,16 +659,40 @@
   var LINE_URL = "https://line.me/R/ti/p/@737agxqn";
   document.querySelectorAll('[data-line]').forEach(function(el){ el.setAttribute('href', LINE_URL); });
 
+  // === YouTube facade: load iframe only on click (fast initial paint) ===
+  document.querySelectorAll('.video[data-yt]').forEach(function(box){
+    box.addEventListener('click', function(){
+      var id = box.getAttribute('data-yt');
+      if (!id || box.dataset.loaded) return;
+      box.dataset.loaded = "1";
+      var iframe = document.createElement('iframe');
+      iframe.src = "https://www.youtube-nocookie.com/embed/" + id + "?autoplay=1&rel=0&playsinline=1&modestbranding=1";
+      iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+      iframe.setAttribute('allowfullscreen', '');
+      iframe.title = "KNCT UNIVERSITY video";
+      box.appendChild(iframe);
+    });
+  });
+  // Fallback maxres → hq thumbnail if 1280 not available
+  document.querySelectorAll('.video-thumb').forEach(function(img){
+    img.addEventListener('error', function(){
+      if (img.src.indexOf('maxresdefault') > -1) {
+        img.src = img.src.replace('maxresdefault', 'hqdefault');
+      }
+    });
+  });
+
   // Scroll reveal
   var io = new IntersectionObserver(function(entries){
     entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
   }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
   document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
 
-  // Sticky CTA appears after the banner
-  var sticky = document.getElementById('stickyCta'), banner = document.querySelector('.banner');
+  // Nav border + sticky CTA
+  var nav = document.getElementById('nav'), sticky = document.getElementById('stickyCta');
   window.addEventListener('scroll', function(){
-    sticky.classList.toggle('show', window.scrollY > banner.offsetHeight - 80);
+    nav.classList.toggle('scrolled', window.scrollY > 8);
+    sticky.classList.toggle('show', window.scrollY > 520);
   }, { passive: true });
 </script>
 </body>
