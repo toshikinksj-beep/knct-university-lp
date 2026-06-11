@@ -248,6 +248,7 @@
 
   /* ===== Testimonials ===== */
   .tm-feature { max-width: 760px; margin: 0 auto 18px; }
+  .tm-feature + .tm-feature { margin-top: 38px; }
   .tm-body { max-width: 620px; margin: 26px auto 0; }
   .tm-story { font-size: clamp(13.5px, 3.5vw, 15px); line-height: 1.95; color: var(--muted); text-align: left; }
   .tm-story p + p { margin-top: 12px; }
@@ -480,7 +481,28 @@
       <p>知識だけでは終わらせない。実際に案件を動かし、売上や契約といった実績を上げた受講生の声。</p>
     </div>
 
-    <!-- Featured video testimonial (framed: video + story) -->
+    <!-- Featured video testimonial: Yuuki -->
+    <div class="tm-feature reveal">
+      <div class="video" data-yt="F--Hh6VqAPU">
+        <img class="video-thumb" src="https://i.ytimg.com/vi/F--Hh6VqAPU/maxresdefault.jpg" alt="Yuuki インタビュー動画" loading="lazy" width="1280" height="720" />
+        <div class="video-veil"></div>
+        <button class="video-play" aria-label="動画を再生">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        </button>
+        <div class="video-label"><span class="lp">Interview</span>Yuuki のリアルな声を見る</div>
+      </div>
+      <div class="tm-body">
+        <div class="tm-story">
+          <p>アカウント・コンテンツすべてゼロからのスタート。実例を分解しながら素直に実行した結果、初月でフォロワー380人まで成長。サッカー選手向け英語コーチングのサポート案件にも繋がり、<b>1ヶ月目で80万円のマネタイズ</b>を達成しました。</p>
+        </div>
+        <div class="tm-author">
+          <div class="tm-ava"><img src="assets/people/yuuki.jpg" alt="Yuuki" loading="lazy" width="50" height="50" /></div>
+          <div><div class="tm-name">Yuuki</div><div class="tm-role">英語コーチング支援</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Featured video testimonial: Shoko -->
     <div class="tm-feature reveal">
       <div class="video" data-yt="gjc7hgcprKM">
         <img class="video-thumb" src="https://i.ytimg.com/vi/gjc7hgcprKM/maxresdefault.jpg" alt="Shoko インタビュー動画" loading="lazy" width="1280" height="720" />
@@ -505,13 +527,6 @@
 
     <!-- Voices: all testimonials -->
     <div class="tcards">
-      <div class="tcard reveal">        <p class="tquote">アカウント・コンテンツすべてゼロからのスタートでした。実例を分解しながら素直に実行した結果、初月でフォロワー380人まで成長。サッカー選手向け英語コーチングのサポート案件にも繋がり、1ヶ月目で80万円のマネタイズを達成しました。</p>
-        <div class="tauthor">
-          <div class="tava"><img src="assets/people/yuuki.jpg" alt="Yuuki さん" loading="lazy" /></div>
-          <div><div class="tname">Yuuki さん</div><div class="trole">英語コーチング支援</div></div>
-        </div>
-      </div>
-
       <div class="tcard reveal">        <p class="tquote">入会して3日目、学んだ対話・提案の進め方をそのまま実践し、フィットネス系クリエイターさんとの初契約まで進めました。その後2人目のクリエイターさんとも契約に至り、コミュニケーション設計とオファー設計を組み合わせた、自分なりの提案の型ができてきた手応えがあります。</p>
         <div class="tauthor">
           <div class="tava">K</div>
