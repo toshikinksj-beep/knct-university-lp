@@ -186,6 +186,7 @@
     box-shadow: 0 4px 16px -6px rgba(0,0,0,0.7); transition: opacity 0.4s ease; }
   .video-tap svg { width: 14px; height: 14px; }
   .video.preview .video-tap { display: flex; }
+  .video.preview .video-play { display: none; }
   .video.playing .video-tap { opacity: 0; pointer-events: none; }
   @media (prefers-reduced-motion: reduce) { .video-play::before { animation: none; } }
 
@@ -735,7 +736,7 @@
     if (!id) return;
     var existing = box.querySelector('iframe');
     if (existing) existing.remove();
-    var p = "autoplay=1&rel=0&playsinline=1&modestbranding=1";
+    var p = "autoplay=1&rel=0&playsinline=1&modestbranding=1&enablejsapi=1";
     if (muted) p += "&mute=1&loop=1&playlist=" + id + "&controls=0&disablekb=1&fs=0";
     var iframe = document.createElement('iframe');
     iframe.src = "https://www.youtube-nocookie.com/embed/" + id + "?" + p;
@@ -743,6 +744,17 @@
     iframe.setAttribute('allowfullscreen', '');
     iframe.title = "KNCT UNIVERSITY video";
     box.appendChild(iframe);
+    ytKillCaptions(iframe);
+  }
+  // Turn captions off (YouTube auto-enables them on muted autoplay)
+  function ytKillCaptions(iframe){
+    var m1 = JSON.stringify({event:'command',func:'unloadModule',args:['captions']});
+    var m2 = JSON.stringify({event:'command',func:'unloadModule',args:['cc']});
+    [700, 1500, 3000, 6000].forEach(function(t){
+      setTimeout(function(){
+        try { iframe.contentWindow.postMessage(m1, '*'); iframe.contentWindow.postMessage(m2, '*'); } catch(e) {}
+      }, t);
+    });
   }
   // Tap → play with sound from the start (all videos)
   document.querySelectorAll('.video[data-yt]').forEach(function(box){
