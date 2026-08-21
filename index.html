@@ -179,6 +179,14 @@
   .video.playing .video-veil,
   .video.playing .video-play { opacity: 0; pointer-events: none; }
   .video.playing .video-label { opacity: 0; transform: translateY(8px); pointer-events: none; }
+  /* "Tap for sound" hint — shown only while the hero preview autoplays muted */
+  .video-tap { position: absolute; top: 14px; right: 14px; z-index: 3; display: none; align-items: center; gap: 6px;
+    font-size: 11.5px; font-weight: 700; color: #fff; background: rgba(0,0,0,0.55);
+    padding: 6px 11px; border-radius: 100px; backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+    box-shadow: 0 4px 16px -6px rgba(0,0,0,0.7); transition: opacity 0.4s ease; }
+  .video-tap svg { width: 14px; height: 14px; }
+  .video.preview .video-tap { display: flex; }
+  .video.playing .video-tap { opacity: 0; pointer-events: none; }
   @media (prefers-reduced-motion: reduce) { .video-play::before { animation: none; } }
 
   /* ===== CTA block ===== */
@@ -396,6 +404,10 @@
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
       </button>
       <div class="video-label"><span class="lp">Watch</span>あなたの価値を10倍にする方法</div>
+      <div class="video-tap">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
+        タップで音声ON
+      </div>
     </div>
 
     <div class="cta-block reveal">
@@ -717,21 +729,33 @@
   var LINE_URL = "https://line.me/R/ti/p/@737agxqn";
   document.querySelectorAll('[data-line]').forEach(function(el){ el.setAttribute('href', LINE_URL); });
 
-  // === YouTube facade: load iframe only on click (fast initial paint) ===
+  // === YouTube video loader (facade + hero muted-autoplay preview) ===
+  function ytLoad(box, muted){
+    var id = box.getAttribute('data-yt');
+    if (!id) return;
+    var existing = box.querySelector('iframe');
+    if (existing) existing.remove();
+    var p = "autoplay=1&rel=0&playsinline=1&modestbranding=1";
+    if (muted) p += "&mute=1&loop=1&playlist=" + id + "&controls=0&disablekb=1&fs=0";
+    var iframe = document.createElement('iframe');
+    iframe.src = "https://www.youtube-nocookie.com/embed/" + id + "?" + p;
+    iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+    iframe.setAttribute('allowfullscreen', '');
+    iframe.title = "KNCT UNIVERSITY video";
+    box.appendChild(iframe);
+  }
+  // Tap → play with sound from the start (all videos)
   document.querySelectorAll('.video[data-yt]').forEach(function(box){
     box.addEventListener('click', function(){
-      var id = box.getAttribute('data-yt');
-      if (!id || box.dataset.loaded) return;
-      box.dataset.loaded = "1";
+      if (box.dataset.sound) return;
+      box.dataset.sound = "1";
       box.classList.add('playing');
-      var iframe = document.createElement('iframe');
-      iframe.src = "https://www.youtube-nocookie.com/embed/" + id + "?autoplay=1&rel=0&playsinline=1&modestbranding=1";
-      iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
-      iframe.setAttribute('allowfullscreen', '');
-      iframe.title = "KNCT UNIVERSITY video";
-      box.appendChild(iframe);
+      ytLoad(box, false);
     });
   });
+  // Hero: muted autoplay + loop preview on load (tap to unmute/restart)
+  var heroVideo = document.querySelector('.video.hero-video[data-yt]');
+  if (heroVideo) { heroVideo.classList.add('preview'); ytLoad(heroVideo, true); }
   // Fallback maxres → hq thumbnail if 1280 not available
   document.querySelectorAll('.video-thumb').forEach(function(img){
     img.addEventListener('error', function(){
