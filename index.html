@@ -788,7 +788,36 @@
   window.addEventListener('scroll', function(){
     sticky.classList.toggle('show', window.scrollY > 480);
   }, { passive: true });
+
+  // === Analytics: LINE button click tracking (GA4 + Vercel) ===
+  document.querySelectorAll('[data-line]').forEach(function(el){
+    el.addEventListener('click', function(){
+      var loc = el.closest('.sticky-cta') ? 'sticky_bar' : el.closest('.final') ? 'final_cta' : el.closest('.hero') ? 'hero' : 'other';
+      try { if (window.gtag) gtag('event', 'line_click', { location: loc }); } catch(e) {}
+      try { if (window.va) va('event', { name: 'line_click', data: { location: loc } }); } catch(e) {}
+    });
+  });
 </script>
+
+<!-- Google Analytics 4（GA_ID に測定IDを入れると有効化） -->
+<script>
+  var GA_ID = ""; // 例: "G-XXXXXXXXXX"
+  if (GA_ID) {
+    var gs = document.createElement('script'); gs.async = true;
+    gs.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+    document.head.appendChild(gs);
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function(){ dataLayer.push(arguments); };
+    gtag('js', new Date());
+    gtag('config', GA_ID);
+  }
+</script>
+
+<!-- Vercel Web Analytics (static-site script version) -->
+<script>
+  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+</script>
+<script defer src="/_vercel/insights/script.js"></script>
 
 <!-- Vercel Speed Insights (static-site script version) -->
 <script>
