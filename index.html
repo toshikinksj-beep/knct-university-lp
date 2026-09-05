@@ -763,6 +763,9 @@
       box.dataset.sound = "1";
       box.classList.add('playing');
       ytLoad(box, false);
+      var area = box.classList.contains('hero-video') ? 'hero_vsl' : 'testimonial';
+      try { if (window.gtag) gtag('event', 'video_play', { video_id: box.dataset.yt, area: area }); } catch(e) {}
+      try { if (window.va) va('event', { name: 'video_play', data: { video_id: box.dataset.yt, area: area } }); } catch(e) {}
     });
   });
   // Hero: muted autoplay + loop preview on load (tap to unmute/restart)
