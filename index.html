@@ -766,6 +766,7 @@
       var area = box.classList.contains('hero-video') ? 'hero_vsl' : 'testimonial';
       try { if (window.gtag) gtag('event', 'video_play', { video_id: box.dataset.yt, area: area }); } catch(e) {}
       try { if (window.va) va('event', { name: 'video_play', data: { video_id: box.dataset.yt, area: area } }); } catch(e) {}
+      try { if (window.fbq) fbq('trackCustom', 'VideoPlay', { video_id: box.dataset.yt, area: area }); } catch(e) {}
     });
   });
   // Hero: muted autoplay + loop preview on load (tap to unmute/restart)
@@ -798,6 +799,7 @@
       var loc = el.closest('.sticky-cta') ? 'sticky_bar' : el.closest('.final') ? 'final_cta' : el.closest('.hero') ? 'hero' : 'other';
       try { if (window.gtag) gtag('event', 'line_click', { location: loc }); } catch(e) {}
       try { if (window.va) va('event', { name: 'line_click', data: { location: loc } }); } catch(e) {}
+      try { if (window.fbq) fbq('track', 'Lead', { content_name: 'line_click', content_category: loc }); } catch(e) {}
     });
   });
 </script>
@@ -813,6 +815,20 @@
     window.gtag = function(){ dataLayer.push(arguments); };
     gtag('js', new Date());
     gtag('config', GA_ID);
+  }
+</script>
+
+<!-- Meta Pixel（FB_PIXEL_ID にピクセルIDを入れると有効化） -->
+<script>
+  var FB_PIXEL_ID = ""; // 例: "1234567890123456"
+  if (FB_PIXEL_ID) {
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', FB_PIXEL_ID);
+    fbq('track', 'PageView');
   }
 </script>
 
