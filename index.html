@@ -388,8 +388,21 @@ n.queue=[];t=b.createElement(e);t.async=!0;
 t.src=v;s=b.getElementsByTagName(e)[0];
 s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
+// Shared event_id + server-side relay (Conversions API) for deduplicated dual sending
+window.metaEvtId = function(){ return Date.now() + '-' + Math.random().toString(36).slice(2, 10); };
+window.capiSend = function(name, id, custom){
+  try {
+    var fbp = (document.cookie.match(/(?:^|; )_fbp=([^;]+)/) || [])[1];
+    var fbc = (document.cookie.match(/(?:^|; )_fbc=([^;]+)/) || [])[1];
+    var payload = JSON.stringify({ event_name: name, event_id: id, event_source_url: location.href, fbp: fbp, fbc: fbc, custom_data: custom });
+    if (navigator.sendBeacon) { navigator.sendBeacon('/api/capi', new Blob([payload], { type: 'application/json' })); }
+    else { fetch('/api/capi', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: payload, keepalive: true }); }
+  } catch (e) {}
+};
 fbq('init', '1665016335272219');
-fbq('track', 'PageView');
+var pvId = metaEvtId();
+fbq('track', 'PageView', {}, { eventID: pvId });
+capiSend('PageView', pvId);
 </script>
 <noscript><img height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=1665016335272219&ev=PageView&noscript=1"
@@ -783,7 +796,13 @@ src="https://www.facebook.com/tr?id=1665016335272219&ev=PageView&noscript=1"
       var area = box.classList.contains('hero-video') ? 'hero_vsl' : 'testimonial';
       try { if (window.gtag) gtag('event', 'video_play', { video_id: box.dataset.yt, area: area }); } catch(e) {}
       try { if (window.va) va('event', { name: 'video_play', data: { video_id: box.dataset.yt, area: area } }); } catch(e) {}
-      try { if (window.fbq) fbq('trackCustom', 'VideoPlay', { video_id: box.dataset.yt, area: area }); } catch(e) {}
+      try {
+        if (window.fbq) {
+          var vpId = window.metaEvtId ? metaEvtId() : String(Date.now());
+          fbq('trackCustom', 'VideoPlay', { video_id: box.dataset.yt, area: area }, { eventID: vpId });
+          if (window.capiSend) capiSend('VideoPlay', vpId, { video_id: box.dataset.yt, area: area });
+        }
+      } catch(e) {}
     });
   });
   // Hero: muted autoplay + loop preview on load (tap to unmute/restart)
@@ -816,7 +835,13 @@ src="https://www.facebook.com/tr?id=1665016335272219&ev=PageView&noscript=1"
       var loc = el.closest('.sticky-cta') ? 'sticky_bar' : el.closest('.final') ? 'final_cta' : el.closest('.hero') ? 'hero' : 'other';
       try { if (window.gtag) gtag('event', 'line_click', { location: loc }); } catch(e) {}
       try { if (window.va) va('event', { name: 'line_click', data: { location: loc } }); } catch(e) {}
-      try { if (window.fbq) fbq('track', 'Lead', { content_name: 'line_click', content_category: loc }); } catch(e) {}
+      try {
+        if (window.fbq) {
+          var ldId = window.metaEvtId ? metaEvtId() : String(Date.now());
+          fbq('track', 'Lead', { content_name: 'line_click', content_category: loc }, { eventID: ldId });
+          if (window.capiSend) capiSend('Lead', ldId, { content_name: 'line_click', content_category: loc });
+        }
+      } catch(e) {}
     });
   });
 </script>
