@@ -2,3 +2,6 @@
 .claude/
 *.zip
 node_modules/
+.vercel/
+.vercel
+.env*.local
