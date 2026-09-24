@@ -2,23 +2,69 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "cleanUrls": true,
   "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/ig-yjk",
+      "destination": "/?utm_source=instagram&utm_medium=yjk",
+      "permanent": false
+    },
+    {
+      "source": "/ig-knct",
+      "destination": "/?utm_source=instagram&utm_medium=knct",
+      "permanent": false
+    },
+    {
+      "source": "/yt-yjk",
+      "destination": "/?utm_source=youtube&utm_medium=yjk",
+      "permanent": false
+    },
+    {
+      "source": "/yt-knct",
+      "destination": "/?utm_source=youtube&utm_medium=knct",
+      "permanent": false
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "Strict-Transport-Security", "value": "max-age=63072000; includeSubDomains" },
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "X-Frame-Options", "value": "DENY" },
-        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
-        { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=(), payment=(), usb=()" },
-        { "key": "Content-Security-Policy", "value": "frame-ancestors 'none'; object-src 'none'; base-uri 'self'; upgrade-insecure-requests" }
+        {
+          "key": "Strict-Transport-Security",
+          "value": "max-age=63072000; includeSubDomains"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=(), payment=(), usb=()"
+        },
+        {
+          "key": "Content-Security-Policy",
+          "value": "frame-ancestors 'none'; object-src 'none'; base-uri 'self'; upgrade-insecure-requests"
+        }
       ]
     },
     {
       "source": "/api/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "no-store" },
-        { "key": "X-Robots-Tag", "value": "noindex" }
+        {
+          "key": "Cache-Control",
+          "value": "no-store"
+        },
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex"
+        }
       ]
     }
   ]

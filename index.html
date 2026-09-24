@@ -766,15 +766,17 @@ src="https://www.facebook.com/tr?id=1665016335272219&ev=PageView&noscript=1"
   // 各値には Lステップ「流入経路分析」で発行した友だち追加URLをそのまま貼る。
   // null のままの経路は DEFAULT にフォールバックするので、埋めた順に有効化できる。
   var LINE_ROUTES = {
-    "instagram/bio":       null,  // IGプロフィールのリンク
-    "instagram/story":     null,
-    "instagram/reel":      null,
-    "instagram/highlight": null,
-    "instagram":           null,  // utm_medium 無しのIG全般
-    "youtube":             null,
-    "tiktok":              null,
-    "ads":                 "https://liff.line.me/2010144535-1ftVOtwe/landing?follow=%40737agxqn&lp=XrdKvo&liff_id=2010144535-1ftVOtwe",
-    "organic":             null   // UTM無し（直接訪問・検索・不明）
+    // 配布リンク（vercel.json の redirects）→ ここのキーに対応
+    "instagram/yjk":  "https://liff.line.me/2010144535-1ftVOtwe/landing?follow=%40737agxqn&lp=Eg730h&liff_id=2010144535-1ftVOtwe",  // joinknct.com/ig-yjk    IG @yuuyajameskato
+    "instagram/knct": "https://liff.line.me/2010144535-1ftVOtwe/landing?follow=%40737agxqn&lp=DpM25M&liff_id=2010144535-1ftVOtwe",  // joinknct.com/ig-knct   IG KNCT University
+    "youtube/yjk":    "https://liff.line.me/2010144535-1ftVOtwe/landing?follow=%40737agxqn&lp=y6i8zj&liff_id=2010144535-1ftVOtwe",  // joinknct.com/yt-yjk    YouTube YJK
+    "youtube/knct":   "https://liff.line.me/2010144535-1ftVOtwe/landing?follow=%40737agxqn&lp=IU6MMj&liff_id=2010144535-1ftVOtwe",  // joinknct.com/yt-knct   YouTube KNCT
+    // 媒体だけ判明している場合のフォールバック
+    "instagram":      null,
+    "youtube":        null,
+    "tiktok":         null,
+    "ads":            "https://liff.line.me/2010144535-1ftVOtwe/landing?follow=%40737agxqn&lp=XrdKvo&liff_id=2010144535-1ftVOtwe",
+    "organic":        null   // UTM無し（直接訪問・検索・不明）
   };
   var LINE_URL = "https://liff.line.me/2010144535-1ftVOtwe/landing?follow=%40737agxqn&lp=XrdKvo&liff_id=2010144535-1ftVOtwe";
 
