@@ -762,9 +762,49 @@ src="https://www.facebook.com/tr?id=1665016335272219&ev=PageView&noscript=1"
 </div>
 
 <script>
-  // === LINE link: replace with your real LINE add-friend URL ===
+  // === LINE link: 流入元(UTM) → Lステップ流入経路URL の振り分け ===
+  // 各値には Lステップ「流入経路分析」で発行した友だち追加URLをそのまま貼る。
+  // null のままの経路は DEFAULT にフォールバックするので、埋めた順に有効化できる。
+  var LINE_ROUTES = {
+    "instagram/bio":       null,  // IGプロフィールのリンク
+    "instagram/story":     null,
+    "instagram/reel":      null,
+    "instagram/highlight": null,
+    "instagram":           null,  // utm_medium 無しのIG全般
+    "youtube":             null,
+    "tiktok":              null,
+    "ads":                 "https://liff.line.me/2010144535-1ftVOtwe/landing?follow=%40737agxqn&lp=XrdKvo&liff_id=2010144535-1ftVOtwe",
+    "organic":             null   // UTM無し（直接訪問・検索・不明）
+  };
   var LINE_URL = "https://liff.line.me/2010144535-1ftVOtwe/landing?follow=%40737agxqn&lp=XrdKvo&liff_id=2010144535-1ftVOtwe";
-  document.querySelectorAll('[data-line]').forEach(function(el){ el.setAttribute('href', LINE_URL); });
+
+  (function(){
+    var K_FIRST = 'knct_attr_first', K_LAST = 'knct_attr_last';
+    function put(store, k, v){ try { window[store].setItem(k, v); } catch(e) {} }
+    function get(store, k){ try { return window[store].getItem(k); } catch(e) { return null; } }
+
+    var q = new URLSearchParams(location.search);
+    var src = (q.get('utm_source') || '').toLowerCase().trim();
+    var med = (q.get('utm_medium')  || '').toLowerCase().trim();
+    var now = src ? (med ? src + '/' + med : src) : '';
+
+    // ラストタッチはセッション単位、ファーストタッチは端末に永続保存
+    if (now) {
+      put('sessionStorage', K_LAST, now);
+      if (!get('localStorage', K_FIRST)) put('localStorage', K_FIRST, now);
+    }
+    var attr = now || get('sessionStorage', K_LAST) || get('localStorage', K_FIRST) || 'organic';
+
+    // source/medium → source のみ → organic → DEFAULT の順に経路を解決
+    var url = LINE_ROUTES[attr]
+           || LINE_ROUTES[attr.split('/')[0]]
+           || LINE_ROUTES['organic']
+           || LINE_URL;
+
+    window.knctAttr = attr;
+    window.knctAttrFirst = get('localStorage', K_FIRST) || attr;
+    document.querySelectorAll('[data-line]').forEach(function(el){ el.setAttribute('href', url); });
+  })();
 
   // === YouTube video loader (facade + hero muted-autoplay preview) ===
   function ytLoad(box, muted){
@@ -839,8 +879,10 @@ src="https://www.facebook.com/tr?id=1665016335272219&ev=PageView&noscript=1"
   document.querySelectorAll('[data-line]').forEach(function(el){
     el.addEventListener('click', function(){
       var loc = el.closest('.sticky-cta') ? 'sticky_bar' : el.closest('.final') ? 'final_cta' : el.closest('.hero') ? 'hero' : 'other';
-      try { if (window.gtag) gtag('event', 'line_click', { location: loc }); } catch(e) {}
-      try { if (window.va) va('event', { name: 'line_click', data: { location: loc } }); } catch(e) {}
+      var attr = window.knctAttr || 'organic';
+      var attrFirst = window.knctAttrFirst || attr;
+      try { if (window.gtag) gtag('event', 'line_click', { location: loc, attribution: attr, attribution_first: attrFirst }); } catch(e) {}
+      try { if (window.va) va('event', { name: 'line_click', data: { location: loc, attribution: attr } }); } catch(e) {}
       try {
         if (window.fbq) {
           var ldId = window.metaEvtId ? metaEvtId() : String(Date.now());
