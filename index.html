@@ -366,6 +366,49 @@
     .sticky-cta { display: none; }
     .sp-br { display: none; }
   }
+
+  /* ===== v3b additions ===== */
+  .stu-res { font-size: clamp(27px, 7.6vw, 36px) !important; line-height: 1.25 !important; margin: 14px 0 0 !important; }
+  .stu-sub { font-size: 13.5px; font-weight: 800; color: var(--gold-2); margin-top: 6px; }
+  .bwr { margin-top: 16px; display: grid; gap: 10px; }
+  .bwr div { display: grid; grid-template-columns: 74px 1fr; gap: 10px; align-items: baseline; }
+  .bwr dt { font-size: 10.5px; font-weight: 800; letter-spacing: 0.16em; color: var(--faint); }
+  .bwr div + div dt { color: var(--gold-2); }
+  .bwr dd { font-size: 14px; color: var(--muted); line-height: 1.7; }
+  .gap { max-width: 560px; margin: 34px auto 0; text-align: center; padding: 26px 20px; border: 1px solid var(--line); border-radius: 18px; background: var(--surface); }
+  .gap p { font-size: 15px; color: var(--muted); }
+  .gap-flow { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 6px; margin: 14px 0; font-size: clamp(13px, 3.6vw, 15px); font-weight: 800; }
+  .gap-flow span { padding: 6px 12px; border-radius: 100px; border: 1px solid rgba(236,231,211,0.35); color: var(--fg); }
+  .gap-flow i { font-style: normal; color: var(--gold); }
+  .gap-flow.sm { justify-content: flex-start; margin: 4px 0 12px; }
+  .machine { max-width: 640px; margin: 26px auto 0; padding: 22px 16px; border-radius: 18px; border: 1px solid rgba(236,231,211,0.32); background: linear-gradient(165deg, rgba(236,231,211,0.10), rgba(236,231,211,0.02)); text-align: center; }
+  .machine-t { font-size: 11px; font-weight: 800; letter-spacing: 0.22em; color: var(--gold-2); }
+  .machine-flow { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 8px 6px; margin-top: 14px; }
+  .machine-flow span { display: inline-flex; flex-direction: column; align-items: center; font-size: 13.5px; font-weight: 800; padding: 7px 11px; border-radius: 10px; background: var(--surface); border: 1px solid var(--line); line-height: 1.3; }
+  .machine-flow span b { font-size: 9px; letter-spacing: 0.14em; color: var(--faint); font-weight: 800; }
+  .machine-flow span.end { background: var(--gold-grad); color: #0a0a0a; border: none; }
+  .machine-flow span.end b { color: rgba(10,10,10,0.6); }
+  .nw { display: inline-flex; align-items: center; gap: 6px; font-style: normal; }
+  .machine-flow i { font-style: normal; color: var(--gold); font-size: 13px; }
+  .wall { display: grid; gap: 12px; }
+  .wcard { border: 1px solid var(--line); border-radius: 16px; padding: 20px 20px; background: var(--surface); display: flex; flex-direction: column; }
+  .wres { font-size: clamp(20px, 5.6vw, 24px); font-weight: 900; line-height: 1.35; }
+  .wcard p { color: var(--muted); font-size: 13.5px; margin-top: 8px; line-height: 1.8; flex: 1; }
+  .wname { display: flex; align-items: center; gap: 10px; margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--line); font-size: 13px; font-weight: 800; }
+  .ava.sm { width: 30px; height: 30px; font-size: 12px; box-shadow: none; }
+  .get-top { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+  .get-top .role { font-size: 11px; font-weight: 800; color: #0a0a0a; background: var(--gold-grad); padding: 3px 10px; border-radius: 100px; white-space: nowrap; }
+  .day-flow { font-size: 12.5px; font-weight: 800; color: var(--gold-2); margin-top: 10px; padding: 8px 12px; border-radius: 10px; background: rgba(236,231,211,0.06); border: 1px solid var(--line); line-height: 1.6; }
+  .community { border-radius: 24px; overflow: hidden; border: 1px solid var(--line); background: var(--surface); }
+  .community-photo { aspect-ratio: 16 / 9; overflow: hidden; }
+  .community-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; }
+  .community-in { padding: 30px 24px 34px; text-align: center; }
+  .community-in h2 { font-size: clamp(22px, 6vw, 30px); font-weight: 900; margin-top: 16px; }
+  .community-in p { color: var(--muted); font-size: 14.5px; margin-top: 12px; }
+  @media (min-width: 720px) {
+    .wall { grid-template-columns: 1fr 1fr; }
+    .gets .get:first-child { grid-column: auto; }
+  }
 </style>
 <!-- Meta Pixel Code -->
 <script>
@@ -428,7 +471,8 @@ src="https://www.facebook.com/tr?id=1665016335272219&ev=PageView&noscript=1"
 
     <div class="cta-block reveal">
       <span class="cta-ribbon">＼ 無料「KNCTビジネスロードマップ」配布中 ／</span>
-      <a href="#" class="btn-line" data-line data-loc="hero"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 5.82 2 10.5c0 2.7 1.5 5.1 3.86 6.66-.1.4-.62 2.3-.7 2.62 0 0-.02.1.05.15.07.04.15 0 .15 0 .2-.03 2.4-1.6 3.4-2.27.43.06.87.09 1.32.09 5.52 0 10-3.82 10-8.5S17.52 2 12 2z"/></svg>LINEで無料で受け取る</a>
+      <a href="#" class="btn-line" data-line data-loc="hero"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 5.82 2 10.5c0 2.7 1.5 5.1 3.86 6.66-.1.4-.62 2.3-.7 2.62 0 0-.02.1.05.15.07.04.15 0 .15 0 .2-.03 2.4-1.6 3.4-2.27.43.06.87.09 1.32.09 5.52 0 10-3.82 10-8.5S17.52 2 12 2z"/></svg>無料ロードマップを受け取る →</a>
+      <span class="cta-sub">受け取りはLINEでお届けします</span>
       <a href="#loop" class="scroll-link">KNCTの仕組みを見る ↓</a>
     </div>
   </div>
@@ -460,16 +504,36 @@ src="https://www.facebook.com/tr?id=1665016335272219&ev=PageView&noscript=1"
     </div>
     <div class="students">
       <article class="stu reveal">
-        <div class="video" data-yt="gjc7hgcprKM">
-          <img class="video-thumb" src="https://i.ytimg.com/vi/gjc7hgcprKM/maxresdefault.jpg" alt="Shoko インタビュー動画" loading="lazy" width="1280" height="720" />
-          <div class="video-veil"></div>
-          <button class="video-play" aria-label="動画を再生"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button>
-          <div class="video-label"><span class="lp">Interview</span>Shokoさん</div>
-        </div>
         <div class="stu-in">
-          <div class="stu-top"><div class="ava"><img src="assets/people/shoko.jpg" alt="Shoko" loading="lazy" /></div><div class="stu-name latin">SHOKO</div></div>
-          <div class="stu-res"><span class="gold">ゼロ → 月100万円</span></div>
-          <p>確立したビジネスがない状態からスタート。市場、ポジショニング、オファー、発信を具体的に絞り込み、<b>1ヶ月で約100万円</b>の売上を作りました。</p>
+          <div class="stu-top"><div class="ava">H</div><div class="stu-name latin">HUSKY</div></div>
+          <div class="stu-res"><span class="gold">約6週間で<br>100万円+</span></div>
+          <dl class="bwr">
+            <div><dt class="latin">BEFORE</dt><dd>大きなフォロワーはなし</dd></div>
+            <div><dt class="latin">CHANGED</dt><dd>特定の顧客・特定の悩み・特定のオファーに絞った、シンプルなフィットネスビジネスを構築</dd></div>
+          </dl>
+        </div>
+      </article>
+
+      <article class="stu reveal">
+        <div class="stu-in">
+          <div class="stu-top"><div class="ava">S</div><div class="stu-name latin">SHOTA</div></div>
+          <div class="stu-res"><span class="gold">30日で約340万円</span></div>
+          <div class="stu-sub">その後、累計1,000万円+</div>
+          <dl class="bwr">
+            <div><dt class="latin">BEFORE</dt><dd>月約30万円</dd></div>
+            <div><dt class="latin">CHANGED</dt><dd>ポジショニング、メカニズム、オファー、集客戦略を変更</dd></div>
+          </dl>
+        </div>
+      </article>
+
+      <article class="stu reveal">
+        <div class="stu-in">
+          <div class="stu-top"><div class="ava"><img src="assets/people/hina.jpg" alt="Hina" loading="lazy" /></div><div class="stu-name latin">HINA</div></div>
+          <div class="stu-res"><span class="gold">累計830万円+</span></div>
+          <dl class="bwr">
+            <div><dt class="latin">BEFORE</dt><dd>自分がクリエイターになるつもりはなかった</dd></div>
+            <div><dt class="latin">CHANGED</dt><dd>すでに注目を持つ人の裏側で、ビジネスを作る側に回った</dd></div>
+          </dl>
         </div>
       </article>
 
@@ -482,35 +546,28 @@ src="https://www.facebook.com/tr?id=1665016335272219&ev=PageView&noscript=1"
         </div>
         <div class="stu-in">
           <div class="stu-top"><div class="ava"><img src="assets/people/yuuki.jpg" alt="Yuuki" loading="lazy" /></div><div class="stu-name latin">YUUKI</div></div>
-          <div class="stu-res"><span class="gold">最初の30日で100万円</span></div>
-          <p>とても具体的な市場でビジネスを立ち上げました。<b>Jリーガーに英語を教える。</b></p>
-          <p>特定の人。特定の悩み。特定のオファー。</p>
+          <div class="stu-res"><span class="gold">最初の30日で<br>100万円</span></div>
+          <dl class="bwr">
+            <div><dt class="latin">BEFORE</dt><dd>ビジネス経験も、SNSアカウントもゼロ</dd></div>
+            <div><dt class="latin">CHANGED</dt><dd>「Jリーガーに英語を教える」という具体的な市場で、クリエイターのビジネスを一緒に構築</dd></div>
+          </dl>
         </div>
       </article>
 
       <article class="stu reveal">
-        <div class="stu-in">
-          <div class="stu-top"><div class="ava">H</div><div class="stu-name latin">HUSKY</div></div>
-          <div class="stu-res"><span class="gold">約6週間で100万円+</span></div>
-          <p>特定の顧客、特定の悩み、特定のオファー。この3つに絞ったシンプルなフィットネスビジネスを構築。</p>
-          <p><b>何百万人ものフォロワーは、<br class="sp-br">必要ありませんでした。</b></p>
+        <div class="video" data-yt="gjc7hgcprKM">
+          <img class="video-thumb" src="https://i.ytimg.com/vi/gjc7hgcprKM/maxresdefault.jpg" alt="Shoko インタビュー動画" loading="lazy" width="1280" height="720" />
+          <div class="video-veil"></div>
+          <button class="video-play" aria-label="動画を再生"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button>
+          <div class="video-label"><span class="lp">Interview</span>Shokoさん</div>
         </div>
-      </article>
-
-      <article class="stu reveal">
         <div class="stu-in">
-          <div class="stu-top"><div class="ava"><img src="assets/people/hina.jpg" alt="Hina" loading="lazy" /></div><div class="stu-name latin">HINA</div></div>
-          <div class="stu-res"><span class="gold">累計830万円+</span></div>
-          <p>彼女は、クリエイターになる必要はありませんでした。</p>
-          <p>すでに注目を持つ人にとって<b>価値ある存在になる方法</b>を学び、その裏側でビジネスを作っています。</p>
-        </div>
-      </article>
-
-      <article class="stu reveal">
-        <div class="stu-in">
-          <div class="stu-top"><div class="ava">S</div><div class="stu-name latin">SHOTA</div></div>
-          <div class="stu-res"><span class="gold">月約30万円 → 30日で約340万円</span></div>
-          <p>ポジショニング、メカニズム、オファー、集客戦略を変更。その後、<b>累計1,000万円以上</b>を達成しています。</p>
+          <div class="stu-top"><div class="ava"><img src="assets/people/shoko.jpg" alt="Shoko" loading="lazy" /></div><div class="stu-name latin">SHOKO</div></div>
+          <div class="stu-res"><span class="gold">ゼロ → 月約100万円</span></div>
+          <dl class="bwr">
+            <div><dt class="latin">BEFORE</dt><dd>確立したビジネスがない状態</dd></div>
+            <div><dt class="latin">CHANGED</dt><dd>市場、ポジショニング、オファー、発信を具体的に絞り込んだ</dd></div>
+          </dl>
         </div>
       </article>
     </div>
@@ -531,6 +588,11 @@ src="https://www.facebook.com/tr?id=1665016335272219&ev=PageView&noscript=1"
       <span>動画編集を学べ</span><span>AIを学べ</span><span>とにかく投稿しろ</span><span>インフルエンサーになれ</span><span>広告を回せ</span><span>副業を始めろ</span><span>セールスを学べ</span><span>パーソナルブランドを作れ</span>
     </div>
     <p class="punch reveal">でも、それらは全部<br class="sp-br">ビジネスの<span class="gold">「部品」</span>。<br>ビジネスそのものではありません。</p>
+    <div class="gap reveal">
+      <p>スキルを1つ知っていても、<br class="sp-br"><b>つなげ方</b>を知らない。</p>
+      <div class="gap-flow"><span>問題</span><em class="nw"><i>→</i><span>解決策</span></em><em class="nw"><i>→</i><span>伝える</span></em><em class="nw"><i>→</i><span>顧客</span></em><em class="nw"><i>→</i><span>結果</span></em></div>
+      <p>この<b>「つなぎ目」</b>を埋めるのが、KNCTです。</p>
+    </div>
   </div>
 </section>
 
@@ -551,26 +613,38 @@ src="https://www.facebook.com/tr?id=1665016335272219&ev=PageView&noscript=1"
       <li>起きたことを測る</li>
       <li>仕組みを改善する</li>
     </ol>
-    <p class="punch reveal">これが、いまのインターネットビジネスの<br class="sp-br">本当の動き方。<br><span class="gold">そして、KNCTが教えていることです。</span></p>
+    <div class="machine reveal">
+      <div class="machine-t latin">THE WHOLE MACHINE</div>
+      <div class="machine-flow">
+        <span><b class="latin">PROBLEM</b>問題</span><em class="nw"><i>→</i><span><b class="latin">OFFER</b>オファー</span></em><em class="nw"><i>→</i><span><b class="latin">ATTENTION</b>注目</span></em><em class="nw"><i>→</i><span><b class="latin">TRUST</b>信頼</span></em><em class="nw"><i>→</i><span><b class="latin">CONVERSATION</b>会話</span></em><em class="nw"><i>→</i><span><b class="latin">SALE</b>販売</span></em><em class="nw"><i>→</i><span class="end"><b class="latin">RESULT</b>結果</span></em>
+      </div>
+    </div>
+    <p class="punch reveal">これが、インターネットビジネスの<br>本当の動き方。<br><span class="gold">KNCTは、このマシン全体を教えます。</span></p>
   </div>
 </section>
 
-<!-- THE KNCT LOOP -->
-<section class="section" id="loop">
+<!-- THE BIG OPPORTUNITY -->
+<section class="section">
   <div class="wrap">
     <div class="head reveal">
-      <span class="eyebrow"><span class="dot"></span>The KNCT Loop</span>
-      <h2>KNCTループ</h2>
-      <div class="loop-flow latin"><span>SEE</span><i>→</i><span>SOLVE</span><i>→</i><span>COMMUNICATE</span><i>→</i><span>MONETIZE</span><i>→</i><span>MEASURE</span></div>
+      <span class="eyebrow"><span class="dot"></span>The Big Opportunity</span>
+      <h2>誰もが注目を欲しがる。<br>でも、その使い方を<br>知る人は<span class="gold">ほとんどいない</span>。</h2>
+      <p>クリエイターは、こんな状態でも——</p>
     </div>
-    <ol class="loop">
-      <li class="reveal"><span class="dot">1</span><div><h3><span class="latin">SEE</span>見つける</h3><p>解く価値のある問題を見つける。</p></div></li>
-      <li class="reveal"><span class="dot">2</span><div><h3><span class="latin">SOLVE</span>解決する</h3><p>その問題を解決するオファー、サービス、商品、仕組みをつくる。</p></div></li>
-      <li class="reveal"><span class="dot">3</span><div><h3><span class="latin">COMMUNICATE</span>伝える</h3><p>コンテンツ、ストーリー、ポジショニング、メッセージ、セールスで、価値を相手に理解してもらう。</p></div></li>
-      <li class="reveal"><span class="dot">4</span><div><h3><span class="latin">MONETIZE</span>収益化する</h3><p>注目を、会話・顧客・売上に変える。</p></div></li>
-      <li class="reveal"><span class="dot">5</span><div><h3><span class="latin">MEASURE</span>測る</h3><p>データと顧客の声から、何がうまくいき、何を改善すべきかを理解する。</p></div></li>
-    </ol>
-    <div class="loop-back reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg><span>そして、次の問題が見えてくる。<br>これを、繰り返す。</span></div>
+    <div class="attn reveal">
+      <div>フォロワー<br>10万人</div>
+      <div>数百万回の<br>再生</div>
+      <div>何千人もの<br>ストーリー閲覧</div>
+      <div>強い<br>パーソナルブランド</div>
+    </div>
+    <p class="body-c reveal" style="margin-top:20px;">——ビジネスとしては、<b>弱いまま</b>のことがあります。</p>
+    <div class="truth reveal">
+      <span class="latin">FOLLOWERS ARE NOT A BUSINESS.</span>
+      <p>フォロワーは、<br class="sp-br">ビジネスじゃない。</p>
+      <span class="latin">VIEWS ARE NOT REVENUE.</span>
+      <p>再生数は、<br class="sp-br">売上じゃない。</p>
+    </div>
+    <p class="punch reveal">注目は、チャンスをつくる。<br><span class="gold">ビジネススキルが、それをつかむ。</span></p>
   </div>
 </section>
 
@@ -602,28 +676,22 @@ src="https://www.facebook.com/tr?id=1665016335272219&ev=PageView&noscript=1"
   </div>
 </section>
 
-<!-- THE BIG OPPORTUNITY -->
-<section class="section">
+<!-- THE KNCT LOOP -->
+<section class="section" id="loop">
   <div class="wrap">
     <div class="head reveal">
-      <span class="eyebrow"><span class="dot"></span>The Big Opportunity</span>
-      <h2>誰もが注目を欲しがる。<br>でも、その使い方を<br>知る人は<span class="gold">ほとんどいない</span>。</h2>
-      <p>クリエイターは、こんな状態でも——</p>
+      <span class="eyebrow"><span class="dot"></span>The KNCT Loop</span>
+      <h2>KNCTループ</h2>
+      <div class="loop-flow latin"><span>SEE</span><i>→</i><span>SOLVE</span><i>→</i><span>COMMUNICATE</span><i>→</i><span>MONETIZE</span><i>→</i><span>MEASURE</span></div>
     </div>
-    <div class="attn reveal">
-      <div>フォロワー<br>10万人</div>
-      <div>数百万回の<br>再生</div>
-      <div>何千人もの<br>ストーリー閲覧</div>
-      <div>強い<br>パーソナルブランド</div>
-    </div>
-    <p class="body-c reveal" style="margin-top:20px;">——ビジネスとしては、<b>弱いまま</b>のことがあります。</p>
-    <div class="truth reveal">
-      <span class="latin">FOLLOWERS ARE NOT A BUSINESS.</span>
-      <p>フォロワーは、<br class="sp-br">ビジネスじゃない。</p>
-      <span class="latin">VIEWS ARE NOT REVENUE.</span>
-      <p>再生数は、<br class="sp-br">売上じゃない。</p>
-    </div>
-    <p class="punch reveal">注目は、チャンスをつくる。<br><span class="gold">ビジネススキルが、それをつかむ。</span></p>
+    <ol class="loop">
+      <li class="reveal"><span class="dot">1</span><div><h3><span class="latin">SEE</span>見つける</h3><p>解く価値のある問題を見つける。</p></div></li>
+      <li class="reveal"><span class="dot">2</span><div><h3><span class="latin">SOLVE</span>解決する</h3><p>その問題を解決するオファー、サービス、商品、仕組みをつくる。</p></div></li>
+      <li class="reveal"><span class="dot">3</span><div><h3><span class="latin">COMMUNICATE</span>伝える</h3><p>コンテンツ、ストーリー、ポジショニング、メッセージ、セールスで、価値を相手に理解してもらう。</p></div></li>
+      <li class="reveal"><span class="dot">4</span><div><h3><span class="latin">MONETIZE</span>収益化する</h3><p>注目を、会話・顧客・売上に変える。</p></div></li>
+      <li class="reveal"><span class="dot">5</span><div><h3><span class="latin">MEASURE</span>測る</h3><p>データと顧客の声から、何がうまくいき、何を改善すべきかを理解する。</p></div></li>
+    </ol>
+    <div class="loop-back reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg><span>そして、次の問題が見えてくる。<br>これを、繰り返す。</span></div>
   </div>
 </section>
 
@@ -639,12 +707,13 @@ src="https://www.facebook.com/tr?id=1665016335272219&ev=PageView&noscript=1"
       <div class="area reveal">
         <div class="area-top"><span class="area-num gold latin">01</span><span class="area-name latin">BUSINESS</span></div>
         <h3>ビジネスが実際にどうお金を生むのかを理解する。</h3>
-        <div class="chips left sm"><span>顧客</span><span>課題</span><span>価値</span><span>売上</span><span>利益率</span><span>集客</span><span>成約</span><span>提供</span><span>継続</span></div>
+        <div class="chips left sm"><span>顧客</span><span>課題</span><span>価値</span><span>売上</span><span>利益率</span><span>集客</span><span>成約</span><span>提供</span><span>継続</span><span>ビジネスの基本数値</span></div>
       </div>
       <div class="area reveal">
         <div class="area-top"><span class="area-num gold latin">02</span><span class="area-name latin">OFFER</span></div>
         <h3>スキルや知識を、人が本当に買いたいものに変える。</h3>
         <ul class="qs"><li>誰を助けるのか？</li><li>どんな問題を解決するのか？</li><li>どんな成果をつくるのか？</li><li>なぜ、あなたが選ばれるのか？</li></ul>
+        <div class="chips left sm" style="margin-top:12px;"><span>ポジショニング</span><span>差別化</span><span>価格設定</span></div>
       </div>
       <div class="area reveal">
         <div class="area-top"><span class="area-num gold latin">03</span><span class="area-name latin">COMMUNICATION</span></div>
@@ -662,6 +731,7 @@ src="https://www.facebook.com/tr?id=1665016335272219&ev=PageView&noscript=1"
         <div class="chips left sm"><span>AIワークフロー</span><span>自動化</span><span>SOP（業務手順）</span><span>トラッキング</span><span>分析</span><span>オペレーション</span><span>チームでの実行</span><span>ボトルネック診断</span></div>
       </div>
     </div>
+    <p class="punch reveal">KNCTは、1つのスキルを教える<br class="sp-br">講座ではありません。<br><span class="gold">インターネットビジネスというマシン全体</span>の<br class="sp-br">動かし方を教えます。</p>
   </div>
 </section>
 
@@ -705,6 +775,33 @@ src="https://www.facebook.com/tr?id=1665016335272219&ev=PageView&noscript=1"
   </div>
 </section>
 
+<!-- MORE PROOF -->
+<section class="section">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow"><span class="dot"></span>Wall of Proof</span>
+      <h2>現場で、<br><span class="gold">結果が生まれている。</span></h2>
+    </div>
+    <div class="video reveal" data-yt="vbgZK-cmwbI" style="max-width:640px;margin:0 auto 16px;">
+      <img class="video-thumb" src="https://i.ytimg.com/vi/vbgZK-cmwbI/maxresdefault.jpg" alt="Sakiko インタビュー動画" loading="lazy" width="1280" height="720" />
+      <div class="video-veil"></div>
+      <button class="video-play" aria-label="動画を再生"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button>
+      <div class="video-label"><span class="lp">Interview</span>Sakikoさん</div>
+    </div>
+    <div class="wall">
+      <div class="wcard reveal"><div class="wres gold">月150万円</div><p>3ヶ月でオペレーター契約を3件獲得。クリエイターと1on1コーチングを販売し、5月の売上150万円を達成。</p><div class="wname"><span class="ava sm">Y</span>Yoneさん</div></div>
+      <div class="wcard reveal"><div class="wres gold">約35万円の売上</div><p>30〜40代男性向けの腕トレ完全ガイドをEbookで提供し、初めてのオンライン収益化に成功。</p><div class="wname"><span class="ava sm"><img src="assets/people/sakiko.jpg" alt="" loading="lazy" /></span>Sakikoさん</div></div>
+      <div class="wcard reveal"><div class="wres gold">入会3日目で初契約</div><p>学んだ対話・提案の進め方をそのまま実践。その後2人目のクリエイターとも契約。</p><div class="wname"><span class="ava sm">K</span>komotakuさん</div></div>
+      <div class="wcard reveal"><div class="wres gold">2名と並行して支援契約</div><p>フィットネス系とガイドツアー系。どちらもアカウントもサービスもゼロからの立ち上げ。</p><div class="wname"><span class="ava sm"><img src="assets/people/kai.jpg" alt="" loading="lazy" /></span>Kaiさん</div></div>
+      <div class="wcard reveal"><div class="wres gold">業界をまたいで2件の契約</div><p>4ヶ月前は「オペレーター」という言葉すら知らなかった。フィットネスに続き、英語クリエイターとも契約。</p><div class="wname"><span class="ava sm"><img src="assets/people/taiyo.jpg" alt="" loading="lazy" /></span>Taiyoさん</div></div>
+      <div class="wcard reveal"><div class="wres gold">3ヶ月の支援契約</div><p>海外ママのクリエイターとの面談から契約。ローンチから最初の成約まで並走中。</p><div class="wname"><span class="ava sm"><img src="assets/people/kanna.jpg" alt="" loading="lazy" /></span>Kannaさん</div></div>
+      <div class="wcard reveal"><div class="wres gold">相談会の参加率が大きく向上</div><p>外資エアライン面接対策の発信でコミュニティを形成。「データ」と「情報」を分ける発信が結果につながった。</p><div class="wname"><span class="ava sm"><img src="assets/people/aya.jpg" alt="" loading="lazy" /></span>Ayaさん</div></div>
+      <div class="wcard reveal"><div class="wres gold">初めての案件支援</div><p>クリエイターの1日イベントの企画運営に裏方として参加。現場に出て、自信のつき方が変わった。</p><div class="wname"><span class="ava sm"><img src="assets/people/ryoma.jpg" alt="" loading="lazy" /></span>Ryomaさん</div></div>
+    </div>
+    <p class="disclaimer">※ 掲載している体験談は個人の感想・成果であり、すべての方に同様の結果を保証するものではありません。</p>
+  </div>
+</section>
+
 <!-- INFORMATION IS NOT THE PRODUCT -->
 <section class="section">
   <div class="wrap">
@@ -713,6 +810,7 @@ src="https://www.facebook.com/tr?id=1665016335272219&ev=PageView&noscript=1"
       <h2>動画をもっと見ても、<br>人生は変わらない。</h2>
       <p>変えるとしたら、<b>実行</b>です。</p>
     </div>
+    <p class="punch reveal" style="margin:0 auto 30px;">情報は、商品じゃない。<br><span class="gold">変化こそが、商品です。</span></p>
     <div class="flows">
       <div class="flow watch reveal">
         <div class="ft latin">よくある講座</div>
@@ -742,47 +840,6 @@ src="https://www.facebook.com/tr?id=1665016335272219&ev=PageView&noscript=1"
       <li class="reveal"><span class="n latin">05</span><div><h3><span class="latin">GET RESULTS</span>結果を出す</h3><p>顧客。契約。売上。スキル。実績。</p></div></li>
       <li class="reveal last"><span class="n latin">06</span><div><h3><span class="latin">REPEAT</span>繰り返す</h3><p>単発の成功を、<b>再現できるスキル</b>に変える。</p></div></li>
     </ol>
-  </div>
-</section>
-
-<!-- YOUR FIRST 90 DAYS -->
-<section class="section">
-  <div class="wrap">
-    <div class="head reveal">
-      <span class="eyebrow"><span class="dot"></span>Your First 90 Days</span>
-      <h2>全部を学ぶ必要はない。<br>必要なのは、<br><span class="gold">次の一手</span>がわかること。</h2>
-    </div>
-    <div class="days">
-      <div class="day reveal">
-        <div class="day-when latin">DAYS 1–7</div>
-        <h3>自分を明確にする<span class="latin">GET CLEAR</span></h3>
-        <div class="chips left sm"><span>自分は何者か？</span><span>誰を助けられるか？</span><span>どんな問題を解決できるか？</span><span>どちらの道が合うか？</span><span>どのスキルを伸ばすか？</span><span>何を売るか？</span></div>
-      </div>
-      <div class="day reveal">
-        <div class="day-when latin">DAYS 8–30</div>
-        <h3>市場に出る<span class="latin">ENTER THE MARKET</span></h3>
-        <p>コンテンツを作る。会話を始める。オファーを組み立てる。声をかける。フィードバックをもらう。</p>
-        <p class="em">「何がうまくいくか」を考えるのをやめて、証拠を集め始める。</p>
-      </div>
-      <div class="day reveal">
-        <div class="day-when latin">DAYS 31–60</div>
-        <h3>制約を見つける<span class="latin">FIND THE CONSTRAINT</span></h3>
-        <p>前に進めない原因は、何か？</p>
-        <div class="chips left sm"><span>スキル？</span><span>オファー？</span><span>ポジショニング？</span><span>注目？</span><span>会話の数？</span><span>セールス？</span><span>実行量？</span></div>
-        <p class="em">そのボトルネックを直す。</p>
-      </div>
-      <div class="day reveal">
-        <div class="day-when latin">DAYS 61–90</div>
-        <h3>再現性をつくる<span class="latin">CREATE REPEATABILITY</span></h3>
-        <p>うまくいったことに集中する。オファーを磨く。実績をつくる。仕組みを作る。量を増やす。</p>
-        <p class="em">最初の結果を、繰り返せるものに変える。</p>
-      </div>
-    </div>
-
-    <div class="cta-block reveal" style="margin-top:40px;">
-      <span class="cta-ribbon">＼ 90日の全体像を、まず無料で ／</span>
-      <a href="#" class="btn-line" data-line data-loc="mid"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 5.82 2 10.5c0 2.7 1.5 5.1 3.86 6.66-.1.4-.62 2.3-.7 2.62 0 0-.02.1.05.15.07.04.15 0 .15 0 .2-.03 2.4-1.6 3.4-2.27.43.06.87.09 1.32.09 5.52 0 10-3.82 10-8.5S17.52 2 12 2z"/></svg>LINEでロードマップを受け取る</a>
-    </div>
   </div>
 </section>
 
@@ -826,21 +883,81 @@ src="https://www.facebook.com/tr?id=1665016335272219&ev=PageView&noscript=1"
   </div>
 </section>
 
+<!-- YOUR FIRST 90 DAYS -->
+<section class="section">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow"><span class="dot"></span>Your First 90 Days</span>
+      <h2>全部を学ぶ必要はない。<br>必要なのは、<br><span class="gold">次の一手</span>がわかること。</h2>
+    </div>
+    <div class="days">
+      <div class="day reveal">
+        <div class="day-when latin">DAYS 1–7</div>
+        <h3>自分を明確にする<span class="latin">GET CLEAR</span></h3>
+        <div class="day-flow">人 → 問題 → スキル → オファー → 道</div>
+        <div class="chips left sm"><span>自分は何者か？</span><span>誰を助けられるか？</span><span>どんな問題を解決できるか？</span><span>どちらの道が合うか？</span><span>どのスキルを伸ばすか？</span><span>何を売るか？</span></div>
+      </div>
+      <div class="day reveal">
+        <div class="day-when latin">DAYS 8–30</div>
+        <h3>市場に出る<span class="latin">ENTER THE MARKET</span></h3>
+        <div class="day-flow">コンテンツ → アウトリーチ → 会話 → オファー → フィードバック</div>
+        <p>コンテンツを作る。会話を始める。オファーを組み立てる。声をかける。フィードバックをもらう。</p>
+        <p class="em">「何がうまくいくか」を考えるのをやめて、証拠を集め始める。</p>
+      </div>
+      <div class="day reveal">
+        <div class="day-when latin">DAYS 31–60</div>
+        <h3>制約を見つける<span class="latin">FIND THE CONSTRAINT</span></h3>
+        <p>前に進めない原因は、何か？</p>
+        <div class="chips left sm"><span>スキル？</span><span>オファー？</span><span>ポジショニング？</span><span>注目？</span><span>会話の数？</span><span>セールス？</span><span>実行量？</span></div>
+        <p class="em">そのボトルネックを直す。</p>
+      </div>
+      <div class="day reveal">
+        <div class="day-when latin">DAYS 61–90</div>
+        <h3>再現性をつくる<span class="latin">CREATE REPEATABILITY</span></h3>
+        <div class="day-flow">結果 → 実績 → 仕組み → 量を増やす → 繰り返す</div>
+        <p>うまくいったことに集中する。オファーを磨く。実績をつくる。仕組みを作る。量を増やす。</p>
+        <p class="em">最初の結果を、繰り返せるものに変える。</p>
+      </div>
+    </div>
+
+    <div class="cta-block reveal" style="margin-top:40px;">
+      <span class="cta-ribbon">＼ 90日の全体像を、まず無料で ／</span>
+      <a href="#" class="btn-line" data-line data-loc="mid"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 5.82 2 10.5c0 2.7 1.5 5.1 3.86 6.66-.1.4-.62 2.3-.7 2.62 0 0-.02.1.05.15.07.04.15 0 .15 0 .2-.03 2.4-1.6 3.4-2.27.43.06.87.09 1.32.09 5.52 0 10-3.82 10-8.5S17.52 2 12 2z"/></svg>無料ロードマップを受け取る →</a>
+      <span class="cta-sub">受け取りはLINEでお届けします</span>
+    </div>
+  </div>
+</section>
+
 <!-- WHAT YOU GET -->
 <section class="section">
   <div class="wrap">
     <div class="head reveal">
-      <span class="eyebrow"><span class="dot"></span>What You Get</span>
-      <h2>90日間、<br><span class="gold">ひとりで作らなくていい。</span></h2>
+      <span class="eyebrow"><span class="dot"></span>Everything Included</span>
+      <h2>手に入るのは、<br>動画へのアクセスじゃない。<br><span class="gold">変わるための環境</span>だ。</h2>
+      <p>これらは、ただの機能一覧ではありません。<br>すべて<b>「学ぶ → 実行 → フィードバック → 改善」</b>の<br class="sp-br">ループを回すためにあります。</p>
     </div>
     <div class="gets">
-      <div class="get reveal"><span class="latin">KNCT CORE CURRICULUM</span><h3>コアカリキュラム</h3><div class="chips left sm" style="margin-top:10px;"><span>ビジネス</span><span>オファー</span><span>マーケティング</span><span>セールス</span><span>AI</span><span>仕組み化</span></div></div>
-      <div class="get reveal"><span class="latin">CREATOR LAB</span><h3>クリエイターラボ</h3><p>ヤッピング、コンテンツ、フック、ストーリーテリング、ポジショニング、パーソナルブランド、コミュニケーション。</p></div>
-      <div class="get reveal"><span class="latin">LIVE SESSIONS</span><h3>ライブセッション</h3><p>学んでいることを、いま実際に作っているものに当てはめるサポート。</p></div>
-      <div class="get reveal"><span class="latin">SUCCESS SUPPORT</span><h3>サクセスサポート</h3><p>情報に溺れる代わりに、次にとるべき行動がわかる。</p></div>
-      <div class="get reveal"><span class="latin">PLAYBOOKS &amp; TEMPLATES</span><h3>プレイブック＆テンプレート</h3><p>私たちが実際に使っているフレームワークを使える。ゼロから作り直さなくていい。</p></div>
-      <div class="get reveal"><span class="latin">REAL-WORLD EXECUTION</span><h3>実戦</h3><p>教室の中の概念を、市場で使う。</p></div>
-      <div class="get reveal"><span class="latin">COMMUNITY</span><h3>コミュニティ</h3><p>作り、売り、学び、実行している仲間に囲まれて進む。</p></div>
+      <div class="get reveal"><div class="get-top"><span class="latin">KNCT CORE CURRICULUM</span><span class="role">学ぶ</span></div><h3>コアカリキュラム</h3><div class="chips left sm" style="margin-top:10px;"><span>ビジネス</span><span>オファー</span><span>マーケティング</span><span>セールス</span><span>AI</span><span>仕組み化</span></div></div>
+      <div class="get reveal"><div class="get-top"><span class="latin">CREATOR LAB</span><span class="role">学ぶ・実行</span></div><h3>クリエイターラボ</h3><p>ヤッピング、フック、コンテンツ、ストーリーテリング、パーソナルブランド。</p></div>
+      <div class="get reveal"><div class="get-top"><span class="latin">PLAYBOOKS &amp; TEMPLATES</span><span class="role">実行</span></div><h3>プレイブック＆テンプレート</h3><p>私たちが実際に使っているフレームワークで、ゼロから作らずにすぐ動ける。</p></div>
+      <div class="get reveal"><div class="get-top"><span class="latin">REAL-WORLD EXECUTION</span><span class="role">実行</span></div><h3>実戦</h3><p>教室の中の概念を、市場で使う。</p></div>
+      <div class="get reveal"><div class="get-top"><span class="latin">LIVE SESSIONS</span><span class="role">フィードバック</span></div><h3>ライブセッション</h3><p>学んでいることを、いま実際に作っているものに当てはめるサポート。</p></div>
+      <div class="get reveal"><div class="get-top"><span class="latin">SUCCESS SUPPORT</span><span class="role">改善</span></div><h3>サクセスサポート</h3><p>やり切るための伴走、つまずきの診断、そして次にとるべき一手の明確化。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- COMMUNITY -->
+<section class="section">
+  <div class="wrap">
+    <div class="community reveal">
+      <div class="community-photo"><img src="assets/community.jpg" alt="KNCT University コミュニティ" loading="lazy" width="1920" height="1460" /></div>
+      <div class="community-in">
+        <span class="eyebrow"><span class="dot"></span>Community</span>
+        <h2>ひとりで作らなくていい。</h2>
+        <p>周りにいるのは、作り、売り、学び、実行している仲間たち。</p>
+        <p>同じループを回している人が近くにいるから、<b>次の一歩が止まらない。</b></p>
+      </div>
     </div>
   </div>
 </section>
@@ -854,38 +971,44 @@ src="https://www.facebook.com/tr?id=1665016335272219&ev=PageView&noscript=1"
     </div>
     <div class="faq">
       <details class="reveal" open>
-        <summary><span class="q latin">01</span>自分の道が、まだわからない<span class="pm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+        <summary><span class="q latin">01</span>ビジネス経験がない<span class="pm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
         <div class="a">
-          <p class="ans"><span class="gold">それで大丈夫です。</span></p>
-          <p>最初からやりたいことが明確な人もいます。でも、ほとんどの人はそうではありません。</p>
-          <p>作ることが好きだと気づくかもしれない。セールスが得意だとわかるかもしれない。仕組みづくりで突出するかもしれない。マーケティングにハマるかもしれない。AIで強くなるかもしれない。クリエイター本人より、<b>その裏側の方が向いている</b>と気づくかもしれない。</p>
-          <p>全員を同じキャリアに押し込むことが目的ではありません。<b>目的は、あなたを「価値ある人」にすること。</b></p>
+          <p class="ans"><span class="gold">大丈夫です。構造を最初から教えます。</span></p>
+          <p>ビジネスは魔法じゃない。学べるスキルの集まりです。</p>
+          <p>人を理解する。問題を見つける。解決する。解決策を伝える。オファーを出す。顧客を得る。結果を届ける。改善する。繰り返す。<b>それが、ゲームのすべてです。</b></p>
         </div>
       </details>
       <details class="reveal">
-        <summary><span class="q latin">02</span>大きなフォロワーがいない<span class="pm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+        <summary><span class="q latin">02</span>フォロワーがいない<span class="pm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
         <div class="a">
           <p class="ans"><span class="gold">なくても始められます。</span></p>
-          <p>自分でオーディエンスを育てることもできる。でも、<b>すでに持っている人の価値ある存在になる</b>こともできます。注目はあるのに——</p>
+          <p>自分で注目を育てることもできる。でも、<b>すでに注目を持つ人の価値ある存在になる</b>こともできます。注目はあるのに——</p>
           <div class="chips left sm"><span>オファーがない</span><span>セールスの仕組みがない</span><span>マネタイズできていない</span><span>運営が回っていない</span><span>戦略がない</span><span>時間がない</span></div>
           <p>そんなクリエイターがいます。<b>その人たちの課題が、あなたのチャンスになる。</b></p>
         </div>
       </details>
       <details class="reveal">
-        <summary><span class="q latin">03</span>ビジネス経験がない<span class="pm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+        <summary><span class="q latin">03</span>何を売ればいいかわからない<span class="pm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
         <div class="a">
-          <p class="ans"><span class="gold">ビジネスは、魔法じゃない。</span></p>
-          <p>学べるスキルの集まりです。</p>
-          <p>人を理解する。問題を見つける。解決する。解決策を伝える。オファーを出す。顧客を得る。結果を届ける。改善する。繰り返す。</p>
-          <p><b>それが、ゲームのすべてです。</b></p>
+          <p class="ans"><span class="gold">それを決めるのが、最初の7日間です。</span></p>
+          <div class="gap-flow sm"><span>人</span><em class="nw"><i>→</i><span>問題</span></em><em class="nw"><i>→</i><span>スキル</span></em><em class="nw"><i>→</i><span>オファー</span></em></div>
+          <p>誰を助けられるか。その人はどんな問題を抱えているか。あなたのどのスキルで解決できるか。この順番で考えれば、売るものは自然に決まっていきます。</p>
         </div>
       </details>
       <details class="reveal">
-        <summary><span class="q latin">04</span>また講座を買うのは、もういい<span class="pm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+        <summary><span class="q latin">04</span>インフルエンサーにはなりたくない<span class="pm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+        <div class="a">
+          <p class="ans"><span class="gold">ならなくていい。だから、道が2つあります。</span></p>
+          <p>自分で注目を集める道のほかに、<b>すでに注目を持つ人の裏側でビジネスを伸ばす道</b>があります。クリエイター本人より、裏側の方が向いている人も少なくありません。</p>
+          <p>全員を同じキャリアに押し込むことが目的ではありません。<b>目的は、あなたを「価値ある人」にすること。</b></p>
+        </div>
+      </details>
+      <details class="reveal">
+        <summary><span class="q latin">05</span>講座を買って、結局何もしなかったことがある<span class="pm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
         <div class="a">
           <p class="ans"><span class="gold">KNCTは、見るための講座ではありません。</span></p>
           <p>一人で100時間の動画を見たいなら、KNCTはおそらく合っていません。情報は安い。実装は難しい。</p>
-          <p>KNCTの中心にあるのは——学ぶ。やる。フィードバックをもらう。修正する。またやる。</p>
+          <p>KNCTの中心にあるのは、<b>実行・フィードバック・診断・改善</b>。学ぶ。やる。フィードバックをもらう。修正する。またやる。</p>
           <p><b>誰かにいちいち指示されなくても、自分で価値を生み出せる人になるまで。</b></p>
         </div>
       </details>
@@ -950,7 +1073,8 @@ src="https://www.facebook.com/tr?id=1665016335272219&ev=PageView&noscript=1"
         </ul>
         <div class="cta-block">
           <span class="cta-ribbon">＼ 無料のKNCTビジネスロードマップ ／</span>
-          <a href="#" class="btn-line" data-line data-loc="final_cta"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 5.82 2 10.5c0 2.7 1.5 5.1 3.86 6.66-.1.4-.62 2.3-.7 2.62 0 0-.02.1.05.15.07.04.15 0 .15 0 .2-.03 2.4-1.6 3.4-2.27.43.06.87.09 1.32.09 5.52 0 10-3.82 10-8.5S17.52 2 12 2z"/></svg>LINEで無料で受け取る</a>
+          <a href="#" class="btn-line" data-line data-loc="final_cta"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 5.82 2 10.5c0 2.7 1.5 5.1 3.86 6.66-.1.4-.62 2.3-.7 2.62 0 0-.02.1.05.15.07.04.15 0 .15 0 .2-.03 2.4-1.6 3.4-2.27.43.06.87.09 1.32.09 5.52 0 10-3.82 10-8.5S17.52 2 12 2z"/></svg>無料ロードマップを受け取る →</a>
+          <span class="cta-sub">受け取りはLINEでお届けします</span>
         </div>
         <p class="micro">誇大な約束はしません。<br>コミュニティに入るだけで成功できる、とも言いません。</p>
       </div>
@@ -974,7 +1098,7 @@ src="https://www.facebook.com/tr?id=1665016335272219&ev=PageView&noscript=1"
 
 <!-- STICKY MOBILE CTA -->
 <div class="sticky-cta" id="stickyCta">
-  <a href="#" class="btn-line" data-line data-loc="sticky_bar"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 5.82 2 10.5c0 2.7 1.5 5.1 3.86 6.66-.1.4-.62 2.3-.7 2.62 0 0-.02.1.05.15.07.04.15 0 .15 0 .2-.03 2.4-1.6 3.4-2.27.43.06.87.09 1.32.09 5.52 0 10-3.82 10-8.5S17.52 2 12 2z"/></svg>LINEで無料ロードマップを受け取る</a>
+  <a href="#" class="btn-line" data-line data-loc="sticky_bar"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 5.82 2 10.5c0 2.7 1.5 5.1 3.86 6.66-.1.4-.62 2.3-.7 2.62 0 0-.02.1.05.15.07.04.15 0 .15 0 .2-.03 2.4-1.6 3.4-2.27.43.06.87.09 1.32.09 5.52 0 10-3.82 10-8.5S17.52 2 12 2z"/></svg>無料ロードマップを受け取る →</a>
 </div>
 
 
