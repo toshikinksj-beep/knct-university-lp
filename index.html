@@ -6,10 +6,10 @@
 <!-- LM Tag -->
 <script>(function(w,d,s,i){w['lmLayer']=w['lmLayer']||[];var f=d.getElementsByTagName(s)[0],j=d.createElement(s);j.async=true;j.src=i;f.parentNode.insertBefore(j,f);})(window,document,'script','https://ltag.jp/2010069004/base/script.js');</script>
 <!-- End LM Tag -->
-<title>KNCT UNIVERSITY｜発信する人ではなく、売上を作る人へ。</title>
-<meta name="description" content="「フォロワー0」「経験0」からでも、クリエイターの裏側で収益を作る——オペレーターという仕事を学ぶKNCT UNIVERSITY。動画で学ぶ、実践で稼ぐ。LINE追加で無料特典を配布中。" />
-<meta property="og:title" content="発信する人ではなく、売上を作る人へ。｜KNCT UNIVERSITY" />
-<meta property="og:description" content="発信する人ではなく売上を作る人。オペレーターという働き方を学ぶ実践コミュニティ。LINEで無料特典配布中。" />
+<title>KNCT University｜集めた注目を、本物のビジネスに変える。</title>
+<meta name="description" content="コンテンツ、マーケティング、オファー、セールス、AI、仕組み化まで。いまのインターネットビジネスの動き方を学び、測れる価値を生み出す90日間の実践型ビジネスプログラム。LINEで無料「KNCTビジネスロードマップ」配布中。" />
+<meta property="og:title" content="集めた注目を、本物のビジネスに変える。｜KNCT University" />
+<meta property="og:description" content="自分のビジネスを作るか。注目を持つ人の、欠かせない存在になるか。90日間の実践型ビジネスプログラム。LINEで無料ロードマップ配布中。" />
 <meta property="og:type" content="website" />
 <meta property="og:image" content="assets/og-image.png" />
 <meta name="twitter:card" content="summary_large_image" />
@@ -26,7 +26,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet" />
 <style>
   :root {
-    /* Black-based premium palette */
     --bg: #0c0c0e;
     --bg-2: #131317;
     --surface: #17171b;
@@ -36,21 +35,16 @@
     --fg: #f7f4ec;
     --muted: rgba(247,244,236,0.74);
     --faint: rgba(247,244,236,0.48);
-
-    /* Cream / champagne accents */
     --gold: #e6dfc9;
     --gold-2: #f4efdd;
     --gold-deep: #cdc4a8;
     --champ: #ECE7D3;
     --gold-grad: linear-gradient(135deg, #f6f1e1 0%, #e6dfc9 50%, #d2c9ac 100%);
-
     --line-green: #06c755;
     --radius: 18px;
     --maxw: 760px;
     --ease: cubic-bezier(0.22, 1, 0.36, 1);
     --font: "Inter", "Noto Sans JP", -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
-    --serif: var(--font);
-    --display: var(--font);
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
@@ -63,13 +57,12 @@
   ::selection { background: var(--gold); color: #0a0a0a; }
   a { color: inherit; text-decoration: none; }
   img { display: block; max-width: 100%; }
-
+  b, strong { color: var(--fg); font-weight: 700; }
   .wrap { width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 22px; }
-
   h1, h2, h3, h4 { letter-spacing: 0.01em; font-weight: 800; line-height: 1.5; }
-
-  /* Gold text */
   .gold { background: var(--gold-grad); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+  .latin { font-family: "Inter", sans-serif; letter-spacing: 0.08em; }
+  .sp-br { display: inline; }
 
   .eyebrow {
     display: inline-flex; align-items: center; gap: 9px; font-size: 11px; font-weight: 700;
@@ -79,304 +72,299 @@
   }
   .eyebrow .dot { width: 5px; height: 5px; border-radius: 50%; background: var(--gold); display: inline-block; box-shadow: 0 0 10px 1px rgba(236,231,211,0.7); }
 
-  .section { padding: 76px 0; position: relative; }
-  .section.tight { padding-top: 0; }
-
-  /* Subtle gold hairline divider */
+  .section { padding: 80px 0 0; position: relative; }
   .rule { width: 100%; max-width: 120px; height: 1px; margin: 0 auto; background: linear-gradient(90deg, transparent, var(--gold), transparent); opacity: 0.6; }
 
-  /* Reveal */
   .reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.8s var(--ease), transform 0.8s var(--ease); }
   .reveal.in { opacity: 1; transform: none; }
   @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } html { scroll-behavior: auto; } }
 
-  /* ===== Nav ===== */
-  header.nav {
-    position: sticky; top: 0; z-index: 100; background: rgba(6,6,6,0.72);
-    backdrop-filter: saturate(160%) blur(20px); -webkit-backdrop-filter: saturate(160%) blur(20px);
-    border-bottom: 1px solid transparent; transition: border-color 0.3s ease, background 0.3s ease;
-  }
-  header.nav.scrolled { border-bottom: 1px solid var(--line); }
-  .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 60px; }
-  .brand { display: inline-flex; align-items: center; }
-  .brand img { height: 44px; width: auto; display: block; }
-  .nav-cta {
-    display: inline-flex; align-items: center; gap: 7px; white-space: nowrap; background: var(--line-green);
-    color: #fff; font-weight: 800; font-size: 12.5px; padding: 10px 17px; border-radius: 100px; transition: transform 0.2s var(--ease);
-  }
-  .nav-cta:active { transform: scale(0.96); }
-  .nav-cta svg { width: 15px; height: 15px; }
+  /* ===== Section heading ===== */
+  .head { text-align: center; max-width: 640px; margin: 0 auto 36px; }
+  .head h2 { font-size: clamp(23px, 6vw, 34px); font-weight: 900; line-height: 1.55; margin-top: 18px; }
+  .head p { color: var(--muted); font-size: 14.5px; margin-top: 16px; }
+  .body-c { text-align: center; color: var(--muted); font-size: 14.5px; max-width: 30em; margin: 0 auto; }
+  .body-c + .body-c { margin-top: 12px; }
+  .punch { text-align: center; max-width: 600px; margin: 34px auto 0; font-size: clamp(19px, 5vw, 26px); font-weight: 900; line-height: 1.6; }
 
-  /* ===== Hero (photo top → black gradient, no header) ===== */
-  .hero { position: relative; padding: 52px 0 40px; overflow: hidden; text-align: center; }
-  .hero::before {
-    content: ""; position: absolute; inset: 0; z-index: -3;
-    background:
-      radial-gradient(620px 300px at 50% 8%, rgba(236,231,211,0.07), transparent 70%),
-      var(--bg);
-  }
+  /* ===== Hero ===== */
+  .hero { position: relative; padding: 52px 0 12px; overflow: hidden; text-align: center; }
+  .hero::before { content: ""; position: absolute; inset: 0; z-index: -3; background: radial-gradient(620px 300px at 50% 8%, rgba(236,231,211,0.07), transparent 70%), var(--bg); }
   .hero-photo { position: absolute; top: 0; left: 0; right: 0; height: clamp(330px, 52vh, 460px); z-index: -2; overflow: hidden; background: #050505; }
-  .hero-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 26%; will-change: transform; animation: kenburns 40s ease-in-out infinite; }
-  @keyframes kenburns {
-    0%   { transform: scale(1.08) translate3d(-1.2%, 0.6%, 0); }
-    50%  { transform: scale(1.16) translate3d(1.2%, -1%, 0); }
-    100% { transform: scale(1.08) translate3d(-1.2%, 0.6%, 0); }
-  }
+  .hero-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 26%; animation: kenburns 40s ease-in-out infinite; }
+  @keyframes kenburns { 0%,100% { transform: scale(1.08) translate3d(-1.2%, 0.6%, 0); } 50% { transform: scale(1.16) translate3d(1.2%, -1%, 0); } }
   @media (prefers-reduced-motion: reduce) { .hero-photo img { animation: none; transform: scale(1.04); } }
-  .hero-photo-veil { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(5,5,6,0.62) 0%, rgba(5,5,6,0.46) 22%, rgba(7,7,9,0.86) 62%, var(--bg) 100%); }
-  .hero-brand { display: flex; flex-direction: column; align-items: center; margin-bottom: 14px; }
-  .hero-brand .hb-main { font-family: var(--serif); font-weight: 900; font-size: clamp(38px, 12vw, 66px); line-height: 0.96; letter-spacing: 0.03em; color: var(--champ); text-shadow: 0 2px 30px rgba(0,0,0,0.75); }
-  .hero-brand .hb-sub { font-family: var(--serif); font-weight: 800; font-size: clamp(12px, 3.8vw, 18px); letter-spacing: 0.4em; padding-left: 0.4em; color: var(--champ); margin-top: 6px; text-shadow: 0 2px 20px rgba(0,0,0,0.75); }
-  .hero-brand .hb-line { width: 34px; height: 2px; background: var(--gold-grad); opacity: 0.9; border-radius: 2px; margin-top: 12px; }
-  .sp-br { display: inline; }
-  .hero-grid {
-    position: absolute; inset: 0; z-index: -1; opacity: 0.5;
-    background-image: linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
-    background-size: 64px 64px;
-    mask-image: radial-gradient(680px 460px at 50% 8%, #000 25%, transparent 78%);
-    -webkit-mask-image: radial-gradient(680px 460px at 50% 8%, #000 25%, transparent 78%);
-  }
-  .hero h1 {
-    font-family: var(--serif); font-size: clamp(27px, 7vw, 46px); font-weight: 900; line-height: 1.45; letter-spacing: 0.01em;
-    margin: 0 auto; max-width: 16em; text-shadow: 0 2px 26px rgba(0,0,0,0.6);
-  }
-  .hero h1 .hl { position: relative; white-space: nowrap; }
-  .hero .lead { font-size: clamp(13.5px, 3.7vw, 16px); color: var(--muted); margin: 12px auto 0; max-width: 26em; font-weight: 500; line-height: 1.75; }
-  .hero .cta-block { margin-top: 20px; }
-  .hero .lead b { color: var(--fg); font-weight: 700; }
+  .hero-photo-veil { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(5,5,6,0.62) 0%, rgba(5,5,6,0.5) 22%, rgba(7,7,9,0.88) 62%, var(--bg) 100%); }
+  .hero-grid { position: absolute; inset: 0; z-index: -1; opacity: 0.5; background-image: linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px); background-size: 64px 64px; mask-image: radial-gradient(680px 460px at 50% 8%, #000 25%, transparent 78%); -webkit-mask-image: radial-gradient(680px 460px at 50% 8%, #000 25%, transparent 78%); }
+  .hero-brand { display: flex; flex-direction: column; align-items: center; margin-bottom: 16px; }
+  .hero-brand .hb-main { font-weight: 900; font-size: clamp(38px, 12vw, 66px); line-height: 0.96; letter-spacing: 0.03em; color: var(--champ); text-shadow: 0 2px 30px rgba(0,0,0,0.75); }
+  .hero-brand .hb-sub { font-weight: 800; font-size: clamp(12px, 3.8vw, 18px); letter-spacing: 0.4em; padding-left: 0.4em; color: var(--champ); margin-top: 6px; }
+  .hero-brand .hb-line { width: 34px; height: 2px; background: var(--gold-grad); border-radius: 2px; margin-top: 12px; }
+  .hero h1 { font-size: clamp(28px, 7.6vw, 48px); font-weight: 900; line-height: 1.42; margin: 0 auto; text-shadow: 0 2px 26px rgba(0,0,0,0.6); }
+  .hero .lead { font-size: clamp(13.5px, 3.7vw, 16px); color: var(--muted); margin: 16px auto 0; max-width: 28em; font-weight: 500; line-height: 1.8; }
+  .hero .forks { display: grid; gap: 8px; max-width: 420px; margin: 18px auto 0; text-align: left; }
+  .hero .forks div { display: flex; gap: 12px; align-items: center; font-size: 14.5px; font-weight: 700; padding: 11px 16px; border: 1px solid var(--line); border-radius: 12px; background: rgba(23,23,27,0.7); }
+  .hero .forks .n { font-size: 10.5px; letter-spacing: 0.14em; color: var(--gold-2); font-weight: 800; flex: none; }
+  .hero .def { font-size: 12.5px; color: var(--faint); max-width: 30em; margin: 16px auto 0; line-height: 1.8; }
+  .hero .def b { color: var(--muted); }
+  .scroll-link { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 700; color: var(--gold-2); margin-top: 6px; padding: 6px 4px; border-bottom: 1px solid rgba(236,231,211,0.35); }
 
-  /* ===== Video player (facade) ===== */
-  .video {
-    position: relative; width: 100%; aspect-ratio: 16 / 9; border-radius: 20px; overflow: hidden;
-    cursor: pointer; background: #000; border: 1px solid var(--line-strong);
-    box-shadow: 0 40px 80px -40px rgba(0,0,0,0.9), 0 0 0 1px rgba(236,231,211,0.10);
-  }
-  .video.hero-video { max-width: 680px; margin: 18px auto 0; box-shadow: 0 50px 110px -45px rgba(0,0,0,0.95), 0 0 0 1px rgba(236,231,211,0.22); }
-  .video::after {
-    content: ""; position: absolute; inset: 0; border-radius: 20px; pointer-events: none;
-    box-shadow: inset 0 0 0 1px rgba(236,231,211,0.18);
-  }
-  .video-thumb { width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s var(--ease), filter 0.5s ease, opacity 0.5s ease; }
+  /* ===== Video facade ===== */
+  .video { position: relative; width: 100%; aspect-ratio: 16 / 9; border-radius: 20px; overflow: hidden; cursor: pointer; background: #000; border: 1px solid var(--line-strong); box-shadow: 0 40px 80px -40px rgba(0,0,0,0.9), 0 0 0 1px rgba(236,231,211,0.10); }
+  .video.hero-video { max-width: 680px; margin: 22px auto 0; box-shadow: 0 50px 110px -45px rgba(0,0,0,0.95), 0 0 0 1px rgba(236,231,211,0.22); }
+  .video::after { content: ""; position: absolute; inset: 0; border-radius: 20px; pointer-events: none; box-shadow: inset 0 0 0 1px rgba(236,231,211,0.18); }
+  .video-thumb { width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s var(--ease), opacity 0.5s ease; }
   .video-veil { position: absolute; inset: 0; z-index: 2; background: linear-gradient(180deg, rgba(0,0,0,0.18), rgba(0,0,0,0.45)); transition: opacity 0.5s ease; }
   .video:hover .video-thumb { transform: scale(1.04); }
-  .video-play {
-    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-    width: 74px; height: 74px; border-radius: 50%; border: none; cursor: pointer;
-    background: var(--gold-grad); display: grid; place-items: center;
-    box-shadow: 0 14px 40px -8px rgba(236,231,211,0.6); z-index: 3; transition: transform 0.25s var(--ease), opacity 0.45s ease;
-  }
+  .video-play { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 70px; height: 70px; border-radius: 50%; border: none; cursor: pointer; background: var(--gold-grad); display: grid; place-items: center; box-shadow: 0 14px 40px -8px rgba(236,231,211,0.6); z-index: 3; transition: transform 0.25s var(--ease), opacity 0.45s ease; }
   .video-play::before { content: ""; position: absolute; inset: -10px; border-radius: 50%; border: 1px solid rgba(236,231,211,0.45); animation: ripple 2.6s var(--ease) infinite; }
   @keyframes ripple { 0% { transform: scale(1); opacity: 0.7; } 100% { transform: scale(1.5); opacity: 0; } }
   .video:hover .video-play { transform: translate(-50%, -50%) scale(1.07); }
-  .video-play svg { width: 28px; height: 28px; color: #0a0a0a; margin-left: 4px; }
-  .video-label {
-    position: absolute; left: 16px; bottom: 14px; right: 16px; z-index: 3; text-align: left;
-    font-size: 12.5px; font-weight: 700; color: #fff; letter-spacing: 0.02em;
-    text-shadow: 0 2px 12px rgba(0,0,0,0.8); display: flex; align-items: center; gap: 8px;
-    transition: opacity 0.45s ease, transform 0.45s var(--ease);
-  }
-  .video-label .lp { font-family: var(--display); font-size: 11px; letter-spacing: 0.22em; color: var(--gold-2); text-transform: uppercase; }
+  .video-play svg { width: 26px; height: 26px; color: #0a0a0a; margin-left: 4px; }
+  .video-label { position: absolute; left: 16px; bottom: 14px; right: 16px; z-index: 3; text-align: left; font-size: 12.5px; font-weight: 700; color: #fff; text-shadow: 0 2px 12px rgba(0,0,0,0.8); display: flex; align-items: center; gap: 8px; transition: opacity 0.45s ease, transform 0.45s var(--ease); }
+  .video-label .lp { font-size: 11px; letter-spacing: 0.22em; color: var(--gold-2); text-transform: uppercase; }
   .video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; z-index: 1; }
-  /* Fade overlays out once the video starts playing */
-  .video.playing .video-thumb,
-  .video.playing .video-veil,
-  .video.playing .video-play { opacity: 0; pointer-events: none; }
+  .video.playing .video-thumb, .video.playing .video-veil, .video.playing .video-play { opacity: 0; pointer-events: none; }
   .video.playing .video-label { opacity: 0; transform: translateY(8px); pointer-events: none; }
-  /* "Tap for sound" hint — shown only while the hero preview autoplays muted */
-  .video-tap { position: absolute; top: 14px; right: 14px; z-index: 3; display: none; align-items: center; gap: 6px;
-    font-size: 11.5px; font-weight: 700; color: #fff; background: rgba(0,0,0,0.55);
-    padding: 6px 11px; border-radius: 100px; backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
-    box-shadow: 0 4px 16px -6px rgba(0,0,0,0.7); transition: opacity 0.4s ease; }
+  .video-tap { position: absolute; top: 14px; right: 14px; z-index: 3; display: none; align-items: center; gap: 6px; font-size: 11.5px; font-weight: 700; color: #fff; background: rgba(0,0,0,0.55); padding: 6px 11px; border-radius: 100px; backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); transition: opacity 0.4s ease; }
   .video-tap svg { width: 14px; height: 14px; }
   .video.preview .video-tap { display: flex; }
   .video.preview .video-play { display: none; }
   .video.playing .video-tap { opacity: 0; pointer-events: none; }
+  .video.preview:not(.playing) .video-label { opacity: 0; }
   @media (prefers-reduced-motion: reduce) { .video-play::before { animation: none; } }
 
-  /* ===== CTA block ===== */
-  .cta-block { margin-top: 40px; display: flex; flex-direction: column; align-items: center; gap: 11px; }
+  /* ===== CTA ===== */
+  .cta-block { margin-top: 26px; display: flex; flex-direction: column; align-items: center; gap: 11px; }
   .cta-ribbon { font-size: 13.5px; font-weight: 800; color: var(--gold-2); letter-spacing: 0.04em; }
   .cta-sub { font-size: 12px; color: var(--faint); font-weight: 500; }
-  .btn-line {
-    display: inline-flex; align-items: center; justify-content: center; gap: 10px; background: var(--line-green);
-    color: #fff; font-weight: 800; font-size: 16.5px; padding: 18px 30px; border-radius: 100px; width: 100%; max-width: 400px;
-    box-shadow: 0 18px 40px -12px rgba(6,199,85,0.55); transition: transform 0.2s var(--ease);
-  }
+  .btn-line { display: inline-flex; align-items: center; justify-content: center; gap: 10px; background: var(--line-green); color: #fff; font-weight: 800; font-size: 16.5px; padding: 18px 30px; border-radius: 100px; width: 100%; max-width: 400px; box-shadow: 0 18px 40px -12px rgba(6,199,85,0.55); transition: transform 0.2s var(--ease); animation: linepulse 2.6s var(--ease) infinite; }
   .btn-line:active { transform: translateY(1px) scale(0.99); animation: none; }
   .btn-line svg { width: 22px; height: 22px; flex: none; }
-  .btn-line { animation: linepulse 2.6s var(--ease) infinite; }
   @keyframes linepulse {
     0%, 100% { transform: scale(1); box-shadow: 0 18px 40px -12px rgba(6,199,85,0.55), 0 0 0 0 rgba(6,199,85,0.4); }
     50%      { transform: scale(1.03); box-shadow: 0 22px 46px -12px rgba(6,199,85,0.6), 0 0 0 14px rgba(6,199,85,0); }
   }
   @media (prefers-reduced-motion: reduce) { .btn-line { animation: none; } }
 
-  /* ===== Section heading ===== */
-  .head { text-align: center; max-width: 640px; margin: 0 auto 38px; }
-  .head h2 { font-family: var(--serif); font-size: clamp(23px, 6vw, 34px); font-weight: 900; line-height: 1.55; }
-  .head h2 .sm { display: block; font-size: 0.6em; color: var(--gold-2); font-weight: 600; margin-top: 10px; letter-spacing: 0.04em; }
-  .head p { color: var(--muted); font-size: 14.5px; margin-top: 16px; }
-  .head .eyebrow { margin-bottom: 18px; }
+  /* ===== Proof stats ===== */
+  .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .stat { text-align: center; padding: 24px 10px 20px; border: 1px solid var(--line); border-radius: 16px; background: var(--surface); }
+  .stat .fig { font-size: clamp(28px, 8.4vw, 40px); font-weight: 900; line-height: 1; letter-spacing: -0.01em; }
+  .stat .fig small { font-size: 0.5em; font-weight: 800; margin-left: 1px; }
+  .stat .lb { font-size: 12px; color: var(--muted); font-weight: 600; margin-top: 10px; line-height: 1.5; }
 
-  /* ===== Worry cards ===== */
-  .worries { display: grid; gap: 14px; }
-  .worry { border: 1px solid var(--line); border-radius: var(--radius); padding: 26px 24px; background: var(--surface); transition: border-color 0.3s ease; }
-  .worry:hover { border-color: var(--line-strong); }
-  .worry h3 { display: flex; gap: 12px; align-items: flex-start; font-size: 17px; font-weight: 800; line-height: 1.6; color: var(--fg); }
-  .worry h3 .ck { color: var(--gold); flex: none; margin-top: 2px; }
-  .worry h3 .ck svg { width: 20px; height: 20px; }
-  .worry p { color: var(--muted); font-size: 14.5px; margin-top: 14px; }
-  .worry p + p { margin-top: 10px; }
-  .worry ul { list-style: none; margin-top: 12px; display: grid; gap: 8px; }
-  .worry ul li { position: relative; padding-left: 18px; color: var(--muted); font-size: 14.5px; }
-  .worry ul li::before { content: ""; position: absolute; left: 2px; top: 0.8em; width: 5px; height: 5px; border-radius: 50%; background: var(--gold); }
+  /* ===== Students ===== */
+  .students { display: grid; gap: 16px; }
+  .stu { border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); position: relative; overflow: hidden; }
+  .stu::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: var(--gold-grad); opacity: 0.85; z-index: 4; }
+  .stu .video { border-radius: 0; border: none; border-bottom: 1px solid var(--line); box-shadow: none; }
+  .stu .video::after { border-radius: 0; box-shadow: none; }
+  .stu-in { padding: 24px 24px 26px; }
+  .stu-top { display: flex; align-items: center; gap: 12px; }
+  .ava { width: 44px; height: 44px; border-radius: 50%; overflow: hidden; background: var(--gold-grad); color: #0a0a0a; display: grid; place-items: center; font-weight: 900; font-size: 16px; flex: none; box-shadow: 0 6px 18px -6px rgba(236,231,211,0.55); }
+  .ava img { width: 100%; height: 100%; object-fit: cover; }
+  .stu-name { font-size: 15px; font-weight: 900; letter-spacing: 0.14em; }
+  .stu-res { font-size: clamp(21px, 5.8vw, 27px); font-weight: 900; line-height: 1.35; margin: 16px 0 2px; }
+  .stu p { color: var(--muted); font-size: 14px; margin-top: 10px; line-height: 1.85; }
+  .disclaimer { color: var(--faint); font-size: 11.5px; line-height: 1.8; max-width: 40em; margin: 22px auto 0; text-align: center; }
 
-  .callout { text-align: center; max-width: 580px; margin: 36px auto 0; font-family: var(--serif); font-size: clamp(17px, 4.6vw, 22px); font-weight: 600; line-height: 1.85; }
-  .callout .q { color: var(--gold-2); }
+  /* ===== Chips ===== */
+  .chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
+  .chips span { font-size: 13px; font-weight: 700; padding: 7px 14px; border-radius: 100px; border: 1px solid var(--line); background: var(--surface); color: var(--muted); }
+  .chips.left { justify-content: flex-start; }
+  .chips.sm span { font-size: 12px; padding: 5px 11px; }
+  .chips.noise span { color: var(--faint); text-decoration: line-through; text-decoration-color: rgba(247,244,236,0.35); background: transparent; border-style: dashed; }
 
-  /* ===== Operator (vs) ===== */
-  .vs { display: grid; grid-template-columns: 1fr; gap: 14px; max-width: 640px; margin: 32px auto 0; }
-  .vs-card { border-radius: 18px; padding: 26px 24px; border: 1px solid var(--line); position: relative; overflow: hidden; }
-  .vs-card.front { background: var(--surface); }
-  .vs-card.back { background: linear-gradient(165deg, rgba(236,231,211,0.16), rgba(236,231,211,0.03)); border-color: rgba(236,231,211,0.42); box-shadow: 0 30px 60px -34px rgba(236,231,211,0.4); }
-  .vs-tag { display: inline-flex; align-items: center; gap: 7px; font-size: 11px; font-weight: 800; letter-spacing: 0.1em; padding: 6px 13px; border-radius: 100px; margin-bottom: 16px; text-transform: uppercase; }
-  .vs-card.front .vs-tag { background: rgba(255,255,255,0.06); color: var(--faint); }
-  .vs-card.back .vs-tag { background: var(--gold-grad); color: #0a0a0a; }
-  .vs-card h4 { font-family: var(--serif); font-size: 19px; font-weight: 700; margin-bottom: 16px; }
-  .vs-card.front h4 { color: var(--muted); }
-  .vs-card.back h4 { color: var(--fg); }
-  .vs-list { list-style: none; display: grid; gap: 11px; }
-  .vs-list li { display: flex; gap: 10px; align-items: flex-start; font-size: 14px; line-height: 1.6; }
-  .vs-list li svg { width: 17px; height: 17px; flex: none; margin-top: 3px; }
-  .vs-card.front .vs-list li { color: var(--faint); }
-  .vs-card.front .vs-list li svg { color: var(--faint); }
-  .vs-card.back .vs-list li { color: var(--fg); }
-  .vs-card.back .vs-list li svg { color: var(--gold-2); }
-  .vs-divider { text-align: center; color: var(--gold); font-weight: 800; font-size: 15px; }
-  .note-strong { text-align: center; margin: 34px auto 0; max-width: 540px; }
-  .note-strong p { color: var(--muted); font-size: 14.5px; }
-  .note-strong strong { display: block; font-family: var(--serif); color: var(--fg); font-size: clamp(19px, 5vw, 25px); font-weight: 900; margin-top: 10px; }
-  .note-strong strong .gold { font-weight: 800; }
+  /* ===== Numbered 8 skills ===== */
+  .skills8 { list-style: none; counter-reset: s; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .skills8 li { counter-increment: s; display: flex; align-items: center; gap: 12px; padding: 16px 16px; border: 1px solid var(--line); border-radius: 14px; background: var(--surface); font-size: 14.5px; font-weight: 800; line-height: 1.45; }
+  .skills8 li::before { content: counter(s, decimal-leading-zero); font-size: 12px; font-weight: 800; color: var(--gold-deep); letter-spacing: 0.04em; flex: none; }
 
-  /* ===== Testimonials ===== */
-  .tm-feature { max-width: 760px; margin: 0 auto 18px; }
-  .tm-feature + .tm-feature { margin-top: 38px; }
-  .tm-body { max-width: 620px; margin: 26px auto 0; }
-  .tm-story { font-size: clamp(13.5px, 3.5vw, 15px); line-height: 1.95; color: var(--muted); text-align: left; }
-  .tm-story p + p { margin-top: 12px; }
-  .tm-story b { color: var(--fg); font-weight: 700; }
-  .tm-body { padding-bottom: 22px; border-bottom: 1px solid var(--line); }
-  .tm-author { display: flex; align-items: center; gap: 12px; }
-  .tm-author + .tm-story { margin-top: 18px; }
-  .tm-author .tm-role { color: var(--gold-2); font-weight: 600; }
+  /* ===== Loop ===== */
+  .loop-flow { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 6px 8px; font-size: clamp(11px, 3vw, 14px); font-weight: 800; letter-spacing: 0.1em; color: var(--gold-2); margin-top: 18px; }
+  .loop-flow i { font-style: normal; color: var(--faint); }
+  .loop { list-style: none; position: relative; display: grid; gap: 12px; max-width: 600px; margin: 0 auto; }
+  .loop::before { content: ""; position: absolute; left: 27px; top: 30px; bottom: 30px; width: 1px; background: linear-gradient(180deg, var(--gold), rgba(236,231,211,0.1)); }
+  .loop li { position: relative; display: flex; gap: 16px; align-items: flex-start; padding: 18px 20px 18px 14px; border: 1px solid var(--line); border-radius: 16px; background: var(--surface); }
+  .loop .dot { width: 28px; height: 28px; border-radius: 50%; background: var(--gold-grad); color: #0a0a0a; display: grid; place-items: center; font-size: 12px; font-weight: 900; flex: none; margin-top: 2px; position: relative; z-index: 1; }
+  .loop h3 { font-size: 16px; font-weight: 900; line-height: 1.4; }
+  .loop h3 .latin { font-size: 11px; color: var(--gold-2); margin-right: 8px; font-weight: 800; }
+  .loop p { color: var(--muted); font-size: 14px; margin-top: 4px; line-height: 1.75; }
+  .loop-back { display: flex; align-items: center; justify-content: center; gap: 10px; margin-top: 18px; font-size: 14.5px; font-weight: 800; color: var(--fg); text-align: center; }
+  .loop-back svg { width: 20px; height: 20px; color: var(--gold); flex: none; }
 
-  /* Testimonial grid (video frames + future placeholders) */
-  .tm-grid { display: grid; grid-template-columns: 1fr; gap: 16px; margin-top: 40px; }
-  .tm-item { display: flex; flex-direction: column; gap: 14px; }
-  .tm-meta { display: flex; align-items: center; gap: 13px; }
-  .tm-ava { width: 50px; height: 50px; border-radius: 50%; overflow: hidden; background: var(--gold-grad); color: #0a0a0a; display: grid; place-items: center; font-weight: 900; font-size: 17px; flex: none; box-shadow: 0 6px 18px -6px rgba(236,231,211,0.6); }
-  .tm-ava img { width: 100%; height: 100%; object-fit: cover; display: block; }
-  .tm-name { font-size: 14.5px; font-weight: 800; color: var(--fg); line-height: 1.3; }
-  .tm-role { font-size: 12px; color: var(--faint); font-weight: 500; }
-  .tm-result { margin-left: auto; font-family: var(--serif); font-size: 15px; font-weight: 700; color: var(--gold-2); white-space: nowrap; }
+  /* ===== Two paths ===== */
+  .paths { display: grid; gap: 14px; }
+  .path { border-radius: var(--radius); padding: 26px 24px; border: 1px solid var(--line); background: var(--surface); position: relative; overflow: hidden; }
+  .path.two { background: linear-gradient(165deg, rgba(236,231,211,0.14), rgba(236,231,211,0.03)); border-color: rgba(236,231,211,0.42); box-shadow: 0 30px 60px -34px rgba(236,231,211,0.35); }
+  .path-tag { display: inline-flex; font-size: 11px; font-weight: 800; letter-spacing: 0.14em; padding: 6px 13px; border-radius: 100px; background: rgba(255,255,255,0.07); color: var(--gold-2); }
+  .path.two .path-tag { background: var(--gold-grad); color: #0a0a0a; }
+  .path h3 { font-size: 19px; font-weight: 900; margin-top: 14px; line-height: 1.5; }
+  .path p { color: var(--muted); font-size: 14px; margin-top: 12px; line-height: 1.85; }
+  .path .chips { margin-top: 14px; }
+  .path-eq { margin-top: 18px; padding-top: 16px; border-top: 1px solid var(--line); font-size: 12.5px; font-weight: 800; letter-spacing: 0.14em; color: var(--gold-2); }
+  .aside { max-width: 30em; margin: 26px auto 0; text-align: center; font-size: 13.5px; color: var(--muted); padding: 16px 20px; border: 1px dashed var(--line-strong); border-radius: 14px; }
 
-  /* Placeholder slot for future videos */
-  .video.placeholder {
-    cursor: default; display: grid; place-items: center; text-align: center;
-    background: repeating-linear-gradient(45deg, rgba(255,255,255,0.02) 0 14px, rgba(255,255,255,0.04) 14px 28px);
-    border: 1px dashed var(--line-strong);
-  }
-  .video.placeholder::after { box-shadow: none; }
-  .ph-inner { color: var(--faint); }
-  .ph-inner .ph-ic { width: 46px; height: 46px; border-radius: 50%; border: 1px solid var(--line-strong); display: grid; place-items: center; margin: 0 auto 12px; color: var(--gold); }
-  .ph-inner .ph-ic svg { width: 22px; height: 22px; }
-  .ph-inner p { font-size: 12.5px; font-weight: 600; letter-spacing: 0.04em; }
+  /* ===== Opportunity ===== */
+  .attn { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; max-width: 520px; margin: 0 auto; }
+  .attn div { text-align: center; padding: 16px 10px; border: 1px solid var(--line); border-radius: 14px; background: var(--surface); font-size: 14px; font-weight: 800; }
+  .attn div small { display: block; font-size: 11px; color: var(--faint); font-weight: 600; margin-top: 2px; }
+  .truth { max-width: 560px; margin: 30px auto 0; border-radius: 20px; padding: 30px 22px; text-align: center; background: linear-gradient(180deg, var(--surface-2), var(--surface)); border: 1px solid rgba(236,231,211,0.3); }
+  .truth p { font-size: clamp(20px, 5.6vw, 28px); font-weight: 900; line-height: 1.55; }
+  .truth .latin { display: block; font-size: 11px; font-weight: 800; color: var(--faint); letter-spacing: 0.2em; margin-bottom: 4px; }
+  .truth p + .latin { margin-top: 18px; }
 
-  /* ===== Cases (text testimonials) ===== */
-  .cases { display: grid; gap: 16px; margin-top: 14px; }
-  .case { border: 1px solid var(--line); border-radius: var(--radius); padding: 28px 24px; background: var(--surface); transition: transform 0.3s var(--ease), border-color 0.3s; position: relative; overflow: hidden; }
-  .case::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: var(--gold-grad); opacity: 0.85; }
-  .case:hover { transform: translateY(-3px); border-color: rgba(236,231,211,0.4); }
-  .case .ctop { display: flex; align-items: center; gap: 12px; }
-  .case .cava { width: 40px; height: 40px; border-radius: 50%; background: rgba(236,231,211,0.14); color: var(--gold-2); display: grid; place-items: center; font-weight: 900; font-size: 15px; flex: none; }
-  .case .tag { font-size: 12px; font-weight: 700; letter-spacing: 0.04em; color: var(--faint); }
-  .case .tag b { color: var(--fg); font-size: 14px; display: block; font-weight: 800; }
-  .case .result { display: inline-block; font-family: var(--serif); font-size: clamp(21px, 5.6vw, 29px); font-weight: 700; letter-spacing: 0.01em; margin: 16px 0 4px; line-height: 1.35; }
-  .case .result .gold { font-weight: 800; }
-  .case p { color: var(--muted); font-size: 14px; margin-top: 12px; line-height: 1.85; }
-  .case .stars { color: var(--gold); font-size: 13px; letter-spacing: 0.15em; margin-top: 6px; }
+  /* ===== Areas ===== */
+  .areas { display: grid; gap: 14px; }
+  .area { border: 1px solid var(--line); border-radius: var(--radius); padding: 24px 22px; background: var(--surface); }
+  .area-top { display: flex; align-items: baseline; gap: 12px; }
+  .area-num { font-size: 30px; font-weight: 900; line-height: 1; }
+  .area-name { font-size: 11px; font-weight: 800; letter-spacing: 0.2em; color: var(--gold-2); }
+  .area h3 { font-size: 17px; font-weight: 900; margin-top: 10px; line-height: 1.55; }
+  .area .chips { margin-top: 14px; }
+  .area ul.qs { list-style: none; margin-top: 12px; display: grid; gap: 6px; }
+  .area ul.qs li { font-size: 14px; color: var(--muted); padding-left: 18px; position: relative; }
+  .area ul.qs li::before { content: "?"; position: absolute; left: 0; color: var(--gold); font-weight: 900; }
 
-  /* Testimonial cards (voices) */
-  .tcards { display: grid; grid-template-columns: 1fr; gap: 14px; margin-top: 30px; }
-  .tcard { border: 1px solid var(--line); border-radius: var(--radius); padding: 26px 24px; background: var(--surface); position: relative; overflow: hidden; transition: transform 0.3s var(--ease), border-color 0.3s; display: flex; flex-direction: column; }
-  .tcard::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: var(--gold-grad); opacity: 0.8; }
-  .tcard:hover { transform: translateY(-3px); border-color: rgba(236,231,211,0.4); }
-  .tcard .tstars { color: var(--gold); font-size: 13px; letter-spacing: 0.15em; }
-  .tcard .tquote { color: var(--muted); font-size: 14px; line-height: 1.9; margin-top: 12px; flex: 1; }
-  .tcard .tauthor { display: flex; align-items: center; gap: 12px; margin-top: 18px; padding-top: 16px; border-top: 1px solid var(--line); }
-  .tcard .tava { width: 46px; height: 46px; border-radius: 50%; flex: none; overflow: hidden; display: grid; place-items: center; background: var(--gold-grad); color: #0a0a0a; font-weight: 900; font-size: 17px; box-shadow: 0 6px 18px -6px rgba(236,231,211,0.55); }
-  .tcard .tava img { width: 100%; height: 100%; object-fit: cover; display: block; }
-  .tcard .tname { font-size: 14.5px; font-weight: 800; color: var(--fg); line-height: 1.3; }
-  .tcard .trole { font-size: 12px; color: var(--gold-2); font-weight: 600; margin-top: 2px; }
-  .tdisclaimer { color: var(--faint); font-size: 11.5px; line-height: 1.8; max-width: 40em; margin: 26px auto 0; text-align: center; }
+  /* ===== Before / After ===== */
+  .ba { display: grid; gap: 14px; }
+  .ba-col { border-radius: var(--radius); padding: 24px 22px; border: 1px solid var(--line); }
+  .ba-col.before { background: transparent; border-style: dashed; }
+  .ba-col.after { background: linear-gradient(165deg, rgba(236,231,211,0.12), rgba(236,231,211,0.02)); border-color: rgba(236,231,211,0.4); }
+  .ba-tag { font-size: 11px; font-weight: 800; letter-spacing: 0.2em; color: var(--faint); }
+  .ba-col.after .ba-tag { color: var(--gold-2); }
+  .ba-col ul { list-style: none; display: grid; gap: 9px; margin-top: 14px; }
+  .ba-col li { display: flex; gap: 10px; font-size: 14px; line-height: 1.6; }
+  .ba-col li svg { width: 16px; height: 16px; flex: none; margin-top: 3px; }
+  .ba-col.before li { color: var(--faint); }
+  .ba-col.after li { color: var(--fg); font-weight: 700; }
+  .ba-col.after li svg { color: var(--gold); }
 
-  /* Stat strip */
-  .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; max-width: 600px; margin: 0 auto 8px; }
-  .stat { text-align: center; padding: 22px 10px; border: 1px solid var(--line); border-radius: 16px; background: var(--surface); }
-  .stat .fig { font-family: var(--serif); font-size: clamp(26px, 8vw, 40px); font-weight: 900; line-height: 1; }
-  .stat .fig small { font-size: 0.46em; font-weight: 700; }
-  .stat .lb { font-size: 11.5px; color: var(--muted); font-weight: 600; margin-top: 8px; letter-spacing: 0.02em; }
+  /* ===== Watch vs Execute ===== */
+  .flows { display: grid; gap: 12px; max-width: 600px; margin: 0 auto; }
+  .flow { border-radius: 16px; padding: 18px 18px; border: 1px solid var(--line); text-align: center; }
+  .flow .ft { font-size: 11px; font-weight: 800; letter-spacing: 0.18em; color: var(--faint); }
+  .flow .fr { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 6px; margin-top: 10px; font-size: clamp(12.5px, 3.4vw, 15px); font-weight: 800; }
+  .flow .fr i { font-style: normal; color: var(--faint); font-weight: 600; }
+  .flow.watch { border-style: dashed; }
+  .flow.watch .fr span { color: var(--faint); }
+  .flow.exec { background: linear-gradient(165deg, rgba(236,231,211,0.12), rgba(236,231,211,0.02)); border-color: rgba(236,231,211,0.4); }
+  .flow.exec .ft { color: var(--gold-2); }
 
-  /* ===== Why list ===== */
-  .why-list { display: grid; gap: 11px; max-width: 500px; margin: 0 auto; }
-  .why-list li { list-style: none; display: flex; gap: 14px; align-items: center; font-size: 15.5px; font-weight: 700; padding: 17px 22px; border: 1px solid var(--line); border-radius: 14px; background: var(--surface); color: var(--fg); }
-  .why-list li .ck { width: 28px; height: 28px; border-radius: 9px; background: var(--gold-grad); color: #0a0a0a; display: grid; place-items: center; flex: none; }
-  .why-list li .ck svg { width: 15px; height: 15px; }
-  .why-emph { text-align: center; max-width: 540px; margin: 0 auto 18px; font-family: var(--serif); font-size: clamp(21px, 5.6vw, 30px); font-weight: 900; }
+  /* ===== How it works ===== */
+  .how { list-style: none; display: grid; gap: 0; max-width: 560px; margin: 0 auto; }
+  .how li { display: grid; grid-template-columns: 44px 1fr; gap: 14px; position: relative; padding-bottom: 22px; }
+  .how li:not(:last-child)::before { content: ""; position: absolute; left: 21px; top: 44px; bottom: 2px; width: 1px; background: var(--line-strong); }
+  .how .n { width: 44px; height: 44px; border-radius: 12px; border: 1px solid rgba(236,231,211,0.4); display: grid; place-items: center; font-size: 13px; font-weight: 900; color: var(--gold-2); background: var(--surface); }
+  .how h3 { font-size: 16.5px; font-weight: 900; line-height: 1.4; padding-top: 2px; }
+  .how h3 .latin { display: block; font-size: 10.5px; color: var(--gold-2); font-weight: 800; letter-spacing: 0.2em; }
+  .how p { color: var(--muted); font-size: 14px; margin-top: 6px; line-height: 1.8; }
+  .how li.last .n { background: var(--gold-grad); color: #0a0a0a; border: none; }
 
-  /* ===== Offer ===== */
-  .offer-list { list-style: none; display: grid; gap: 12px; max-width: 480px; margin: 26px auto 0; }
-  .offer-list li { display: flex; gap: 13px; align-items: center; font-size: 15px; font-weight: 600; color: var(--fg); }
-  .offer-list li .ck { color: var(--gold); flex: none; }
-  .offer-list li .ck svg { width: 20px; height: 20px; }
+  /* ===== 90 days ===== */
+  .days { display: grid; gap: 14px; }
+  .day { border: 1px solid var(--line); border-radius: var(--radius); padding: 24px 22px; background: var(--surface); position: relative; overflow: hidden; }
+  .day::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: var(--gold-grad); opacity: 0.85; }
+  .day-when { font-size: 11px; font-weight: 800; letter-spacing: 0.2em; color: var(--gold-2); }
+  .day h3 { font-size: 20px; font-weight: 900; margin-top: 6px; }
+  .day h3 .latin { display: block; font-size: 10.5px; color: var(--faint); letter-spacing: 0.16em; font-weight: 700; margin-top: 2px; }
+  .day p { color: var(--muted); font-size: 14px; margin-top: 10px; line-height: 1.85; }
+  .day .chips { margin-top: 12px; }
+  .day .em { color: var(--fg); font-weight: 800; }
 
-  /* ===== Final ===== */
-  .final { background: linear-gradient(180deg, var(--surface) 0%, var(--bg-2) 100%); color: #fff; border-radius: 28px; padding: 56px 28px; text-align: center; position: relative; overflow: hidden; border: 1px solid var(--line); }
-  .final::before { content: ""; position: absolute; inset: 0; background: radial-gradient(560px 320px at 50% 0%, rgba(236,231,211,0.22), transparent 70%); }
+  /* ===== Show me ===== */
+  .showme { text-align: center; margin: 8px auto 0; }
+  .showme q { display: inline-block; quotes: "「" "」"; font-size: clamp(26px, 7.4vw, 40px); font-weight: 900; line-height: 1.4; }
+  .showme .latin { display: block; font-size: 11px; color: var(--faint); letter-spacing: 0.24em; margin-top: 8px; font-weight: 700; }
+  .qgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; max-width: 520px; margin: 26px auto 0; }
+  .qgrid div { font-size: 13.5px; font-weight: 700; padding: 12px 12px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); text-align: center; color: var(--muted); }
+  .chain { list-style: none; max-width: 440px; margin: 30px auto 0; display: grid; gap: 0; }
+  .chain li { text-align: center; font-size: 15px; font-weight: 800; padding: 10px 0; position: relative; }
+  .chain li:not(:last-child)::after { content: "↓"; display: block; color: var(--gold); font-size: 13px; margin-top: 6px; }
+  .chain li b { color: var(--gold-2); }
+
+  /* ===== Philosophy ===== */
+  .philo { border-radius: 24px; padding: 40px 24px; text-align: center; background: radial-gradient(420px 220px at 50% 0%, rgba(236,231,211,0.12), transparent 70%), var(--surface); border: 1px solid var(--line); }
+  .philo ul { list-style: none; display: grid; gap: 14px; margin-top: 24px; }
+  .philo li { font-size: clamp(17px, 4.8vw, 23px); font-weight: 900; line-height: 1.5; }
+  .philo li:nth-child(odd) .gold { font-weight: 900; }
+  .philo p { color: var(--muted); font-size: 14px; margin-top: 26px; }
+
+  /* ===== What you get ===== */
+  .gets { display: grid; gap: 12px; }
+  .get { border: 1px solid var(--line); border-radius: 16px; padding: 20px 20px; background: var(--surface); }
+  .get .latin { font-size: 10.5px; font-weight: 800; color: var(--gold-2); letter-spacing: 0.18em; }
+  .get h3 { font-size: 16.5px; font-weight: 900; margin-top: 4px; line-height: 1.5; }
+  .get p { color: var(--muted); font-size: 13.5px; margin-top: 6px; line-height: 1.8; }
+
+  /* ===== FAQ-style objections ===== */
+  .faq { display: grid; gap: 12px; max-width: 640px; margin: 0 auto; }
+  .faq details { border: 1px solid var(--line); border-radius: 16px; background: var(--surface); overflow: hidden; }
+  .faq details[open] { border-color: rgba(236,231,211,0.38); }
+  .faq summary { list-style: none; cursor: pointer; display: flex; align-items: center; gap: 12px; padding: 20px 20px; font-size: 16px; font-weight: 900; line-height: 1.5; }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary .q { font-size: 11px; font-weight: 800; color: var(--gold-2); letter-spacing: 0.1em; flex: none; }
+  .faq summary .pm { margin-left: auto; width: 26px; height: 26px; border-radius: 50%; border: 1px solid var(--line-strong); display: grid; place-items: center; flex: none; transition: transform 0.3s var(--ease); color: var(--gold); }
+  .faq summary .pm svg { width: 14px; height: 14px; }
+  .faq details[open] summary .pm { transform: rotate(45deg); }
+  .faq .a { padding: 0 20px 22px; color: var(--muted); font-size: 14px; line-height: 1.9; }
+  .faq .a p + p, .faq .a p + .chips, .faq .a .chips + p { margin-top: 12px; }
+  .faq .a .ans { color: var(--fg); font-weight: 900; font-size: 15.5px; }
+  .faq .a .ans .gold { font-weight: 900; }
+
+  /* ===== Bigger goal ===== */
+  .changes { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; max-width: 520px; margin: 0 auto; }
+  .changes span { font-size: 13px; font-weight: 700; color: var(--faint); padding: 7px 14px; border-radius: 100px; border: 1px dashed var(--line-strong); }
+  .always { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; max-width: 520px; margin: 22px auto 0; }
+  .always li { font-size: 14px; font-weight: 800; padding: 13px 12px; text-align: center; border: 1px solid rgba(236,231,211,0.32); border-radius: 12px; background: var(--surface); }
+  .always li:last-child:nth-child(odd) { grid-column: 1 / -1; }
+
+  /* ===== Close ===== */
+  .close-lines { list-style: none; display: grid; gap: 4px; max-width: 420px; margin: 28px auto 0; text-align: center; }
+  .close-lines li { font-size: clamp(16px, 4.4vw, 19px); font-weight: 800; color: var(--muted); }
+  .close-lines li:last-child { color: var(--fg); margin-top: 6px; }
+  .both { text-align: center; margin: 34px auto 0; font-size: clamp(22px, 6vw, 32px); font-weight: 900; line-height: 1.5; }
+
+  /* ===== Final (roadmap) ===== */
+  .final { background: linear-gradient(180deg, var(--surface) 0%, var(--bg-2) 100%); border-radius: 28px; padding: 50px 24px; text-align: center; position: relative; overflow: hidden; border: 1px solid var(--line); }
+  .final::before { content: ""; position: absolute; inset: 0; background: radial-gradient(560px 320px at 50% 0%, rgba(236,231,211,0.2), transparent 70%); }
   .final::after { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
   .final .inner { position: relative; }
-  .final h2 { font-family: var(--serif); color: #fff; font-size: clamp(24px, 6.4vw, 35px); font-weight: 900; margin-top: 20px; line-height: 1.55; }
-  .final p { color: var(--muted); font-size: 14.5px; margin: 16px auto 0; max-width: 25em; }
-  .final .cta-block { margin-top: 32px; }
-  .final .micro { margin-top: 18px; font-size: 12px; color: var(--faint); }
+  .final h2 { font-size: clamp(24px, 6.4vw, 34px); font-weight: 900; margin-top: 20px; line-height: 1.55; }
+  .final > .inner > p { color: var(--muted); font-size: 14.5px; margin: 16px auto 0; max-width: 26em; }
+  .rm-list { list-style: none; display: grid; gap: 10px; max-width: 440px; margin: 24px auto 0; text-align: left; }
+  .rm-list li { display: flex; gap: 12px; align-items: flex-start; font-size: 14.5px; font-weight: 700; line-height: 1.6; }
+  .rm-list li svg { width: 19px; height: 19px; color: var(--gold); flex: none; margin-top: 2px; }
+  .final .micro { margin-top: 20px; font-size: 12px; color: var(--faint); line-height: 1.8; }
 
   /* ===== Footer ===== */
-  footer { padding: 50px 0 120px; border-top: 1px solid var(--line); text-align: center; }
-  .foot-brand { display: inline-flex; flex-direction: column; align-items: center; gap: 4px; font-weight: 900; letter-spacing: 0.1em; }
-  .foot-brand small { font-family: var(--display); font-weight: 600; font-size: 11px; letter-spacing: 0.34em; color: var(--gold-2); }
+  footer { margin-top: 90px; padding: 50px 0 120px; border-top: 1px solid var(--line); text-align: center; }
   .foot-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 14px; margin-top: 18px; }
-  .foot-links a { font-size: 11.5px; color: var(--faint); font-weight: 500; transition: color 0.2s ease; }
+  .foot-links a { font-size: 11.5px; color: var(--faint); font-weight: 500; }
   .foot-links a:hover { color: var(--muted); }
   .foot-copy { font-size: 12px; color: var(--faint); margin-top: 14px; }
 
   /* ===== Sticky mobile CTA ===== */
-  .sticky-cta {
-    position: fixed; left: 0; right: 0; bottom: 0; z-index: 90; padding: 12px 16px calc(12px + env(safe-area-inset-bottom));
-    background: rgba(6,6,6,0.82); backdrop-filter: saturate(160%) blur(18px); -webkit-backdrop-filter: saturate(160%) blur(18px);
-    border-top: 1px solid var(--line); transform: translateY(120%); transition: transform 0.4s var(--ease);
-  }
+  .sticky-cta { position: fixed; left: 0; right: 0; bottom: 0; z-index: 90; padding: 12px 16px calc(12px + env(safe-area-inset-bottom)); background: rgba(6,6,6,0.82); backdrop-filter: saturate(160%) blur(18px); -webkit-backdrop-filter: saturate(160%) blur(18px); border-top: 1px solid var(--line); transform: translateY(120%); transition: transform 0.4s var(--ease); }
   .sticky-cta.show { transform: none; }
-  .sticky-cta .btn-line { max-width: none; padding: 15px; font-size: 15.5px; box-shadow: 0 -2px 20px rgba(6,199,85,0.2); animation: linepulse-sticky 2.6s var(--ease) infinite; }
+  .sticky-cta .btn-line { max-width: none; padding: 15px; font-size: 15.5px; animation: linepulse-sticky 2.6s var(--ease) infinite; }
   @keyframes linepulse-sticky { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.015); } }
   @media (prefers-reduced-motion: reduce) { .sticky-cta .btn-line { animation: none; } }
 
   @media (min-width: 720px) {
-    .section { padding: 104px 0; }
-    .vs { grid-template-columns: 1fr 1fr; }
-    .vs-divider { display: none; }
-    .tm-grid { grid-template-columns: 1fr 1fr; }
-    .tcards { grid-template-columns: 1fr 1fr; }
-    .final { padding: 72px 48px; }
+    .section { padding-top: 110px; }
+    .stats { grid-template-columns: repeat(4, 1fr); }
+    .students { grid-template-columns: 1fr 1fr; }
+    .skills8 { grid-template-columns: repeat(4, 1fr); }
+    .paths, .ba { grid-template-columns: 1fr 1fr; }
+    .areas { grid-template-columns: 1fr 1fr; }
+    .areas .area:last-child { grid-column: 1 / -1; }
+    .days { grid-template-columns: 1fr 1fr; }
+    .gets { grid-template-columns: 1fr 1fr; }
+    .gets .get:first-child { grid-column: 1 / -1; }
+    .qgrid { grid-template-columns: repeat(3, 1fr); }
+    .final { padding: 70px 48px; }
     .sticky-cta { display: none; }
     .sp-br { display: none; }
   }
@@ -420,7 +408,7 @@ src="https://www.facebook.com/tr?id=1665016335272219&ev=PageView&noscript=1"
 <!-- HERO -->
 <section class="hero">
   <div class="hero-photo">
-    <img src="assets/community.jpg" alt="KNCT UNIVERSITY コミュニティ" width="1920" height="1460" fetchpriority="high" />
+    <img src="assets/community.jpg" alt="KNCT University コミュニティ" width="1920" height="1460" fetchpriority="high" />
     <div class="hero-photo-veil"></div>
   </div>
   <div class="hero-grid"></div>
@@ -430,310 +418,553 @@ src="https://www.facebook.com/tr?id=1665016335272219&ev=PageView&noscript=1"
       <span class="hb-sub">UNIVERSITY</span>
       <span class="hb-line"></span>
     </div>
-    <h1 class="reveal">もし、あなたの価値が<br><span class="hl gold">10倍</span>になったら。<br>何が変わりますか？</h1>
-    <p class="lead reveal">必要なのは、<b>問題を見つけ、解決し、</b><br><b>目に見える価値を生み出すスキル</b>。<br>それが、KNCTで教えているものです。</p>
+    <h1 class="reveal">集めた注目を、<br><span class="gold">本物のビジネス</span>に<br class="sp-br">変える。</h1>
+    <p class="lead reveal">コンテンツ、マーケティング、オファー、<br>セールス、AI、仕組み化まで。<br>いまのインターネットビジネスが<br class="sp-br"><b>「実際にどう動いているか」</b>を学ぶ。</p>
+    <div class="forks reveal">
+      <div><span class="n latin">PATH 1</span>自分のビジネスを作る。</div>
+      <div><span class="n latin">PATH 2</span><span>注目を持つ人の、<br class="sp-br">欠かせない存在になる。</span></div>
+    </div>
 
-    <!-- MAIN VIDEO -->
     <div class="video hero-video reveal" data-yt="euwNsYezPlw">
-      <img class="video-thumb" src="https://i.ytimg.com/vi/euwNsYezPlw/maxresdefault.jpg" alt="KNCT Universityであなたの価値を10倍に — VSL本編" loading="eager" width="1280" height="720" />
+      <img class="video-thumb" src="https://i.ytimg.com/vi/euwNsYezPlw/maxresdefault.jpg" alt="KNCT Universityの仕組み — 動画" loading="eager" width="1280" height="720" />
       <div class="video-veil"></div>
-      <button class="video-play" aria-label="動画を再生">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-      </button>
-      <div class="video-label"><span class="lp">Watch</span>あなたの価値を10倍にする方法</div>
+      <button class="video-play" aria-label="動画を再生"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button>
+      <div class="video-label"><span class="lp">Watch</span>KNCTの仕組みを見る</div>
       <div class="video-tap">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
         タップで音声ON
       </div>
     </div>
 
+    <p class="def reveal">KNCT Universityは、オンラインで<b>「測れる価値」</b>を生み出す力を身につける、<b>90日間の実践型ビジネスプログラム</b>です。</p>
+
     <div class="cta-block reveal">
-      <span class="cta-ribbon">＼ まずは無料特典を受け取る ／</span>
-      <a href="#" class="btn-line" data-line>
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 5.82 2 10.5c0 2.7 1.5 5.1 3.86 6.66-.1.4-.62 2.3-.7 2.62 0 0-.02.1.05.15.07.04.15 0 .15 0 .2-.03 2.4-1.6 3.4-2.27.43.06.87.09 1.32.09 5.52 0 10-3.82 10-8.5S17.52 2 12 2z"/></svg>
-        LINEを追加する
-      </a>
-      <span class="cta-sub">LINE追加で限定コンテンツを無料配布中</span>
+      <span class="cta-ribbon">＼ 無料「KNCTビジネスロードマップ」配布中 ／</span>
+      <a href="#" class="btn-line" data-line data-loc="hero"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 5.82 2 10.5c0 2.7 1.5 5.1 3.86 6.66-.1.4-.62 2.3-.7 2.62 0 0-.02.1.05.15.07.04.15 0 .15 0 .2-.03 2.4-1.6 3.4-2.27.43.06.87.09 1.32.09 5.52 0 10-3.82 10-8.5S17.52 2 12 2z"/></svg>LINEで無料で受け取る</a>
+      <a href="#loop" class="scroll-link">KNCTの仕組みを見る ↓</a>
     </div>
   </div>
 </section>
 
-<!-- WORRIES -->
-<section class="section tight">
+<!-- PROOF -->
+<section class="section">
   <div class="wrap">
-    <div class="head reveal"><div class="rule" style="margin-bottom:26px;"></div><h2>こんな悩み、<br>ありませんか？</h2></div>
-    <div class="worries">
-      <div class="worry reveal">
-        <h3><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>会社員だけど、この先ずっと今の働き方でいいのか不安</h3>
-        <p>収入は安定している。でも将来に安心はない。</p>
-        <p>副業も試した。だけど時間だけ奪われて、結果が出なかった。</p>
+    <div class="head reveal">
+      <span class="eyebrow"><span class="dot"></span>Track Record</span>
+      <h2>教えるだけじゃない。<br><span class="gold">私たち自身が、やっている。</span></h2>
+    </div>
+    <div class="stats">
+      <div class="stat reveal"><div class="fig gold">1億<small>回+</small></div><div class="lb">生み出した<br>総再生回数</div></div>
+      <div class="stat reveal"><div class="fig gold">11億<small>円+</small></div><div class="lb">支援先で生まれた<br>売上</div></div>
+      <div class="stat reveal"><div class="fig gold">数百<small>件</small></div><div class="lb">生まれた契約と<br>ビジネス機会</div></div>
+      <div class="stat reveal"><div class="fig gold">1.2億<small>円+</small></div><div class="lb">10ヶ月で築いた<br>コミュニティ</div></div>
+    </div>
+    <p class="body-c reveal" style="margin-top:26px;">そして受講生たちも、同じ原則を使って<br class="sp-br">自分自身の結果を出し始めています。</p>
+  </div>
+</section>
+
+<!-- STUDENT PROOF -->
+<section class="section">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow"><span class="dot"></span>Student Results</span>
+      <h2>スキルを学ぶ、から<br><span class="gold">結果を出す</span>、へ。</h2>
+    </div>
+    <div class="students">
+      <article class="stu reveal">
+        <div class="video" data-yt="gjc7hgcprKM">
+          <img class="video-thumb" src="https://i.ytimg.com/vi/gjc7hgcprKM/maxresdefault.jpg" alt="Shoko インタビュー動画" loading="lazy" width="1280" height="720" />
+          <div class="video-veil"></div>
+          <button class="video-play" aria-label="動画を再生"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button>
+          <div class="video-label"><span class="lp">Interview</span>Shokoさん</div>
+        </div>
+        <div class="stu-in">
+          <div class="stu-top"><div class="ava"><img src="assets/people/shoko.jpg" alt="Shoko" loading="lazy" /></div><div class="stu-name latin">SHOKO</div></div>
+          <div class="stu-res"><span class="gold">ゼロ → 月100万円</span></div>
+          <p>確立したビジネスがない状態からスタート。市場、ポジショニング、オファー、発信を具体的に絞り込み、<b>1ヶ月で約100万円</b>の売上を作りました。</p>
+        </div>
+      </article>
+
+      <article class="stu reveal">
+        <div class="video" data-yt="F--Hh6VqAPU">
+          <img class="video-thumb" src="https://i.ytimg.com/vi/F--Hh6VqAPU/maxresdefault.jpg" alt="Yuuki インタビュー動画" loading="lazy" width="1280" height="720" />
+          <div class="video-veil"></div>
+          <button class="video-play" aria-label="動画を再生"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button>
+          <div class="video-label"><span class="lp">Interview</span>Yuukiさん</div>
+        </div>
+        <div class="stu-in">
+          <div class="stu-top"><div class="ava"><img src="assets/people/yuuki.jpg" alt="Yuuki" loading="lazy" /></div><div class="stu-name latin">YUUKI</div></div>
+          <div class="stu-res"><span class="gold">最初の30日で100万円</span></div>
+          <p>とても具体的な市場でビジネスを立ち上げました。<b>Jリーガーに英語を教える。</b></p>
+          <p>特定の人。特定の悩み。特定のオファー。</p>
+        </div>
+      </article>
+
+      <article class="stu reveal">
+        <div class="stu-in">
+          <div class="stu-top"><div class="ava">H</div><div class="stu-name latin">HUSKY</div></div>
+          <div class="stu-res"><span class="gold">約6週間で100万円+</span></div>
+          <p>特定の顧客、特定の悩み、特定のオファー。この3つに絞ったシンプルなフィットネスビジネスを構築。</p>
+          <p><b>何百万人ものフォロワーは、<br class="sp-br">必要ありませんでした。</b></p>
+        </div>
+      </article>
+
+      <article class="stu reveal">
+        <div class="stu-in">
+          <div class="stu-top"><div class="ava"><img src="assets/people/hina.jpg" alt="Hina" loading="lazy" /></div><div class="stu-name latin">HINA</div></div>
+          <div class="stu-res"><span class="gold">累計830万円+</span></div>
+          <p>彼女は、クリエイターになる必要はありませんでした。</p>
+          <p>すでに注目を持つ人にとって<b>価値ある存在になる方法</b>を学び、その裏側でビジネスを作っています。</p>
+        </div>
+      </article>
+
+      <article class="stu reveal">
+        <div class="stu-in">
+          <div class="stu-top"><div class="ava">S</div><div class="stu-name latin">SHOTA</div></div>
+          <div class="stu-res"><span class="gold">月約30万円 → 30日で約340万円</span></div>
+          <p>ポジショニング、メカニズム、オファー、集客戦略を変更。その後、<b>累計1,000万円以上</b>を達成しています。</p>
+        </div>
+      </article>
+    </div>
+    <p class="disclaimer">※ 掲載している実績は個人の成果であり、すべての方に同様の結果を保証するものではありません。成果は各自の取り組みや状況により異なります。</p>
+  </div>
+</section>
+
+<!-- THE REAL PROBLEM -->
+<section class="section">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow"><span class="dot"></span>The Real Problem</span>
+      <h2>足りないのは、<br>可能性じゃない。<br><span class="gold">ビジネススキル</span>だ。</h2>
+    </div>
+    <p class="body-c reveal">ほとんどの人は、インターネットビジネスが実際どう動いているのかを、教わったことがありません。</p>
+    <p class="body-c reveal">学校は教えてくれなかった。<br>会社もたぶん、教えてくれない。<br>そしてSNSには、<br class="sp-br"><b>バラバラの答え</b>が何千個も転がっている。</p>
+    <div class="chips noise reveal" style="margin-top:26px;">
+      <span>動画編集を学べ</span><span>AIを学べ</span><span>とにかく投稿しろ</span><span>インフルエンサーになれ</span><span>広告を回せ</span><span>副業を始めろ</span><span>セールスを学べ</span><span>パーソナルブランドを作れ</span>
+    </div>
+    <p class="punch reveal">でも、それらは全部<br class="sp-br">ビジネスの<span class="gold">「部品」</span>。<br>ビジネスそのものではありません。</p>
+  </div>
+</section>
+
+<!-- WHAT YOU ACTUALLY NEED -->
+<section class="section">
+  <div class="wrap">
+    <div class="head reveal">
+      <div class="rule" style="margin-bottom:8px;"></div>
+      <h2>本当に価値があるのは、<br>この一連の力。</h2>
+    </div>
+    <ol class="skills8 reveal">
+      <li>問題を見つける</li>
+      <li>解決策をつくる</li>
+      <li>価値を伝える</li>
+      <li>注目を集める</li>
+      <li>注目を顧客に変える</li>
+      <li>結果を届ける</li>
+      <li>起きたことを測る</li>
+      <li>仕組みを改善する</li>
+    </ol>
+    <p class="punch reveal">これが、いまのインターネットビジネスの<br class="sp-br">本当の動き方。<br><span class="gold">そして、KNCTが教えていることです。</span></p>
+  </div>
+</section>
+
+<!-- THE KNCT LOOP -->
+<section class="section" id="loop">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow"><span class="dot"></span>The KNCT Loop</span>
+      <h2>KNCTループ</h2>
+      <div class="loop-flow latin"><span>SEE</span><i>→</i><span>SOLVE</span><i>→</i><span>COMMUNICATE</span><i>→</i><span>MONETIZE</span><i>→</i><span>MEASURE</span></div>
+    </div>
+    <ol class="loop">
+      <li class="reveal"><span class="dot">1</span><div><h3><span class="latin">SEE</span>見つける</h3><p>解く価値のある問題を見つける。</p></div></li>
+      <li class="reveal"><span class="dot">2</span><div><h3><span class="latin">SOLVE</span>解決する</h3><p>その問題を解決するオファー、サービス、商品、仕組みをつくる。</p></div></li>
+      <li class="reveal"><span class="dot">3</span><div><h3><span class="latin">COMMUNICATE</span>伝える</h3><p>コンテンツ、ストーリー、ポジショニング、メッセージ、セールスで、価値を相手に理解してもらう。</p></div></li>
+      <li class="reveal"><span class="dot">4</span><div><h3><span class="latin">MONETIZE</span>収益化する</h3><p>注目を、会話・顧客・売上に変える。</p></div></li>
+      <li class="reveal"><span class="dot">5</span><div><h3><span class="latin">MEASURE</span>測る</h3><p>データと顧客の声から、何がうまくいき、何を改善すべきかを理解する。</p></div></li>
+    </ol>
+    <div class="loop-back reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg><span>そして、次の問題が見えてくる。<br>これを、繰り返す。</span></div>
+  </div>
+</section>
+
+<!-- TWO PATHS -->
+<section class="section">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow"><span class="dot"></span>Two Paths</span>
+      <h2>道は、<span class="gold">2つ</span>ある。</h2>
+      <p>インターネットビジネスの仕組みがわかれば、<br class="sp-br">そのスキルの使い道は2つです。</p>
+    </div>
+    <div class="paths">
+      <div class="path reveal">
+        <span class="path-tag latin">PATH 1</span>
+        <h3>自分で注目を集める。</h3>
+        <p>クリエイターになる。パーソナルブランドを築く。コンテンツを作る。オーディエンスを育てる。オファーを作る。そして、集めた注目を顧客に変える。</p>
+        <div class="path-eq latin">ATTENTION → BUSINESS</div>
       </div>
-      <div class="worry reveal">
-        <h3><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>SNSを頑張っているのに、全然マネタイズできない</h3>
-        <p>フォロワーは増えている。でも「で、結局どうやってお金にするの？」</p>
-        <p>PR案件以外の収益化方法がわからない。投稿を続けたいのに、ビジネス設計が分からない。</p>
+      <div class="path two reveal">
+        <span class="path-tag latin">PATH 2</span>
+        <h3>すでに注目を持つ人の、<br>価値ある存在になる。</h3>
+        <p><b>インフルエンサーになる必要はありません。</b>クリエイターや企業は、すでにオーディエンスを持っています。でも多くの場合、次のことがわかる人がいません。</p>
+        <div class="chips left sm"><span>オファー</span><span>マーケティング</span><span>セールス</span><span>マネタイズ</span><span>AI</span><span>オペレーション</span><span>仕組み化</span><span>集客</span><span>グロース</span></div>
+        <p>注目の裏側にあるビジネスを、一緒に作れる人になる。</p>
+        <div class="path-eq latin">SKILL → BUSINESS VALUE</div>
       </div>
-      <div class="worry reveal">
-        <h3><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>起業したい。でも何から始めればいいかわからない</h3>
-        <p>「自分の力で稼げるようになりたい」そう思っている。でも、</p>
+    </div>
+    <p class="aside reveal">KNCTでは、この人を<b>「オペレーター」</b>と呼ぶことがあります。<br>でも、大事なのは肩書きではありません。<br><b>生み出す価値</b>です。</p>
+  </div>
+</section>
+
+<!-- THE BIG OPPORTUNITY -->
+<section class="section">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow"><span class="dot"></span>The Big Opportunity</span>
+      <h2>誰もが注目を欲しがる。<br>でも、その使い方を<br>知る人は<span class="gold">ほとんどいない</span>。</h2>
+      <p>クリエイターは、こんな状態でも——</p>
+    </div>
+    <div class="attn reveal">
+      <div>フォロワー<br>10万人</div>
+      <div>数百万回の<br>再生</div>
+      <div>何千人もの<br>ストーリー閲覧</div>
+      <div>強い<br>パーソナルブランド</div>
+    </div>
+    <p class="body-c reveal" style="margin-top:20px;">——ビジネスとしては、<b>弱いまま</b>のことがあります。</p>
+    <div class="truth reveal">
+      <span class="latin">FOLLOWERS ARE NOT A BUSINESS.</span>
+      <p>フォロワーは、<br class="sp-br">ビジネスじゃない。</p>
+      <span class="latin">VIEWS ARE NOT REVENUE.</span>
+      <p>再生数は、<br class="sp-br">売上じゃない。</p>
+    </div>
+    <p class="punch reveal">注目は、チャンスをつくる。<br><span class="gold">ビジネススキルが、それをつかむ。</span></p>
+  </div>
+</section>
+
+<!-- WHAT KNCT TEACHES -->
+<section class="section">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow"><span class="dot"></span>What KNCT Teaches</span>
+      <h2>必要なのは、<br>また別のスキルじゃない。<br><span class="gold">マシン全体</span>を理解すること。</h2>
+      <p>KNCTが教えるのは、5つのコア領域です。</p>
+    </div>
+    <div class="areas">
+      <div class="area reveal">
+        <div class="area-top"><span class="area-num gold latin">01</span><span class="area-name latin">BUSINESS</span></div>
+        <h3>ビジネスが実際にどうお金を生むのかを理解する。</h3>
+        <div class="chips left sm"><span>顧客</span><span>課題</span><span>価値</span><span>売上</span><span>利益率</span><span>集客</span><span>成約</span><span>提供</span><span>継続</span></div>
+      </div>
+      <div class="area reveal">
+        <div class="area-top"><span class="area-num gold latin">02</span><span class="area-name latin">OFFER</span></div>
+        <h3>スキルや知識を、人が本当に買いたいものに変える。</h3>
+        <ul class="qs"><li>誰を助けるのか？</li><li>どんな問題を解決するのか？</li><li>どんな成果をつくるのか？</li><li>なぜ、あなたが選ばれるのか？</li></ul>
+      </div>
+      <div class="area reveal">
+        <div class="area-top"><span class="area-num gold latin">03</span><span class="area-name latin">COMMUNICATION</span></div>
+        <h3>あなたの価値を、相手に理解してもらう。</h3>
+        <div class="chips left sm"><span>コンテンツ</span><span>ヤッピング</span><span>フック</span><span>ストーリーテリング</span><span>ポジショニング</span><span>メッセージ</span><span>パーソナルブランド</span><span>セールスの伝え方</span></div>
+      </div>
+      <div class="area reveal">
+        <div class="area-top"><span class="area-num gold latin">04</span><span class="area-name latin">MARKETING &amp; SALES</span></div>
+        <h3>注目が売上に変わる流れを学ぶ。</h3>
+        <div class="chips left sm"><span>オーガニック集客</span><span>DM</span><span>LINE</span><span>リード獲得</span><span>見込み客の見極め</span><span>セールスコール</span><span>フォローアップ</span><span>反論への対応</span><span>成約</span></div>
+      </div>
+      <div class="area reveal">
+        <div class="area-top"><span class="area-num gold latin">05</span><span class="area-name latin">SYSTEMS &amp; AI</span></div>
+        <h3>全部を手作業でやるのを、やめる。</h3>
+        <div class="chips left sm"><span>AIワークフロー</span><span>自動化</span><span>SOP（業務手順）</span><span>トラッキング</span><span>分析</span><span>オペレーション</span><span>チームでの実行</span><span>ボトルネック診断</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THE RESULT -->
+<section class="section">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow"><span class="dot"></span>The Result</span>
+      <h2>KNCTが育てるのは、<br><span class="gold">測れる価値を<br class="sp-br">生み出せる人</span>。</h2>
+      <p>「ビジネス動画を見るのが上手い人」を<br class="sp-br">作る場所ではありません。</p>
+    </div>
+    <div class="ba">
+      <div class="ba-col before reveal">
+        <div class="ba-tag latin">BEFORE KNCT</div>
         <ul>
-          <li>何を売ればいい？</li>
-          <li>どうやって集客する？</li>
-          <li>誰に相談すればいい？</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 12h12"/></svg>何のビジネスを始めればいいかわからない</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 12h12"/></svg>自分が何が得意なのかわからない</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 12h12"/></svg>何を売ればいいかわからない</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 12h12"/></svg>投稿しているのに、お金にならない</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 12h12"/></svg>フォロワーがいない</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 12h12"/></svg>お客さんの集め方がわからない</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 12h12"/></svg>AIツールは使えるけど、稼ぎ方がわからない</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 12h12"/></svg>アイデアが多すぎて、方向が定まらない</li>
         </ul>
-        <p>実践できる環境もない。</p>
+      </div>
+      <div class="ba-col after reveal">
+        <div class="ba-tag latin">AFTER KNCT</div>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>誰を助けられるかがわかる</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>自分が解決できる問題がわかる</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>オファーを作れる</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>価値の伝え方がわかる</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>需要をつくれる</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>会話を生み出せる</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>セールスがわかる</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>AIと仕組みを使いこなせる</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>インターネットビジネスの本当の動き方がわかる</li>
+        </ul>
       </div>
     </div>
-    <div class="callout reveal">もし1つでも当てはまるなら、<br>あなたは <span class="q">オペレーター</span> という選択肢を<br>知るべきかもしれません。</div>
   </div>
 </section>
 
-<!-- WHAT IS OPERATOR -->
-<section class="section tight">
+<!-- INFORMATION IS NOT THE PRODUCT -->
+<section class="section">
   <div class="wrap">
     <div class="head reveal">
-      <span class="eyebrow"><span class="dot"></span>What is an Operator</span>
-      <h2 style="margin-top:18px;">「発信する人」ではなく、<br><span class="gold">売上を作る人</span>。</h2>
-      <p>今、SNSクリエイターは大量にいます。<br class="sp-br">でも、<b style="color:var(--fg);font-weight:700;">売上を作れる人は圧倒的に少ない。</b><br class="sp-br">多くのクリエイターは「収益化の設計」がないからです。</p>
+      <span class="eyebrow"><span class="dot"></span>Information Is Not The Product</span>
+      <h2>動画をもっと見ても、<br>人生は変わらない。</h2>
+      <p>変えるとしたら、<b>実行</b>です。</p>
     </div>
-
-    <div class="vs">
-      <div class="vs-card front reveal">
-        <span class="vs-tag">Creator</span>
-        <h4>発信する人</h4>
-        <ul class="vs-list">
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/></svg>フォロワーは増える</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/></svg>再生数も出る</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg>でも、売上がない</li>
-        </ul>
+    <div class="flows">
+      <div class="flow watch reveal">
+        <div class="ft latin">よくある講座</div>
+        <div class="fr"><span>見る</span><i>→</i><span>見る</span><i>→</i><span>見る</span><i>→</i><span>見る</span></div>
       </div>
-      <div class="vs-divider reveal">▼</div>
-      <div class="vs-card back reveal">
-        <span class="vs-tag">Operator</span>
-        <h4>売上を作る人</h4>
-        <ul class="vs-list">
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>商品設計・導線・販売・セールス</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>仕組み化を行う</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>クリエイターと組み、売上を共に作る</li>
-        </ul>
+      <div class="flow exec reveal">
+        <div class="ft latin">KNCT</div>
+        <div class="fr"><span>学ぶ</span><i>→</i><span>実行</span><i>→</i><span>フィードバック</span><i>→</i><span>改善</span><i>→</i><span class="gold">結果</span></div>
       </div>
     </div>
-
-    <div class="note-strong reveal">
-      <p>SNS運用代行ではありません。<br class="sp-br">ただ投稿を作る仕事でもありません。</p>
-      <strong>あなたは<span class="gold">「ビジネスを作る側」</span>になる。</strong>
-    </div>
+    <p class="body-c reveal" style="margin-top:26px;">学ぶ。実践する。市場から反応が返ってくる。<br>その反応の意味を、<b>私たちが一緒に読み解く</b>。<br>修正する。そして、また実行する。</p>
   </div>
 </section>
 
-<!-- TESTIMONIALS -->
-<section class="section tight">
+<!-- HOW KNCT WORKS -->
+<section class="section">
   <div class="wrap">
     <div class="head reveal">
-      <span class="eyebrow"><span class="dot"></span>Real Stories</span>
-      <h2 style="margin-top:18px;">未経験・SNS経験ゼロでも、<br><span class="gold">結果が出ています。</span></h2>
-      <p>知識だけでは終わらせない。実際に案件を動かし、売上や契約といった実績を上げた受講生の声。</p>
+      <span class="eyebrow"><span class="dot"></span>How KNCT Works</span>
+      <h2>KNCTの進め方</h2>
     </div>
-
-    <!-- Featured video testimonial: Yuuki -->
-    <div class="tm-feature reveal">
-      <div class="video" data-yt="F--Hh6VqAPU">
-        <img class="video-thumb" src="https://i.ytimg.com/vi/F--Hh6VqAPU/maxresdefault.jpg" alt="Yuuki インタビュー動画" loading="lazy" width="1280" height="720" />
-        <div class="video-veil"></div>
-        <button class="video-play" aria-label="動画を再生">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-        </button>
-        <div class="video-label"><span class="lp">Interview</span>Yuukiさん</div>
-      </div>
-      <div class="tm-body">
-        <div class="tm-author">
-          <div class="tm-ava"><img src="assets/people/yuuki.jpg" alt="Yuuki" loading="lazy" width="50" height="50" /></div>
-          <div><div class="tm-name">Yuuki</div><div class="tm-role">オペレーター</div></div>
-        </div>
-        <div class="tm-story">
-          <p>KNCTにオペレーターとして入り、これまでビジネスの経験やSNSのアカウントもない、全てゼロからのスタート。</p>
-          <p>国内や海外のプロサッカー選手へ向けた英語コーチング事業を知人と始め、レベニューシェア30%で契約。自身はオペレーターとしてバックエンドを担当し、<b>初月でフォロワー380人、高単価で80万円</b>を達成しました。</p>
-          <p>月額5,000円のコミュニティも同様に立ち上げ、現在Whopで20名ほどを抱えています。AIなどの知見を活かし、活動の幅をますます広げています。</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Featured video testimonial: Shoko -->
-    <div class="tm-feature reveal">
-      <div class="video" data-yt="gjc7hgcprKM">
-        <img class="video-thumb" src="https://i.ytimg.com/vi/gjc7hgcprKM/maxresdefault.jpg" alt="Shoko インタビュー動画" loading="lazy" width="1280" height="720" />
-        <div class="video-veil"></div>
-        <button class="video-play" aria-label="動画を再生">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-        </button>
-        <div class="video-label"><span class="lp">Interview</span>Shokoさん</div>
-      </div>
-      <div class="tm-body">
-        <div class="tm-author">
-          <div class="tm-ava"><img src="assets/people/shoko.jpg" alt="Shoko" loading="lazy" width="50" height="50" /></div>
-          <div><div class="tm-name">Shoko</div><div class="tm-role">インバウンド事業クリエイター兼オペレーター</div></div>
-        </div>
-        <div class="tm-story">
-          <p>KNCTにオペレーターとして入り、まず自分自身がクリエイターとなりインバウンドの観光事業を展開。KNCTでオペレーターマインドセットを学び、インスタで発信を始め<b>2ヶ月で、インスタからの集客のみで月の売上100万円</b>を達成。</p>
-          <p>彼女の発信を見たインバウンド企業から、「オペレーターとしてインスタを手伝って欲しい」と連絡が来るようになりました。</p>
-          <p>今後は自分自身のビジネスを伸ばしながら、今度は<b>オペレーターとして他の人を支える</b>方向で動き始めています。</p>
-        </div>
-      </div>
-    </div>
-
-        <!-- Featured video testimonial: Sakiko -->
-    <div class="tm-feature reveal">
-      <div class="video" data-yt="vbgZK-cmwbI">
-        <img class="video-thumb" src="https://i.ytimg.com/vi/vbgZK-cmwbI/maxresdefault.jpg" alt="Sakiko インタビュー動画" loading="lazy" width="1280" height="720" />
-        <div class="video-veil"></div>
-        <button class="video-play" aria-label="動画を再生">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-        </button>
-        <div class="video-label"><span class="lp">Interview</span>Sakikoさん</div>
-      </div>
-      <div class="tm-body">
-        <div class="tm-author">
-          <div class="tm-ava"><img src="assets/people/sakiko.jpg" alt="Sakiko" loading="lazy" width="50" height="50" /></div>
-          <div><div class="tm-name">Sakiko</div><div class="tm-role">フィットネス系クリエイター兼オペレーター</div></div>
-        </div>
-        <div class="tm-story">
-          <p>旦那さんのアカウントで、初めてのオンライン収益化に挑戦。30〜40代男性向けの腕トレ完全ガイドをEbook形式で提供し、最初の売上が立ちました。さらにクリエイターと共に、<b>約35万円の売上</b>を上げることにも成功。正しいやり方を教えてくれる環境と、第三者の目線で意見をくれる仲間のおかげです。</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Voices: all testimonials -->
-    <div class="tcards">
-      <div class="tcard reveal">
-        <p class="tquote">クリエイターさんの1日イベントの企画運営に裏方として参加。学んだことを実践し、初めて案件支援を経験できました。現場に出ると、自信のつき方が違います。</p>
-        <div class="tauthor">
-          <div class="tava"><img src="assets/people/ryoma.jpg" alt="Ryoma さん" loading="lazy" /></div>
-          <div><div class="tname">Ryoma さん</div><div class="trole">オペレーター</div></div>
-        </div>
-      </div>
-
-      <div class="tcard reveal">
-        <p class="tquote">フィットネス系とガイドツアー系、2人のクリエイターさんと並行して支援契約を結びました。どちらもアカウントもサービスもゼロからの立ち上げで、未経験領域ですが、学びを実践に変える機会として向き合っています。</p>
-        <div class="tauthor">
-          <div class="tava"><img src="assets/people/kai.jpg" alt="Kai さん" loading="lazy" /></div>
-          <div><div class="tname">Kai さん</div><div class="trole">オペレーター</div></div>
-        </div>
-      </div>
-
-      <div class="tcard reveal">
-        <p class="tquote">フィットネスに続き、英語クリエイターさんとも支援契約を結ぶことができました。4ヶ月前は「オペレーター」という言葉さえ知らなかった自分でも、業界を問わずに学びを活かせる。それがこのスキルの価値だと感じています。</p>
-        <div class="tauthor">
-          <div class="tava"><img src="assets/people/taiyo.jpg" alt="Taiyo さん" loading="lazy" /></div>
-          <div><div class="tname">Taiyo さん</div><div class="trole">オペレーター</div></div>
-        </div>
-      </div>
-
-      <div class="tcard reveal">
-        <p class="tquote">海外ママのクリエイターさんとの面談から、3ヶ月の支援契約をいただきました。アメリカの夏休みに向けて、5月中にローンチして最初の成約までサポートする形で並走しています。緊張した初面談で「何者ですか?」と聞かれた反省点もありますが、一歩進めて嬉しいです。</p>
-        <div class="tauthor">
-          <div class="tava"><img src="assets/people/kanna.jpg" alt="Kanna さん" loading="lazy" /></div>
-          <div><div class="tname">Kanna さん</div><div class="trole">オペレーター</div></div>
-        </div>
-      </div>
-
-      <div class="tcard reveal">
-        <p class="tquote">KNCTに入ってから、Whopでのコミュニティ形成を進めることができました。外資エアライン面接対策の発信で、競合が有料化している情報も積極的にGIVEする方針で運用。少しずつ信頼が積み上がり、個別相談会の参加率も大きく伸びました。「データ」と「情報」を区別する発信の考え方が、結果につながったと感じています。</p>
-        <div class="tauthor">
-          <div class="tava"><img src="assets/people/aya.jpg" alt="Aya さん" loading="lazy" /></div>
-          <div><div class="tname">Aya さん</div><div class="trole">外資エアラインクリエイター兼オペレーター</div></div>
-        </div>
-      </div>
-
-      <div class="tcard reveal">
-        <p class="tquote">入会して3日目、学んだ対話・提案の進め方をそのまま実践し、フィットネス系クリエイターさんとの初契約まで進めました。その後2人目のクリエイターさんとも契約に至り、コミュニケーション設計とオファー設計を組み合わせた、自分なりの提案の型ができてきた手応えがあります。</p>
-        <div class="tauthor">
-          <div class="tava">K</div>
-          <div><div class="tname">komotaku さん</div><div class="trole">オペレーター</div></div>
-        </div>
-      </div>
-
-      <div class="tcard reveal">
-        <p class="tquote">整体事業のお客様だった国際薬膳師の方が、マンツーマン薬膳レッスンを始めたいけれど集客・オファー・商品設計の進め方が分からない、と。学んできたフレームをそのまま使って、お試しサポートから関係性を作り始めています。</p>
-        <div class="tauthor">
-          <div class="tava">T</div>
-          <div><div class="tname">Takumi さん</div><div class="trole">オペレーター</div></div>
-        </div>
-      </div>
-
-      <div class="tcard reveal">
-        <p class="tquote">フォロワー4万人の方には相手にされないだろう、と思いながら恐る恐るDMを送りました。実際にお話を聞いてみると、進め方が分からず一人で抱えていた状態だったとのこと。今は支援者として並走しています。</p>
-        <div class="tauthor">
-          <div class="tava">U</div>
-          <div><div class="tname">Uta さん</div><div class="trole">オペレーター</div></div>
-        </div>
-      </div>
-
-      <div class="tcard reveal">
-        <p class="tquote">ICPの設計、刺さるオファーの作り方、痛みの言語化といったオペレーターのマインドセットを習得し、3ヶ月でオペレーター契約を3件獲得。クリエイターと、90日でパーソナルブランドを構築する1on1コーチングを販売し、5月は売上150万円を達成しました。今後はローチケット商品へと事業を広げつつ、オペレーター事業も拡大していきます。</p>
-        <div class="tauthor">
-          <div class="tava">Y</div>
-          <div><div class="tname">Yone さん</div><div class="trole">オペレーター</div></div>
-        </div>
-      </div>
-
-    </div>
-
-
-    <p class="tdisclaimer">※ 掲載している体験談は受講者個人の感想であり、すべての方に同様の結果を保証するものではありません。学習成果は、各受講者の取り組みや状況により異なります。</p>
+    <ol class="how">
+      <li class="reveal"><span class="n latin">01</span><div><h3><span class="latin">LEARN</span>学ぶ</h3><p>フレームワーク、レッスン、テンプレート、プレイブックを手に入れる。</p></div></li>
+      <li class="reveal"><span class="n latin">02</span><div><h3><span class="latin">EXECUTE</span>実行する</h3><p>現実の世界で使う。作る。組み立てる。声をかける。売る。問題を解決する。</p></div></li>
+      <li class="reveal"><span class="n latin">03</span><div><h3><span class="latin">GET FEEDBACK</span>フィードバックを得る</h3><p>メンター、ライブセッション、コミュニティ、そして実際の市場データから、うまくいっていない部分を特定する。</p></div></li>
+      <li class="reveal"><span class="n latin">04</span><div><h3><span class="latin">IMPROVE</span>改善する</h3><p>失敗するたびにゼロからやり直すのではなく、<b>変えるべき変数だけ</b>を変える。</p></div></li>
+      <li class="reveal"><span class="n latin">05</span><div><h3><span class="latin">GET RESULTS</span>結果を出す</h3><p>顧客。契約。売上。スキル。実績。</p></div></li>
+      <li class="reveal last"><span class="n latin">06</span><div><h3><span class="latin">REPEAT</span>繰り返す</h3><p>単発の成功を、<b>再現できるスキル</b>に変える。</p></div></li>
+    </ol>
   </div>
 </section>
 
-<!-- WHY -->
-<section class="section tight">
+<!-- YOUR FIRST 90 DAYS -->
+<section class="section">
   <div class="wrap">
-    <div class="head reveal"><div class="rule" style="margin-bottom:26px;"></div><h2>なぜ、結果が出るのか？</h2><p>理由はシンプルです。</p></div>
-    <div class="why-emph reveal">見るだけで<br><span class="gold">終わらない</span>から。</div>
-    <p style="text-align:center;color:var(--muted);font-size:14.5px;max-width:25em;margin:0 auto 30px;" class="reveal">よくあるスクールは、動画教材を渡して終了。でもKNCT UNIVERSITYは違います。<b style="color:var(--fg);font-weight:700;">一緒に作る。</b></p>
-    <ul class="why-list">
-      <li class="reveal"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>毎日のライブセッション</li>
-      <li class="reveal"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>メンター添削</li>
-      <li class="reveal"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>プレイブック</li>
-      <li class="reveal"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>実践環境</li>
-      <li class="reveal"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>リアル案件ベース</li>
+    <div class="head reveal">
+      <span class="eyebrow"><span class="dot"></span>Your First 90 Days</span>
+      <h2>全部を学ぶ必要はない。<br>必要なのは、<br><span class="gold">次の一手</span>がわかること。</h2>
+    </div>
+    <div class="days">
+      <div class="day reveal">
+        <div class="day-when latin">DAYS 1–7</div>
+        <h3>自分を明確にする<span class="latin">GET CLEAR</span></h3>
+        <div class="chips left sm"><span>自分は何者か？</span><span>誰を助けられるか？</span><span>どんな問題を解決できるか？</span><span>どちらの道が合うか？</span><span>どのスキルを伸ばすか？</span><span>何を売るか？</span></div>
+      </div>
+      <div class="day reveal">
+        <div class="day-when latin">DAYS 8–30</div>
+        <h3>市場に出る<span class="latin">ENTER THE MARKET</span></h3>
+        <p>コンテンツを作る。会話を始める。オファーを組み立てる。声をかける。フィードバックをもらう。</p>
+        <p class="em">「何がうまくいくか」を考えるのをやめて、証拠を集め始める。</p>
+      </div>
+      <div class="day reveal">
+        <div class="day-when latin">DAYS 31–60</div>
+        <h3>制約を見つける<span class="latin">FIND THE CONSTRAINT</span></h3>
+        <p>前に進めない原因は、何か？</p>
+        <div class="chips left sm"><span>スキル？</span><span>オファー？</span><span>ポジショニング？</span><span>注目？</span><span>会話の数？</span><span>セールス？</span><span>実行量？</span></div>
+        <p class="em">そのボトルネックを直す。</p>
+      </div>
+      <div class="day reveal">
+        <div class="day-when latin">DAYS 61–90</div>
+        <h3>再現性をつくる<span class="latin">CREATE REPEATABILITY</span></h3>
+        <p>うまくいったことに集中する。オファーを磨く。実績をつくる。仕組みを作る。量を増やす。</p>
+        <p class="em">最初の結果を、繰り返せるものに変える。</p>
+      </div>
+    </div>
+
+    <div class="cta-block reveal" style="margin-top:40px;">
+      <span class="cta-ribbon">＼ 90日の全体像を、まず無料で ／</span>
+      <a href="#" class="btn-line" data-line data-loc="mid"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 5.82 2 10.5c0 2.7 1.5 5.1 3.86 6.66-.1.4-.62 2.3-.7 2.62 0 0-.02.1.05.15.07.04.15 0 .15 0 .2-.03 2.4-1.6 3.4-2.27.43.06.87.09 1.32.09 5.52 0 10-3.82 10-8.5S17.52 2 12 2z"/></svg>LINEでロードマップを受け取る</a>
+    </div>
+  </div>
+</section>
+
+<!-- WHY THIS WORKS -->
+<section class="section">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow"><span class="dot"></span>Why This Works</span>
+      <h2>行き詰まったとき、<br>足りないのは<br class="sp-br">情報じゃない。</h2>
+      <p>多くの教育は、行き詰まった人にさらに情報を与えます。<br>でも、問題はたいていそこではありません。<br>うまくいかないとき、最初に聞くべきなのは——</p>
+    </div>
+    <div class="showme reveal">
+      <q class="gold">やったことを、見せて。</q>
+      <span class="latin">SHOW ME WHAT YOU DID.</span>
+    </div>
+    <div class="qgrid reveal">
+      <div>コンテンツは何本？</div><div>会話は何件？</div><div>オファーは何回？</div><div>通話は何件？</div><div>何回試した？</div><div>結果どうなった？</div>
+    </div>
+    <ol class="chain reveal">
+      <li><b>実行</b>が、量を生む。</li>
+      <li><b>量</b>が、データを生む。</li>
+      <li><b>データ</b>が、診断を生む。</li>
+      <li><b>診断</b>が、改善すべき点を教えてくれる。</li>
+    </ol>
+  </div>
+</section>
+
+<!-- OUR PHILOSOPHY -->
+<section class="section">
+  <div class="wrap">
+    <div class="philo reveal">
+      <span class="eyebrow"><span class="dot"></span>Our Philosophy</span>
+      <ul>
+        <li>行動のない学びは、<br class="sp-br"><span class="gold">ない。</span></li>
+        <li>数字のない行動は、<br class="sp-br"><span class="gold">ない。</span></li>
+        <li>データ不足の<br class="sp-br">「うまくいかなかった」は、<br class="sp-br"><span class="gold">ない。</span></li>
+        <li>データなしの戦略変更は、<br class="sp-br"><span class="gold">ない。</span></li>
+      </ul>
+      <p>失敗は、プロセスの終わりではない。<br><b>プロセスの中にある「情報」</b>だ。</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT YOU GET -->
+<section class="section">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow"><span class="dot"></span>What You Get</span>
+      <h2>90日間、<br><span class="gold">ひとりで作らなくていい。</span></h2>
+    </div>
+    <div class="gets">
+      <div class="get reveal"><span class="latin">KNCT CORE CURRICULUM</span><h3>コアカリキュラム</h3><div class="chips left sm" style="margin-top:10px;"><span>ビジネス</span><span>オファー</span><span>マーケティング</span><span>セールス</span><span>AI</span><span>仕組み化</span></div></div>
+      <div class="get reveal"><span class="latin">CREATOR LAB</span><h3>クリエイターラボ</h3><p>ヤッピング、コンテンツ、フック、ストーリーテリング、ポジショニング、パーソナルブランド、コミュニケーション。</p></div>
+      <div class="get reveal"><span class="latin">LIVE SESSIONS</span><h3>ライブセッション</h3><p>学んでいることを、いま実際に作っているものに当てはめるサポート。</p></div>
+      <div class="get reveal"><span class="latin">SUCCESS SUPPORT</span><h3>サクセスサポート</h3><p>情報に溺れる代わりに、次にとるべき行動がわかる。</p></div>
+      <div class="get reveal"><span class="latin">PLAYBOOKS &amp; TEMPLATES</span><h3>プレイブック＆テンプレート</h3><p>私たちが実際に使っているフレームワークを使える。ゼロから作り直さなくていい。</p></div>
+      <div class="get reveal"><span class="latin">REAL-WORLD EXECUTION</span><h3>実戦</h3><p>教室の中の概念を、市場で使う。</p></div>
+      <div class="get reveal"><span class="latin">COMMUNITY</span><h3>コミュニティ</h3><p>作り、売り、学び、実行している仲間に囲まれて進む。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- OBJECTIONS -->
+<section class="section">
+  <div class="wrap">
+    <div class="head reveal">
+      <div class="rule" style="margin-bottom:8px;"></div>
+      <h2>まだ、こう思って<br>いませんか？</h2>
+    </div>
+    <div class="faq">
+      <details class="reveal" open>
+        <summary><span class="q latin">01</span>自分の道が、まだわからない<span class="pm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+        <div class="a">
+          <p class="ans"><span class="gold">それで大丈夫です。</span></p>
+          <p>最初からやりたいことが明確な人もいます。でも、ほとんどの人はそうではありません。</p>
+          <p>作ることが好きだと気づくかもしれない。セールスが得意だとわかるかもしれない。仕組みづくりで突出するかもしれない。マーケティングにハマるかもしれない。AIで強くなるかもしれない。クリエイター本人より、<b>その裏側の方が向いている</b>と気づくかもしれない。</p>
+          <p>全員を同じキャリアに押し込むことが目的ではありません。<b>目的は、あなたを「価値ある人」にすること。</b></p>
+        </div>
+      </details>
+      <details class="reveal">
+        <summary><span class="q latin">02</span>大きなフォロワーがいない<span class="pm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+        <div class="a">
+          <p class="ans"><span class="gold">なくても始められます。</span></p>
+          <p>自分でオーディエンスを育てることもできる。でも、<b>すでに持っている人の価値ある存在になる</b>こともできます。注目はあるのに——</p>
+          <div class="chips left sm"><span>オファーがない</span><span>セールスの仕組みがない</span><span>マネタイズできていない</span><span>運営が回っていない</span><span>戦略がない</span><span>時間がない</span></div>
+          <p>そんなクリエイターがいます。<b>その人たちの課題が、あなたのチャンスになる。</b></p>
+        </div>
+      </details>
+      <details class="reveal">
+        <summary><span class="q latin">03</span>ビジネス経験がない<span class="pm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+        <div class="a">
+          <p class="ans"><span class="gold">ビジネスは、魔法じゃない。</span></p>
+          <p>学べるスキルの集まりです。</p>
+          <p>人を理解する。問題を見つける。解決する。解決策を伝える。オファーを出す。顧客を得る。結果を届ける。改善する。繰り返す。</p>
+          <p><b>それが、ゲームのすべてです。</b></p>
+        </div>
+      </details>
+      <details class="reveal">
+        <summary><span class="q latin">04</span>また講座を買うのは、もういい<span class="pm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+        <div class="a">
+          <p class="ans"><span class="gold">KNCTは、見るための講座ではありません。</span></p>
+          <p>一人で100時間の動画を見たいなら、KNCTはおそらく合っていません。情報は安い。実装は難しい。</p>
+          <p>KNCTの中心にあるのは——学ぶ。やる。フィードバックをもらう。修正する。またやる。</p>
+          <p><b>誰かにいちいち指示されなくても、自分で価値を生み出せる人になるまで。</b></p>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- THE BIGGER GOAL -->
+<section class="section">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow"><span class="dot"></span>The Bigger Goal</span>
+      <h2>2年後に消える<br>テクニックを<br class="sp-br">教えたいわけじゃない。</h2>
+      <p>2026年だけ通用する小手先の戦術には、興味がありません。</p>
+    </div>
+    <div class="changes reveal"><span>プラットフォームは変わる</span><span>アルゴリズムも変わる</span><span>AIも変わる</span><span>ツールも変わる</span><span>戦術も変わる</span></div>
+    <p class="body-c reveal" style="margin-top:26px;">でもビジネスには、いつの時代も<br class="sp-br"><b>こんな人</b>が必要です。</p>
+    <ul class="always reveal">
+      <li>顧客を理解できる</li><li>問題を解決できる</li><li>価値を伝えられる</li><li>需要をつくれる</li><li>売れる</li><li>仕組みを作れる</li><li>結果を出せる</li>
     </ul>
-    <p style="text-align:center;color:var(--muted);font-size:14.5px;margin-top:26px;" class="reveal">「頑張ってください」ではなく、共に実装。<br class="sp-br">だから未経験でも前に進めます。</p>
+    <p class="punch reveal">私たちが育てているのは、<br class="sp-br"><span class="gold">そういうスキル</span>です。</p>
   </div>
 </section>
 
-<!-- FREE OFFER -->
-<section class="section tight">
+<!-- FINAL CLOSE -->
+<section class="section">
   <div class="wrap">
-    <div class="head reveal">
-      <span class="eyebrow"><span class="dot"></span>Free Gift</span>
-      <h2 style="margin-top:18px;">まずは無料で<br>受け取ってください</h2>
-      <p>KNCT UNIVERSITYでは、LINE限定で<br><b style="color:var(--fg);font-weight:700;">有料級の特典コンテンツ</b>を無料配布しています。</p>
+    <div class="head reveal" style="margin-bottom:0;">
+      <div class="rule" style="margin-bottom:8px;"></div>
+      <h2>未来は、<br>いちばん知っている人の<br>ものじゃない。<br><span class="gold">価値を生み出せる人</span>の<br>ものだ。</h2>
     </div>
-    <p style="text-align:center;font-size:14px;color:var(--muted);font-weight:600;" class="reveal">さらにLINEでは、今後こんな情報も配信予定：</p>
-    <ul class="offer-list">
-      <li class="reveal"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>オペレーターの具体例</li>
-      <li class="reveal"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>収益化事例</li>
-      <li class="reveal"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>SNSマネタイズ戦略</li>
-      <li class="reveal"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>最新情報</li>
-      <li class="reveal"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>限定ライブ案内</li>
+    <ul class="close-lines reveal">
+      <li>問題を見つける。</li>
+      <li>解決する。</li>
+      <li>価値を伝える。</li>
+      <li>需要をつくる。</li>
+      <li>解決策を売る。</li>
+      <li>お客さんに結果を届ける。</li>
+      <li>仕組みを作る。</li>
+      <li>そして、もう一度やる。</li>
     </ul>
-    <p style="text-align:center;font-size:14.5px;color:var(--muted);max-width:25em;margin:28px auto 0;" class="reveal">「自分にもできるか知りたい」そう思った方は、まず無料で情報を受け取ってください。<b style="color:var(--fg);font-weight:700;">無理な営業はありません。</b></p>
+    <p class="body-c reveal" style="margin-top:28px;">そのスキルで、自分のビジネスを作ってもいい。<br>誰かのビジネスを伸ばす力にしてもいい。</p>
+    <p class="both reveal">KNCT Universityは、<br><span class="gold">その両方を教えます。</span></p>
   </div>
 </section>
 
-<!-- FINAL CTA -->
-<section class="section tight">
+<!-- FREE NEXT STEP -->
+<section class="section">
   <div class="wrap">
     <div class="final reveal">
       <div class="inner">
-        <span class="eyebrow"><span class="dot"></span>Join Free</span>
-        <h2>LINE追加で<br><span class="gold">限定コンテンツ</span>を受け取る</h2>
-        <p>発信する人で終わるか、売上を作る人になるか。<br>その一歩は、ここから始まります。</p>
+        <span class="eyebrow"><span class="dot"></span>Free Next Step</span>
+        <h2>まずは<br><span class="gold">KNCT<br class="sp-br">ビジネスロードマップ</span><br>から。</h2>
+        <p>方向性がない状態から、オンラインで<b>測れる価値</b>を生み出せる人になるまでの道のり。中身はこちらです。</p>
+        <ul class="rm-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>いまのインターネットビジネスが、実際にどう動いているか</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>「クリエイター」と「裏側でグロースを支える」2つの道の選び方</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>価値ある問題の見つけ方</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>最初のオファーの作り方</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>注目が顧客に変わる仕組み</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>次に伸ばすべきスキル</li>
+        </ul>
         <div class="cta-block">
-          <a href="#" class="btn-line" data-line>
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 5.82 2 10.5c0 2.7 1.5 5.1 3.86 6.66-.1.4-.62 2.3-.7 2.62 0 0-.02.1.05.15.07.04.15 0 .15 0 .2-.03 2.4-1.6 3.4-2.27.43.06.87.09 1.32.09 5.52 0 10-3.82 10-8.5S17.52 2 12 2z"/></svg>
-            LINEを追加する
-          </a>
+          <span class="cta-ribbon">＼ 無料のKNCTビジネスロードマップ ／</span>
+          <a href="#" class="btn-line" data-line data-loc="final_cta"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 5.82 2 10.5c0 2.7 1.5 5.1 3.86 6.66-.1.4-.62 2.3-.7 2.62 0 0-.02.1.05.15.07.04.15 0 .15 0 .2-.03 2.4-1.6 3.4-2.27.43.06.87.09 1.32.09 5.52 0 10-3.82 10-8.5S17.52 2 12 2z"/></svg>LINEで無料で受け取る</a>
         </div>
+        <p class="micro">誇大な約束はしません。<br>コミュニティに入るだけで成功できる、とも言いません。</p>
       </div>
     </div>
   </div>
@@ -742,24 +973,22 @@ src="https://www.facebook.com/tr?id=1665016335272219&ev=PageView&noscript=1"
 <!-- FOOTER -->
 <footer>
   <div class="wrap">
-    <div class="foot-brand"><img src="assets/og-image.png" alt="KNCT UNIVERSITY" style="height:56px;width:auto;" /></div>
+    <div><img src="assets/og-image.png" alt="KNCT University" style="height:56px;width:auto;margin:0 auto;" /></div>
     <nav class="foot-links" aria-label="関連リンク">
       <a href="https://knctuniversity.netlify.app/" target="_blank" rel="noopener">運営サイト</a>
       <a href="https://knctuniversity.netlify.app/tokushoho" target="_blank" rel="noopener">特定商取引法に基づく表記</a>
       <a href="https://knctuniversity.netlify.app/privacy" target="_blank" rel="noopener">プライバシーポリシー</a>
       <a href="https://knctuniversity.netlify.app/contact" target="_blank" rel="noopener">お問い合わせ</a>
     </nav>
-    <div class="foot-copy">© 2026 KNCT UNIVERSITY. All rights reserved.</div>
+    <div class="foot-copy">© 2026 KNCT University. All rights reserved.</div>
   </div>
 </footer>
 
 <!-- STICKY MOBILE CTA -->
 <div class="sticky-cta" id="stickyCta">
-  <a href="#" class="btn-line" data-line>
-    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 5.82 2 10.5c0 2.7 1.5 5.1 3.86 6.66-.1.4-.62 2.3-.7 2.62 0 0-.02.1.05.15.07.04.15 0 .15 0 .2-.03 2.4-1.6 3.4-2.27.43.06.87.09 1.32.09 5.52 0 10-3.82 10-8.5S17.52 2 12 2z"/></svg>
-    LINEで無料特典を受け取る
-  </a>
+  <a href="#" class="btn-line" data-line data-loc="sticky_bar"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 5.82 2 10.5c0 2.7 1.5 5.1 3.86 6.66-.1.4-.62 2.3-.7 2.62 0 0-.02.1.05.15.07.04.15 0 .15 0 .2-.03 2.4-1.6 3.4-2.27.43.06.87.09 1.32.09 5.52 0 10-3.82 10-8.5S17.52 2 12 2z"/></svg>LINEで無料ロードマップを受け取る</a>
 </div>
+
 
 <script>
   // === LINE link: 流入元(UTM) → Lステップ流入経路URL の振り分け ===
@@ -820,7 +1049,7 @@ src="https://www.facebook.com/tr?id=1665016335272219&ev=PageView&noscript=1"
     iframe.src = "https://www.youtube-nocookie.com/embed/" + id + "?" + p;
     iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
     iframe.setAttribute('allowfullscreen', '');
-    iframe.title = "KNCT UNIVERSITY video";
+    iframe.title = "KNCT University video";
     box.appendChild(iframe);
     ytKillCaptions(iframe);
   }
@@ -880,7 +1109,7 @@ src="https://www.facebook.com/tr?id=1665016335272219&ev=PageView&noscript=1"
   // === Analytics: LINE button click tracking (GA4 + Vercel) ===
   document.querySelectorAll('[data-line]').forEach(function(el){
     el.addEventListener('click', function(){
-      var loc = el.closest('.sticky-cta') ? 'sticky_bar' : el.closest('.final') ? 'final_cta' : el.closest('.hero') ? 'hero' : 'other';
+      var loc = el.dataset.loc || (el.closest('.sticky-cta') ? 'sticky_bar' : el.closest('.final') ? 'final_cta' : el.closest('.hero') ? 'hero' : 'other');
       var attr = window.knctAttr || 'organic';
       var attrFirst = window.knctAttrFirst || attr;
       try { if (window.gtag) gtag('event', 'line_click', { location: loc, attribution: attr, attribution_first: attrFirst }); } catch(e) {}
