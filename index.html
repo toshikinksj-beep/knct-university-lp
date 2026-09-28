@@ -520,13 +520,17 @@
   .section.dark .gold { background: var(--gold-grad); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; padding-inline: 0; }
   .section.dark .eyebrow { background: rgba(236,231,211,0.06); border-color: var(--line-strong); color: var(--gold-2); }
   .section.dark .eyebrow .dot { background: var(--gold); }
-  /* 黒セクションの上下をヒーローと同じカーブでグラデーション */
-  .section.dark { --fade: clamp(200px, 40vw, 360px); padding-top: calc(var(--fade) * .75); padding-bottom: calc(var(--fade) * .75);
-    background:
-      linear-gradient(180deg, rgba(var(--fade-top),1) 0%, rgba(var(--fade-top),0.94) 3%, rgba(var(--fade-top),0.84) 10%, rgba(var(--fade-top),0.7) 18%, rgba(var(--fade-top),0.54) 26%, rgba(var(--fade-top),0.38) 34%, rgba(var(--fade-top),0.24) 42%, rgba(var(--fade-top),0.13) 51%, rgba(var(--fade-top),0.06) 61%, rgba(var(--fade-top),0.02) 72%, rgba(var(--fade-top),0) 84%) top / 100% var(--fade) no-repeat,
-      linear-gradient(0deg, rgba(var(--fade-bot),1) 0%, rgba(var(--fade-bot),0.94) 3%, rgba(var(--fade-bot),0.84) 10%, rgba(var(--fade-bot),0.7) 18%, rgba(var(--fade-bot),0.54) 26%, rgba(var(--fade-bot),0.38) 34%, rgba(var(--fade-bot),0.24) 42%, rgba(var(--fade-bot),0.13) 51%, rgba(var(--fade-bot),0.06) 61%, rgba(var(--fade-bot),0.02) 72%, rgba(var(--fade-bot),0) 84%) bottom / 100% var(--fade) no-repeat,
-      radial-gradient(700px 360px at 50% 30%, rgba(236,231,211,0.07), transparent 70%),
-      #000; }
+  /* ===== なめらかな背景トランジション（smootherstep×OKLab 32段） ===== */
+  .section.t-w2c, .section.t-c2w { --tf: clamp(120px, 26vw, 200px); background-repeat: no-repeat; background-size: 100% var(--tf), auto; }
+  .section.t-w2c { background-image: linear-gradient(180deg, #ffffff 0.00%, #ffffff 3.12%, #ffffff 6.25%, #ffffff 9.38%, #ffffff 12.50%, #ffffff 15.62%, #fffefe 18.75%, #fefefe 21.88%, #fefefd 25.00%, #fefdfd 28.12%, #fdfdfc 31.25%, #fdfdfb 34.38%, #fdfcfb 37.50%, #fcfbfa 40.62%, #fcfbf9 43.75%, #fbfaf8 46.88%, #faf9f7 50.00%, #faf9f6 53.12%, #f9f8f5 56.25%, #f9f8f4 59.38%, #f8f7f3 62.50%, #f8f6f3 65.62%, #f8f6f2 68.75%, #f7f6f1 71.88%, #f7f5f1 75.00%, #f7f5f0 78.12%, #f6f5f0 81.25%, #f6f4ef 84.38%, #f6f4ef 87.50%, #f6f4ef 90.62%, #f6f4ef 93.75%, #f6f4ef 96.88%, #f6f4ef 100.00%), linear-gradient(#f6f4ef,#f6f4ef); }
+  .section.t-c2w { background-image: linear-gradient(180deg, #f6f4ef 0.00%, #f6f4ef 3.12%, #f6f4ef 6.25%, #f6f4ef 9.38%, #f6f4ef 12.50%, #f6f4ef 15.62%, #f6f5f0 18.75%, #f7f5f0 21.88%, #f7f5f1 25.00%, #f7f6f1 28.12%, #f8f6f2 31.25%, #f8f6f3 34.38%, #f8f7f3 37.50%, #f9f8f4 40.62%, #f9f8f5 43.75%, #faf9f6 46.88%, #faf9f7 50.00%, #fbfaf8 53.12%, #fcfbf9 56.25%, #fcfbfa 59.38%, #fdfcfb 62.50%, #fdfdfb 65.62%, #fdfdfc 68.75%, #fefdfd 71.88%, #fefefd 75.00%, #fefefe 78.12%, #fffefe 81.25%, #ffffff 84.38%, #ffffff 87.50%, #ffffff 90.62%, #ffffff 93.75%, #ffffff 96.88%, #ffffff 100.00%), linear-gradient(#ffffff,#ffffff); }
+  .section.dark { --fade: clamp(260px, 60vw, 460px); padding-top: calc(var(--fade) * .72); padding-bottom: calc(var(--fade) * .72);
+    background: var(--gt) top / 100% var(--fade) no-repeat, var(--gb) bottom / 100% var(--fade) no-repeat, #000; }
+  .section.d-top-w { --gt: linear-gradient(180deg, #ffffff 0.00%, #ffffff 3.12%, #fefefe 6.25%, #fdfdfd 9.38%, #fafafa 12.50%, #f5f5f5 15.62%, #efefef 18.75%, #e7e7e7 21.88%, #dddddd 25.00%, #d1d1d1 28.12%, #c4c4c4 31.25%, #b5b5b5 34.38%, #a6a6a6 37.50%, #969696 40.62%, #858585 43.75%, #747474 46.88%, #636363 50.00%, #535353 53.12%, #434343 56.25%, #353535 59.38%, #282828 62.50%, #1c1c1c 65.62%, #121212 68.75%, #090909 71.88%, #040404 75.00%, #010101 78.12%, #000000 81.25%, #000000 84.38%, #000000 87.50%, #000000 90.62%, #000000 93.75%, #000000 96.88%, #000000 100.00%); }
+  .section.d-top-c { --gt: linear-gradient(180deg, #f6f4ef 0.00%, #f6f4ef 3.12%, #f5f3ee 6.25%, #f4f2ed 9.38%, #f1efea 12.50%, #eceae6 15.62%, #e6e4e0 18.75%, #deddd8 21.88%, #d5d3cf 25.00%, #cac8c4 28.12%, #bdbbb7 31.25%, #afadaa 34.38%, #a09f9b 37.50%, #908f8c 40.62%, #807f7c 43.75%, #706f6c 46.88%, #5f5e5c 50.00%, #504f4d 53.12%, #41403e 56.25%, #333231 59.38%, #262524 62.50%, #1a1a19 65.62%, #101010 68.75%, #080808 71.88%, #030303 75.00%, #010101 78.12%, #000000 81.25%, #000000 84.38%, #000000 87.50%, #000000 90.62%, #000000 93.75%, #000000 96.88%, #000000 100.00%); }
+  .section.d-bot-w { --gb: linear-gradient(180deg, #000000 0.00%, #000000 3.12%, #000000 6.25%, #000000 9.38%, #000000 12.50%, #000000 15.62%, #000000 18.75%, #010101 21.88%, #040404 25.00%, #090909 28.12%, #121212 31.25%, #1c1c1c 34.38%, #282828 37.50%, #353535 40.62%, #434343 43.75%, #535353 46.88%, #636363 50.00%, #747474 53.12%, #858585 56.25%, #969696 59.38%, #a6a6a6 62.50%, #b5b5b5 65.62%, #c4c4c4 68.75%, #d1d1d1 71.88%, #dddddd 75.00%, #e7e7e7 78.12%, #efefef 81.25%, #f5f5f5 84.38%, #fafafa 87.50%, #fdfdfd 90.62%, #fefefe 93.75%, #ffffff 96.88%, #ffffff 100.00%); }
+  .section.d-bot-c { --gb: linear-gradient(180deg, #000000 0.00%, #000000 3.12%, #000000 6.25%, #000000 9.38%, #000000 12.50%, #000000 15.62%, #000000 18.75%, #010101 21.88%, #030303 25.00%, #080808 28.12%, #101010 31.25%, #1a1a19 34.38%, #262524 37.50%, #333231 40.62%, #41403e 43.75%, #504f4d 46.88%, #5f5e5c 50.00%, #706f6c 53.12%, #807f7c 56.25%, #908f8c 59.38%, #a09f9b 62.50%, #afadaa 65.62%, #bdbbb7 68.75%, #cac8c4 71.88%, #d5d3cf 75.00%, #deddd8 78.12%, #e6e4e0 81.25%, #eceae6 84.38%, #f1efea 87.50%, #f4f2ed 90.62%, #f5f3ee 93.75%, #f6f4ef 96.88%, #f6f4ef 100.00%); }
+  .hero-fade { height: clamp(260px, 60vw, 460px); background: linear-gradient(180deg, #000000 0.00%, #000000 3.12%, #000000 6.25%, #000000 9.38%, #000000 12.50%, #000000 15.62%, #000000 18.75%, #010101 21.88%, #040404 25.00%, #090909 28.12%, #121212 31.25%, #1c1c1c 34.38%, #282828 37.50%, #353535 40.62%, #434343 43.75%, #535353 46.88%, #636363 50.00%, #747474 53.12%, #858585 56.25%, #969696 59.38%, #a6a6a6 62.50%, #b5b5b5 65.62%, #c4c4c4 68.75%, #d1d1d1 71.88%, #dddddd 75.00%, #e7e7e7 78.12%, #efefef 81.25%, #f5f5f5 84.38%, #fafafa 87.50%, #fdfdfd 90.62%, #fefefe 93.75%, #ffffff 96.88%, #ffffff 100.00%); }
 </style>
 <!-- Meta Pixel Code -->
 <script>
@@ -606,7 +610,7 @@ src="https://www.facebook.com/tr?id=1665016335272219&ev=PageView&noscript=1"
 </section>
 
 <!-- STUDENT PROOF -->
-<section class="section alt">
+<section class="section alt t-w2c">
   <div class="wrap">
     <div class="head reveal">
       <span class="eyebrow"><span class="dot"></span>受講生の成果</span>
@@ -792,7 +796,7 @@ src="https://www.facebook.com/tr?id=1665016335272219&ev=PageView&noscript=1"
 </section>
 
 <!-- THE REAL PROBLEM -->
-<section class="section dark" style="--fade-top:246,244,239;--fade-bot:246,244,239;">
+<section class="section dark d-top-c d-bot-c">
   <div class="wrap">
     <div class="head reveal">
       <span class="eyebrow"><span class="dot"></span>本当の問題</span>
@@ -840,7 +844,7 @@ src="https://www.facebook.com/tr?id=1665016335272219&ev=PageView&noscript=1"
 </section>
 
 <!-- THE BIG OPPORTUNITY -->
-<section class="section">
+<section class="section t-c2w">
   <div class="wrap">
     <div class="head reveal">
       <span class="eyebrow"><span class="dot"></span>大きなチャンス</span>
@@ -865,7 +869,7 @@ src="https://www.facebook.com/tr?id=1665016335272219&ev=PageView&noscript=1"
 </section>
 
 <!-- TWO PATHS -->
-<section class="section alt">
+<section class="section alt t-w2c">
   <div class="wrap">
     <div class="head reveal">
       <span class="eyebrow"><span class="dot"></span>2つの道</span>
@@ -893,7 +897,7 @@ src="https://www.facebook.com/tr?id=1665016335272219&ev=PageView&noscript=1"
 </section>
 
 <!-- THE KNCT LOOP -->
-<section class="section" id="loop">
+<section class="section t-c2w" id="loop">
   <div class="wrap">
     <div class="head reveal">
       <span class="eyebrow"><span class="dot"></span>KNCTの循環</span>
@@ -912,7 +916,7 @@ src="https://www.facebook.com/tr?id=1665016335272219&ev=PageView&noscript=1"
 </section>
 
 <!-- WHAT KNCT TEACHES -->
-<section class="section alt">
+<section class="section alt t-w2c">
   <div class="wrap">
     <div class="head reveal">
       <span class="eyebrow"><span class="dot"></span>KNCTで学べること</span>
@@ -952,7 +956,7 @@ src="https://www.facebook.com/tr?id=1665016335272219&ev=PageView&noscript=1"
 </section>
 
 <!-- THE RESULT -->
-<section class="section">
+<section class="section t-c2w">
   <div class="wrap">
     <div class="head reveal">
       <span class="eyebrow"><span class="dot"></span>育つ力</span>
@@ -993,7 +997,7 @@ src="https://www.facebook.com/tr?id=1665016335272219&ev=PageView&noscript=1"
 
 
 <!-- INFORMATION IS NOT THE PRODUCT -->
-<section class="section dark" style="--fade-top:255,255,255;--fade-bot:255,255,255;">
+<section class="section dark d-top-w d-bot-w">
   <div class="wrap">
     <div class="head reveal">
       <span class="eyebrow"><span class="dot"></span>情報は商品じゃない</span>
@@ -1034,7 +1038,7 @@ src="https://www.facebook.com/tr?id=1665016335272219&ev=PageView&noscript=1"
 </section>
 
 <!-- WHY THIS WORKS -->
-<section class="section alt">
+<section class="section alt t-w2c">
   <div class="wrap">
     <div class="head reveal">
       <span class="eyebrow"><span class="dot"></span>結果が出る理由</span>
@@ -1058,7 +1062,7 @@ src="https://www.facebook.com/tr?id=1665016335272219&ev=PageView&noscript=1"
 </section>
 
 <!-- OUR PHILOSOPHY -->
-<section class="section">
+<section class="section t-c2w">
   <div class="wrap">
     <div class="philo reveal">
       <span class="eyebrow"><span class="dot"></span>私たちの考え方</span>
@@ -1074,7 +1078,7 @@ src="https://www.facebook.com/tr?id=1665016335272219&ev=PageView&noscript=1"
 </section>
 
 <!-- YOUR FIRST 90 DAYS -->
-<section class="section alt">
+<section class="section alt t-w2c">
   <div class="wrap">
     <div class="head reveal">
       <span class="eyebrow"><span class="dot"></span>最初の90日</span>
@@ -1119,7 +1123,7 @@ src="https://www.facebook.com/tr?id=1665016335272219&ev=PageView&noscript=1"
 </section>
 
 <!-- WHAT YOU GET -->
-<section class="section">
+<section class="section t-c2w">
   <div class="wrap">
     <div class="head reveal">
       <span class="eyebrow"><span class="dot"></span>提供内容</span>
@@ -1138,7 +1142,7 @@ src="https://www.facebook.com/tr?id=1665016335272219&ev=PageView&noscript=1"
 </section>
 
 <!-- COMMUNITY -->
-<section class="section alt">
+<section class="section alt t-w2c">
   <div class="wrap">
     <div class="community reveal">
       <div class="community-in">
@@ -1152,7 +1156,7 @@ src="https://www.facebook.com/tr?id=1665016335272219&ev=PageView&noscript=1"
 </section>
 
 <!-- OBJECTIONS -->
-<section class="section">
+<section class="section t-c2w">
   <div class="wrap">
     <div class="head reveal">
       <div class="rule" style="margin-bottom:8px;"></div>
@@ -1206,7 +1210,7 @@ src="https://www.facebook.com/tr?id=1665016335272219&ev=PageView&noscript=1"
 </section>
 
 <!-- THE BIGGER GOAL -->
-<section class="section dark" style="--fade-top:255,255,255;--fade-bot:255,255,255;">
+<section class="section dark d-top-w d-bot-w">
   <div class="wrap">
     <div class="head reveal">
       <span class="eyebrow"><span class="dot"></span>目指す未来</span>
@@ -1245,7 +1249,7 @@ src="https://www.facebook.com/tr?id=1665016335272219&ev=PageView&noscript=1"
 </section>
 
 <!-- FREE NEXT STEP -->
-<section class="section alt">
+<section class="section alt t-w2c">
   <div class="wrap">
     <div class="final reveal">
       <div class="inner">
