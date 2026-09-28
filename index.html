@@ -1333,6 +1333,8 @@ src="https://www.facebook.com/tr?id=1665016335272219&ev=PageView&noscript=1"
     "instagram":      null,
     "youtube":        null,
     "tiktok":         null,
+    // Meta広告（utm_source=meta）。Lステップで meta_application 経路を発行したら lp= をそのURLに差し替える
+    "meta":           "https://liff.line.me/2010144535-1ftVOtwe/landing?follow=%40737agxqn&lp=XrdKvo&liff_id=2010144535-1ftVOtwe",
     "ads":            "https://liff.line.me/2010144535-1ftVOtwe/landing?follow=%40737agxqn&lp=XrdKvo&liff_id=2010144535-1ftVOtwe",
     "organic":        null   // UTM無し（直接訪問・検索・不明）
   };
@@ -1363,6 +1365,22 @@ src="https://www.facebook.com/tr?id=1665016335272219&ev=PageView&noscript=1"
 
     window.knctAttr = attr;
     window.knctAttrFirst = get('localStorage', K_FIRST) || attr;
+    // UTM一式（source/medium/campaign/content/term）をLINEのURLに付けてLステップへ渡す。
+    // utm_source 付きで来たら上書き保存（ラストタッチ）、無ければ前回保存分を使う。
+    var UTM_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
+    var utm = {};
+    try { utm = JSON.parse(get('localStorage', 'knct_utm') || '{}') || {}; } catch(e) { utm = {}; }
+    if (q.get('utm_source')) {
+      utm = {};
+      UTM_KEYS.forEach(function(k){ var v = q.get(k); if (v) utm[k] = v.slice(0, 100); });
+      put('localStorage', 'knct_utm', JSON.stringify(utm));
+    }
+    try {
+      var u = new URL(url);
+      UTM_KEYS.forEach(function(k){ if (utm[k]) u.searchParams.set(k, utm[k]); });
+      url = u.toString();
+    } catch(e) {}
+
     document.querySelectorAll('[data-line]').forEach(function(el){ el.setAttribute('href', url); });
   })();
 
