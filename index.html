@@ -409,6 +409,94 @@
     .wall { grid-template-columns: 1fr 1fr; }
     .gets .get:first-child { grid-column: auto; }
   }
+
+  /* ===================================================================
+     LIGHT THEME (Thank-you page系): 黒ヒーロー → 白/クリームの本文 → 黒フッター
+     =================================================================== */
+  :root {
+    --bg: #FFFFFF; --bg-2: #F6F4EF; --bg-alt: #F6F4EF;
+    --surface: #FFFFFF; --surface-2: #F6F4EF;
+    --line: #E5E1D7; --line-strong: #D3CFC4;
+    --fg: #111315; --muted: #3A3E44; --faint: #6E727A;
+    --gold: #9C8B5A; --gold-2: #6B6040; --gold-deep: #9C8B5A;
+    --accent: #111315; --on-accent: #ECE7D3;
+    --accent-tint: #F4F0E4; --accent-line: #D9CDA8; --marker: #E7DDBE;
+    --shadow: 0 1px 2px rgba(17,19,21,.04), 0 14px 34px -20px rgba(17,19,21,.22);
+    color-scheme: light;
+  }
+  .hero, footer, .final {
+    --bg: #000000; --bg-2: #0c0c0e; --surface: #17171B; --surface-2: #1e1e23;
+    --line: rgba(236,231,211,.16); --line-strong: rgba(236,231,211,.26);
+    --fg: #FFFFFF; --muted: #D4D4D8; --faint: #A3A3A9;
+    --gold: #e6dfc9; --gold-2: #f4efdd; --gold-deep: #cdc4a8;
+    --accent: #ECE7D3; --on-accent: #14140F;
+    color-scheme: dark; color: var(--fg);
+  }
+  body { background: var(--bg); color: var(--muted); }
+  h1, h2, h3, h4 { color: var(--fg); }
+  .head h2, .punch, .both, .final h2 { font-weight: 800; }
+  ::selection { background: var(--marker); color: #111315; }
+
+  /* sections: 白とクリームを交互に */
+  .section { padding: clamp(72px, 12vw, 112px) 0; background: var(--bg); }
+  .section.alt { background: var(--bg-alt); }
+  footer { margin-top: 0; background: #000; }
+
+  /* hero: 黒 → 白へフェード */
+  .hero { background: #000; padding-bottom: 0; }
+  .hero::before { background: radial-gradient(620px 320px at 50% 6%, rgba(236,231,211,0.10), transparent 70%), #000; }
+  .hero-fade { position: relative; height: clamp(200px, 40vw, 360px); margin-top: 40px; pointer-events: none;
+    background: linear-gradient(rgba(255,255,255,0) 0%, rgba(255,255,255,.02) 16%, rgba(255,255,255,.06) 28%, rgba(255,255,255,.13) 39%, rgba(255,255,255,.24) 49%, rgba(255,255,255,.38) 58%, rgba(255,255,255,.54) 66%, rgba(255,255,255,.7) 74%, rgba(255,255,255,.84) 82%, rgba(255,255,255,.94) 90%, #fff 97%); }
+  .hero + .section { padding-top: clamp(8px, 3vw, 28px); }
+
+  /* 強調: 本文ではゴールドのグラデ文字をやめ、クリームのマーカーに */
+  .gold { background: linear-gradient(transparent 60%, var(--marker) 60%); -webkit-background-clip: border-box; background-clip: border-box;
+    -webkit-text-fill-color: currentColor; color: var(--fg); padding-inline: 0.06em; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+  .hero .gold, .final .gold { background: var(--gold-grad); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; padding-inline: 0; }
+  .stat .fig.gold, .stu-res .gold, .wres.gold, .area-num.gold { background: none; padding-inline: 0; }
+
+  /* バッジ類は黒×クリーム */
+  .eyebrow { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+  .eyebrow .dot { background: var(--on-accent); box-shadow: 0 0 10px rgba(236,231,211,.8); }
+  .hero .eyebrow, .final .eyebrow { background: rgba(236,231,211,0.06); border-color: var(--line-strong); color: var(--gold-2); }
+  .hero .eyebrow .dot, .final .eyebrow .dot { background: var(--gold); }
+  .ava, .loop .dot, .path.two .path-tag, .how li.last .n, .get-top .role, .machine-flow span.end, .video-play {
+    background: var(--accent); color: var(--on-accent); box-shadow: none; }
+  .video-play svg { color: var(--on-accent); }
+  .video-play::before { border-color: rgba(17,19,21,.35); }
+  .hero .video-play::before { border-color: rgba(236,231,211,.45); }
+  .machine-flow span.end b { color: rgba(236,231,211,.7); }
+  .rule { background: linear-gradient(90deg, transparent, var(--line-strong) 30%, var(--line-strong) 70%, transparent); opacity: 1; }
+
+  /* カード: 白＋細線＋やわらかい影 */
+  .stat, .stu, .skills8 li, .loop li, .path, .attn div, .area, .day, .get, .wcard, .faq details, .gap, .qgrid div, .always li, .community, .how .n {
+    background: var(--surface); border: 1px solid var(--line); box-shadow: var(--shadow); }
+  .section.alt .ba-col.before, .section.alt .flow.watch { background: transparent; }
+  .path.two, .ba-col.after, .flow.exec, .machine, .truth, .philo {
+    border: 1.5px solid var(--accent); background: linear-gradient(165deg, var(--accent-tint), var(--surface) 62%);
+    box-shadow: 0 1px 2px rgba(17,19,21,.04), 0 24px 48px -26px rgba(17,19,21,.35); }
+  .faq details[open] { border-color: var(--accent); }
+  .how li:not(:last-child)::before { background: var(--line-strong); }
+  .how .n { color: var(--fg); }
+  .loop::before { background: linear-gradient(180deg, var(--line-strong), transparent); }
+  .skills8 li::before { color: var(--faint); }
+  .chips span { background: var(--accent-tint); border-color: var(--accent-line); color: var(--fg); }
+  .chips.noise span { background: transparent; border-color: var(--line-strong); color: var(--faint); text-decoration-color: rgba(17,19,21,.35); }
+  .gap-flow span { border-color: var(--accent-line); background: var(--accent-tint); }
+  .day-flow { background: var(--accent-tint); border-color: var(--accent-line); color: var(--fg); }
+  .aside { border-color: var(--line-strong); }
+  .wname { border-top-color: var(--line); }
+  .ba-col.after li svg, .rm-list li svg, .loop-back svg, .faq summary .pm { color: var(--fg); }
+  .community-in h2 { color: var(--fg); }
+
+  /* 最後のCTAブロックは黒で締める */
+  .final { background: #000; border-color: rgba(236,231,211,.16); box-shadow: 0 30px 60px -30px rgba(17,19,21,.5); }
+  .final h2 { color: #fff; }
+
+  .final { padding-left: 18px; padding-right: 18px; }
+  .final .btn-line { font-size: 15.5px; padding: 17px 18px; white-space: nowrap; }
+  /* スマホ追従バーは白 */
+  .sticky-cta { background: rgba(255,255,255,0.9); border-top: 1px solid var(--line); }
 </style>
 <!-- Meta Pixel Code -->
 <script>
@@ -472,6 +560,7 @@ src="https://www.facebook.com/tr?id=1665016335272219&ev=PageView&noscript=1"
       <a href="#loop" class="scroll-link">KNCTの仕組みを見る ↓</a>
     </div>
   </div>
+  <div class="hero-fade"></div>
 </section>
 
 <!-- PROOF -->
@@ -492,7 +581,7 @@ src="https://www.facebook.com/tr?id=1665016335272219&ev=PageView&noscript=1"
 </section>
 
 <!-- STUDENT PROOF -->
-<section class="section">
+<section class="section alt">
   <div class="wrap">
     <div class="head reveal">
       <span class="eyebrow"><span class="dot"></span>Student Results</span>
@@ -593,7 +682,7 @@ src="https://www.facebook.com/tr?id=1665016335272219&ev=PageView&noscript=1"
 </section>
 
 <!-- WHAT YOU ACTUALLY NEED -->
-<section class="section">
+<section class="section alt">
   <div class="wrap">
     <div class="head reveal">
       <div class="rule" style="margin-bottom:8px;"></div>
@@ -645,7 +734,7 @@ src="https://www.facebook.com/tr?id=1665016335272219&ev=PageView&noscript=1"
 </section>
 
 <!-- TWO PATHS -->
-<section class="section">
+<section class="section alt">
   <div class="wrap">
     <div class="head reveal">
       <span class="eyebrow"><span class="dot"></span>Two Paths</span>
@@ -692,7 +781,7 @@ src="https://www.facebook.com/tr?id=1665016335272219&ev=PageView&noscript=1"
 </section>
 
 <!-- WHAT KNCT TEACHES -->
-<section class="section">
+<section class="section alt">
   <div class="wrap">
     <div class="head reveal">
       <span class="eyebrow"><span class="dot"></span>What KNCT Teaches</span>
@@ -772,7 +861,7 @@ src="https://www.facebook.com/tr?id=1665016335272219&ev=PageView&noscript=1"
 </section>
 
 <!-- MORE PROOF -->
-<section class="section">
+<section class="section alt">
   <div class="wrap">
     <div class="head reveal">
       <span class="eyebrow"><span class="dot"></span>Wall of Proof</span>
@@ -822,7 +911,7 @@ src="https://www.facebook.com/tr?id=1665016335272219&ev=PageView&noscript=1"
 </section>
 
 <!-- HOW KNCT WORKS -->
-<section class="section">
+<section class="section alt">
   <div class="wrap">
     <div class="head reveal">
       <span class="eyebrow"><span class="dot"></span>How KNCT Works</span>
@@ -864,7 +953,7 @@ src="https://www.facebook.com/tr?id=1665016335272219&ev=PageView&noscript=1"
 </section>
 
 <!-- OUR PHILOSOPHY -->
-<section class="section">
+<section class="section alt">
   <div class="wrap">
     <div class="philo reveal">
       <span class="eyebrow"><span class="dot"></span>Our Philosophy</span>
@@ -925,7 +1014,7 @@ src="https://www.facebook.com/tr?id=1665016335272219&ev=PageView&noscript=1"
 </section>
 
 <!-- WHAT YOU GET -->
-<section class="section">
+<section class="section alt">
   <div class="wrap">
     <div class="head reveal">
       <span class="eyebrow"><span class="dot"></span>Everything Included</span>
@@ -958,7 +1047,7 @@ src="https://www.facebook.com/tr?id=1665016335272219&ev=PageView&noscript=1"
 </section>
 
 <!-- OBJECTIONS -->
-<section class="section">
+<section class="section alt">
   <div class="wrap">
     <div class="head reveal">
       <div class="rule" style="margin-bottom:8px;"></div>
@@ -1029,7 +1118,7 @@ src="https://www.facebook.com/tr?id=1665016335272219&ev=PageView&noscript=1"
 </section>
 
 <!-- FINAL CLOSE -->
-<section class="section">
+<section class="section alt">
   <div class="wrap">
     <div class="head reveal" style="margin-bottom:0;">
       <div class="rule" style="margin-bottom:8px;"></div>
