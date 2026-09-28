@@ -535,6 +535,8 @@
   .more-wrap { display: flex; justify-content: center; margin-top: 26px; }
   .more-btn { font: inherit; font-size: 14px; font-weight: 800; color: var(--fg); background: var(--surface); border: 1px solid var(--line-strong); border-radius: 100px; padding: 13px 26px; cursor: pointer; transition: background .2s ease; }
   .more-btn:hover { background: var(--bg-2, var(--surface)); }
+  .hero-vsl { max-width: 680px; margin: 22px auto 0; border-radius: 20px; overflow: hidden; background: #000; border: 1px solid rgba(236,231,211,0.22); box-shadow: 0 50px 110px -45px rgba(0,0,0,0.95); }
+  .hero-vsl wistia-player { display: block; width: 100%; }
 </style>
 <!-- Meta Pixel Code -->
 <script>
@@ -566,6 +568,9 @@ capiSend('PageView', pvId);
 src="https://www.facebook.com/tr?id=1665016335272219&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
+<script src="https://fast.wistia.com/player.js" async></script>
+<script src="https://fast.wistia.com/embed/t4dyhb4f3p.js" async type="module"></script>
+<style>wistia-player[media-id='t4dyhb4f3p']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/t4dyhb4f3p/swatch'); display: block; filter: blur(5px); padding-top:56.25%; }</style>
 </head>
 <body id="top">
 <!-- LM Tag [LP] -->
@@ -583,15 +588,9 @@ src="https://www.facebook.com/tr?id=1665016335272219&ev=PageView&noscript=1"
     </div>
     <h1 class="reveal">集めた注目を、<br><span class="gold">本物のビジネス</span>に<br class="sp-br">変える。</h1>
     <p class="lead reveal">コンテンツ、マーケティング、オファー、<br>セールス、AI、仕組み化まで。<br>いまのインターネットビジネスが<br class="sp-br"><b>「実際にどう動いているか」</b>を学ぶ。</p>
-    <div class="video hero-video reveal" data-yt="euwNsYezPlw">
-      <img class="video-thumb" src="https://i.ytimg.com/vi/euwNsYezPlw/maxresdefault.jpg" alt="KNCT Universityの仕組み — 動画" loading="eager" width="1280" height="720" />
-      <div class="video-veil"></div>
-      <button class="video-play" aria-label="動画を再生"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button>
-      <div class="video-label"><span class="lp">Watch</span>KNCTの仕組みを見る</div>
-      <div class="video-tap">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
-        タップで音声ON
-      </div>
+    <div class="hero-vsl reveal">
+      <wistia-player media-id="t4dyhb4f3p" aspect="1.7777777777777777"></wistia-player>
+    </div>
     </div>
 
     <p class="def reveal">KNCT Universityは、オンラインで<b>「測れる価値」</b>を生み出す力を身につける、<b>90日間の実践型ビジネスプログラム</b>です。</p>
@@ -1422,6 +1421,27 @@ src="https://www.facebook.com/tr?id=1665016335272219&ev=PageView&noscript=1"
       box.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); });
     });
   });
+  // Hero VSL (Wistia): 再生を計測
+  (function(){
+    var fired = false;
+    function onPlay(){
+      if (fired) return; fired = true;
+      var d = { video_id: 't4dyhb4f3p', area: 'hero_vsl' };
+      try { if (window.gtag) gtag('event', 'video_play', d); } catch(e) {}
+      try { if (window.va) va('event', { name: 'video_play', data: d }); } catch(e) {}
+      try {
+        if (window.fbq) {
+          var vpId = window.metaEvtId ? metaEvtId() : String(Date.now());
+          fbq('trackCustom', 'VideoPlay', d, { eventID: vpId });
+          if (window.capiSend) capiSend('VideoPlay', vpId, d);
+        }
+      } catch(e) {}
+    }
+    var el = document.querySelector('wistia-player[media-id="t4dyhb4f3p"]');
+    if (el) el.addEventListener('play', onPlay);
+    window._wq = window._wq || [];
+    _wq.push({ id: 't4dyhb4f3p', onReady: function(v){ try { v.bind('play', onPlay); } catch(e) {} } });
+  })();
   // Scroll reveal
   var io = new IntersectionObserver(function(entries){
     entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
