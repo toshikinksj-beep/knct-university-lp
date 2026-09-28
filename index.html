@@ -520,6 +520,13 @@
   .section.dark .gold { background: var(--gold-grad); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; padding-inline: 0; }
   .section.dark .eyebrow { background: rgba(236,231,211,0.06); border-color: var(--line-strong); color: var(--gold-2); }
   .section.dark .eyebrow .dot { background: var(--gold); }
+  /* 黒セクションの上下をヒーローと同じカーブでグラデーション */
+  .section.dark { --fade: clamp(200px, 40vw, 360px); padding-top: calc(var(--fade) * .75); padding-bottom: calc(var(--fade) * .75);
+    background:
+      linear-gradient(180deg, rgba(var(--fade-top),1) 0%, rgba(var(--fade-top),0.94) 3%, rgba(var(--fade-top),0.84) 10%, rgba(var(--fade-top),0.7) 18%, rgba(var(--fade-top),0.54) 26%, rgba(var(--fade-top),0.38) 34%, rgba(var(--fade-top),0.24) 42%, rgba(var(--fade-top),0.13) 51%, rgba(var(--fade-top),0.06) 61%, rgba(var(--fade-top),0.02) 72%, rgba(var(--fade-top),0) 84%) top / 100% var(--fade) no-repeat,
+      linear-gradient(0deg, rgba(var(--fade-bot),1) 0%, rgba(var(--fade-bot),0.94) 3%, rgba(var(--fade-bot),0.84) 10%, rgba(var(--fade-bot),0.7) 18%, rgba(var(--fade-bot),0.54) 26%, rgba(var(--fade-bot),0.38) 34%, rgba(var(--fade-bot),0.24) 42%, rgba(var(--fade-bot),0.13) 51%, rgba(var(--fade-bot),0.06) 61%, rgba(var(--fade-bot),0.02) 72%, rgba(var(--fade-bot),0) 84%) bottom / 100% var(--fade) no-repeat,
+      radial-gradient(700px 360px at 50% 30%, rgba(236,231,211,0.07), transparent 70%),
+      #000; }
 </style>
 <!-- Meta Pixel Code -->
 <script>
@@ -795,7 +802,7 @@ src="https://www.facebook.com/tr?id=1665016335272219&ev=PageView&noscript=1"
 </section>
 
 <!-- THE REAL PROBLEM -->
-<section class="section dark">
+<section class="section dark" style="--fade-top:246,244,239;--fade-bot:246,244,239;">
   <div class="wrap">
     <div class="head reveal">
       <span class="eyebrow"><span class="dot"></span>本当の問題</span>
@@ -996,7 +1003,7 @@ src="https://www.facebook.com/tr?id=1665016335272219&ev=PageView&noscript=1"
 
 
 <!-- INFORMATION IS NOT THE PRODUCT -->
-<section class="section dark">
+<section class="section dark" style="--fade-top:255,255,255;--fade-bot:255,255,255;">
   <div class="wrap">
     <div class="head reveal">
       <span class="eyebrow"><span class="dot"></span>情報は商品じゃない</span>
@@ -1209,7 +1216,7 @@ src="https://www.facebook.com/tr?id=1665016335272219&ev=PageView&noscript=1"
 </section>
 
 <!-- THE BIGGER GOAL -->
-<section class="section dark">
+<section class="section dark" style="--fade-top:255,255,255;--fade-bot:255,255,255;">
   <div class="wrap">
     <div class="head reveal">
       <span class="eyebrow"><span class="dot"></span>目指す未来</span>
