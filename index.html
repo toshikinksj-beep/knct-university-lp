@@ -539,6 +539,14 @@
   .hero-vsl { position: relative; aspect-ratio: 16 / 9; }
   .hero-vsl wistia-player { position: absolute; inset: 0; display: block; width: 100%; height: 100%; }
   .hero-vsl wistia-player[media-id]:not(:defined) { padding-top: 0 !important; background-size: cover !important; }
+  .vsl-unmute { position: absolute; top: 14px; right: 14px; z-index: 5; display: inline-flex; align-items: center; gap: 9px;
+    font: inherit; font-size: 14px; font-weight: 800; color: #111315; background: #ECE7D3; border: 0; border-radius: 100px; padding: 11px 18px; cursor: pointer;
+    box-shadow: 0 10px 30px -6px rgba(0,0,0,.6); animation: vslPulse 2.2s ease-in-out infinite; white-space: nowrap; }
+  .vsl-unmute svg { width: 20px; height: 20px; }
+  .vsl-unmute:hover { transform: scale(1.04); }
+  .vsl-unmute[hidden] { display: none; }
+  @keyframes vslPulse { 0%,100% { box-shadow: 0 10px 30px -6px rgba(0,0,0,.6), 0 0 0 0 rgba(236,231,211,.55); } 50% { box-shadow: 0 10px 30px -6px rgba(0,0,0,.6), 0 0 0 10px rgba(236,231,211,0); } }
+  @media (prefers-reduced-motion: reduce) { .vsl-unmute { animation: none; } }
 </style>
 <!-- Meta Pixel Code -->
 <script>
@@ -1439,6 +1447,20 @@ src="https://www.facebook.com/tr?id=1665016335272219&ev=PageView&noscript=1"
     var el = document.querySelector('wistia-player[media-id="t4dyhb4f3p"]');
     function check(){ try { if (el && !el.muted && !el.paused) onPlay(); } catch(e) {} }
     if (el) ['play', 'mute-change', 'volume-change'].forEach(function(n){ el.addEventListener(n, check); });
+    // 「タップで音声ON」：音声ONで最初から再生し、ボタンを消す
+    var ub = document.querySelector('.vsl-unmute');
+    function hideUb(){ if (ub) ub.hidden = true; }
+    if (ub && el) {
+      ub.addEventListener('click', function(){
+        try { el.muted = false; } catch(e) {}
+        try { if (el.unmute) el.unmute(); } catch(e) {}
+        try { el.volume = 1; } catch(e) {}
+        try { el.currentTime = 0; } catch(e) {}
+        try { var p = el.play(); if (p && p.catch) p.catch(function(){}); } catch(e) {}
+        hideUb();
+      });
+      el.addEventListener('mute-change', function(){ try { if (!el.muted) hideUb(); } catch(e) {} });
+    }
   })();
   // Scroll reveal
   var io = new IntersectionObserver(function(entries){
