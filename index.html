@@ -507,6 +507,19 @@
   .sub-head h3 { font-size: clamp(19px, 5vw, 22px); font-weight: 900; }
   .sub-head p { color: var(--muted); font-size: 13.5px; margin-top: 6px; }
   .ava.sm img { width: 100%; height: 100%; object-fit: cover; }
+  /* 途中の黒セクション */
+  .section.dark {
+    --bg: #000000; --bg-2: #0c0c0e; --surface: #17171B; --surface-2: #1e1e23;
+    --line: rgba(236,231,211,.16); --line-strong: rgba(236,231,211,.26);
+    --fg: #FFFFFF; --muted: #D4D4D8; --faint: #A3A3A9;
+    --gold: #e6dfc9; --gold-2: #f4efdd; --gold-deep: #cdc4a8;
+    --accent: #ECE7D3; --on-accent: #14140F; --accent-tint: rgba(236,231,211,.06); --accent-line: rgba(236,231,211,.26); --marker: rgba(236,231,211,.22);
+    --shadow: none;
+    background: radial-gradient(700px 360px at 50% 0%, rgba(236,231,211,0.08), transparent 70%), #000; color: var(--muted); color-scheme: dark;
+  }
+  .section.dark .gold { background: var(--gold-grad); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; padding-inline: 0; }
+  .section.dark .eyebrow { background: rgba(236,231,211,0.06); border-color: var(--line-strong); color: var(--gold-2); }
+  .section.dark .eyebrow .dot { background: var(--gold); }
 </style>
 <!-- Meta Pixel Code -->
 <script>
@@ -782,7 +795,7 @@ src="https://www.facebook.com/tr?id=1665016335272219&ev=PageView&noscript=1"
 </section>
 
 <!-- THE REAL PROBLEM -->
-<section class="section">
+<section class="section dark">
   <div class="wrap">
     <div class="head reveal">
       <span class="eyebrow"><span class="dot"></span>本当の問題</span>
@@ -983,7 +996,7 @@ src="https://www.facebook.com/tr?id=1665016335272219&ev=PageView&noscript=1"
 
 
 <!-- INFORMATION IS NOT THE PRODUCT -->
-<section class="section alt">
+<section class="section dark">
   <div class="wrap">
     <div class="head reveal">
       <span class="eyebrow"><span class="dot"></span>情報は商品じゃない</span>
@@ -1196,7 +1209,7 @@ src="https://www.facebook.com/tr?id=1665016335272219&ev=PageView&noscript=1"
 </section>
 
 <!-- THE BIGGER GOAL -->
-<section class="section alt">
+<section class="section dark">
   <div class="wrap">
     <div class="head reveal">
       <span class="eyebrow"><span class="dot"></span>目指す未来</span>
@@ -1240,7 +1253,7 @@ src="https://www.facebook.com/tr?id=1665016335272219&ev=PageView&noscript=1"
     <div class="final reveal">
       <div class="inner">
         <span class="eyebrow"><span class="dot"></span>次の一歩</span>
-        <h2>まずは<br><span class="gold">個別面談</span><br>から。</h2>
+        <h2>まずは<span class="gold">個別面談</span>から。</h2>
         <p>いまの状況から、オンラインで<b>測れる価値</b>を生み出せる人になるまでの道のりを、一緒に整理します。面談では、こんなことをお話しします。</p>
         <ul class="rm-list">
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>あなたの現在地と、目指したいゴールの整理</li>
