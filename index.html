@@ -499,10 +499,6 @@
   .sticky-cta { background: rgba(255,255,255,0.9); border-top: 1px solid var(--line); }
   .stu-res { color: var(--fg); }
   .stu-more { margin-top: 16px; }
-  .stu-more[hidden] { display: none; }
-  .more-wrap { display: flex; justify-content: center; margin-top: 22px; }
-  .more-btn { font: inherit; font-size: 14px; font-weight: 800; color: var(--fg); background: var(--surface); border: 1px solid var(--line-strong); border-radius: 100px; padding: 13px 26px; cursor: pointer; transition: background .2s ease; }
-  .more-btn:hover { background: var(--bg-2, var(--surface)); }
   .wres { color: var(--fg); font-size: clamp(17px, 4.8vw, 19px); }
   .eyebrow { letter-spacing: 0.12em; font-size: 12px; }
   .stat .fig .k { font-size: 0.8em; font-weight: 900; }
@@ -672,7 +668,7 @@ src="https://www.facebook.com/tr?id=1665016335272219&ev=PageView&noscript=1"
         </div>
       </article>
     </div>
-    <div class="students stu-more" id="stu-more" hidden>
+    <div class="students stu-more" id="stu-more">
       <article class="stu reveal">
         <div class="stu-in">
           <div class="stu-top"><div class="ava"><img src="assets/people/husky.webp" alt="Huskyさん" loading="lazy" width="88" height="88" /></div><div class="stu-name">Huskyさん</div></div>
@@ -756,7 +752,6 @@ src="https://www.facebook.com/tr?id=1665016335272219&ev=PageView&noscript=1"
         </div>
       </article>
     </div>
-    <div class="more-wrap"><button class="more-btn" type="button" aria-controls="stu-more" aria-expanded="false" data-more="stu-more">さらに10名のストーリーを見る</button></div>
     <div class="wall" style="margin-top:16px;">
       <div class="wcard reveal"><div class="wres">相談会の参加率が大きく向上</div><p>KNCTに入ってから、Whopでのコミュニティ形成を進めることができました。外資エアライン面接対策の発信で、競合が有料化している情報も積極的にGIVEする方針で運用。少しずつ信頼が積み上がり、個別相談会の参加率も大きく伸びました。「データ」と「情報」を区別する発信の考え方が、結果につながったと感じています。</p><div class="wname"><span class="ava sm"><img src="assets/people/aya.jpg" alt="Ayaさん" loading="lazy" width="88" height="88" /></span>Ayaさん</div></div>
       <div class="wcard reveal"><div class="wres">2人のクリエイターと契約</div><p>一度は「子育てが忙しい」と断られましたが、しばらくして相手から再び連絡がありました。1回目の面談では話を聞くことに集中し、添削ライブで方向性を固めてから、2回目に提案して契約へ。一度断られても終わりではないことを学びました。</p><div class="wname"><span class="ava sm"><img src="assets/people/kanna.jpg" alt="Kannaさん" loading="lazy" width="88" height="88" /></span>Kannaさん</div></div>
@@ -1383,13 +1378,6 @@ src="https://www.facebook.com/tr?id=1665016335272219&ev=PageView&noscript=1"
     });
   });
 
-  // Testimonials: expand more stories
-  document.querySelectorAll('[data-more]').forEach(function(btn){
-    btn.addEventListener('click', function(){
-      var box = document.getElementById(btn.getAttribute('data-more'));
-      box.hidden = false; btn.parentNode.remove();
-    });
-  });
   // Scroll reveal
   var io = new IntersectionObserver(function(entries){
     entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
