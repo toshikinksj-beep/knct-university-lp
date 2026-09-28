@@ -536,7 +536,9 @@
   .more-btn { font: inherit; font-size: 14px; font-weight: 800; color: var(--fg); background: var(--surface); border: 1px solid var(--line-strong); border-radius: 100px; padding: 13px 26px; cursor: pointer; transition: background .2s ease; }
   .more-btn:hover { background: var(--bg-2, var(--surface)); }
   .hero-vsl { max-width: 680px; margin: 22px auto 0; border-radius: 20px; overflow: hidden; background: #000; border: 1px solid rgba(236,231,211,0.22); box-shadow: 0 50px 110px -45px rgba(0,0,0,0.95); }
-  .hero-vsl wistia-player { display: block; width: 100%; }
+  .hero-vsl { position: relative; aspect-ratio: 16 / 9; }
+  .hero-vsl wistia-player { position: absolute; inset: 0; display: block; width: 100%; height: 100%; }
+  .hero-vsl wistia-player[media-id]:not(:defined) { padding-top: 0 !important; background-size: cover !important; }
 </style>
 <!-- Meta Pixel Code -->
 <script>
@@ -589,7 +591,7 @@ src="https://www.facebook.com/tr?id=1665016335272219&ev=PageView&noscript=1"
     <h1 class="reveal">集めた注目を、<br><span class="gold">本物のビジネス</span>に<br class="sp-br">変える。</h1>
     <p class="lead reveal">コンテンツ、マーケティング、オファー、<br>セールス、AI、仕組み化まで。<br>いまのインターネットビジネスが<br class="sp-br"><b>「実際にどう動いているか」</b>を学ぶ。</p>
     <div class="hero-vsl reveal">
-      <wistia-player media-id="t4dyhb4f3p" aspect="1.7777777777777777"></wistia-player>
+      <wistia-player media-id="t4dyhb4f3p" aspect="1.7777777777777777" autoplay muted silent-autoplay="allow" playsinline></wistia-player>
     </div>
 
     <p class="def reveal">KNCT Universityは、オンラインで<b>「測れる価値」</b>を生み出す力を身につける、<b>90日間の実践型ビジネスプログラム</b>です。</p>
@@ -1420,7 +1422,7 @@ src="https://www.facebook.com/tr?id=1665016335272219&ev=PageView&noscript=1"
       box.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); });
     });
   });
-  // Hero VSL (Wistia): 再生を計測
+  // Hero VSL (Wistia): 音声ONでの視聴開始を計測
   (function(){
     var fired = false;
     function onPlay(){
@@ -1436,10 +1438,10 @@ src="https://www.facebook.com/tr?id=1665016335272219&ev=PageView&noscript=1"
         }
       } catch(e) {}
     }
+    // ミュート自動再生は数えず、音声ONで再生された時だけ計測
     var el = document.querySelector('wistia-player[media-id="t4dyhb4f3p"]');
-    if (el) el.addEventListener('play', onPlay);
-    window._wq = window._wq || [];
-    _wq.push({ id: 't4dyhb4f3p', onReady: function(v){ try { v.bind('play', onPlay); } catch(e) {} } });
+    function check(){ try { if (el && !el.muted && !el.paused) onPlay(); } catch(e) {} }
+    if (el) ['play', 'mute-change', 'volume-change'].forEach(function(n){ el.addEventListener(n, check); });
   })();
   // Scroll reveal
   var io = new IntersectionObserver(function(entries){
