@@ -531,6 +531,10 @@
   .section.d-bot-w { --gb: linear-gradient(180deg, #000000 0.00%, #000000 3.12%, #000000 6.25%, #000000 9.38%, #000000 12.50%, #000000 15.62%, #000000 18.75%, #010101 21.88%, #040404 25.00%, #090909 28.12%, #121212 31.25%, #1c1c1c 34.38%, #282828 37.50%, #353535 40.62%, #434343 43.75%, #535353 46.88%, #636363 50.00%, #747474 53.12%, #858585 56.25%, #969696 59.38%, #a6a6a6 62.50%, #b5b5b5 65.62%, #c4c4c4 68.75%, #d1d1d1 71.88%, #dddddd 75.00%, #e7e7e7 78.12%, #efefef 81.25%, #f5f5f5 84.38%, #fafafa 87.50%, #fdfdfd 90.62%, #fefefe 93.75%, #ffffff 96.88%, #ffffff 100.00%); }
   .section.d-bot-c { --gb: linear-gradient(180deg, #000000 0.00%, #000000 3.12%, #000000 6.25%, #000000 9.38%, #000000 12.50%, #000000 15.62%, #000000 18.75%, #010101 21.88%, #030303 25.00%, #080808 28.12%, #101010 31.25%, #1a1a19 34.38%, #262524 37.50%, #333231 40.62%, #41403e 43.75%, #504f4d 46.88%, #5f5e5c 50.00%, #706f6c 53.12%, #807f7c 56.25%, #908f8c 59.38%, #a09f9b 62.50%, #afadaa 65.62%, #bdbbb7 68.75%, #cac8c4 71.88%, #d5d3cf 75.00%, #deddd8 78.12%, #e6e4e0 81.25%, #eceae6 84.38%, #f1efea 87.50%, #f4f2ed 90.62%, #f5f3ee 93.75%, #f6f4ef 96.88%, #f6f4ef 100.00%); }
   .hero-fade { height: clamp(260px, 60vw, 460px); background: linear-gradient(180deg, #000000 0.00%, #000000 3.12%, #000000 6.25%, #000000 9.38%, #000000 12.50%, #000000 15.62%, #000000 18.75%, #010101 21.88%, #040404 25.00%, #090909 28.12%, #121212 31.25%, #1c1c1c 34.38%, #282828 37.50%, #353535 40.62%, #434343 43.75%, #535353 46.88%, #636363 50.00%, #747474 53.12%, #858585 56.25%, #969696 59.38%, #a6a6a6 62.50%, #b5b5b5 65.62%, #c4c4c4 68.75%, #d1d1d1 71.88%, #dddddd 75.00%, #e7e7e7 78.12%, #efefef 81.25%, #f5f5f5 84.38%, #fafafa 87.50%, #fdfdfd 90.62%, #fefefe 93.75%, #ffffff 96.88%, #ffffff 100.00%); }
+  .wall[hidden] { display: none; }
+  .more-wrap { display: flex; justify-content: center; margin-top: 26px; }
+  .more-btn { font: inherit; font-size: 14px; font-weight: 800; color: var(--fg); background: var(--surface); border: 1px solid var(--line-strong); border-radius: 100px; padding: 13px 26px; cursor: pointer; transition: background .2s ease; }
+  .more-btn:hover { background: var(--bg-2, var(--surface)); }
 </style>
 <!-- Meta Pixel Code -->
 <script>
@@ -783,7 +787,8 @@ src="https://www.facebook.com/tr?id=1665016335272219&ev=PageView&noscript=1"
         </div>
       </article>
     </div>
-    <div class="wall" style="margin-top:16px;">
+    <div class="more-wrap"><button class="more-btn" type="button" aria-controls="wall-more" aria-expanded="false" data-more="wall-more">さらに16名の実績を見る</button></div>
+    <div class="wall" id="wall-more" style="margin-top:16px;" hidden>
       <div class="wcard reveal"><div class="wres">相談会の参加率が大きく向上</div><p>KNCTに入ってから、Whopでのコミュニティ形成を進めることができました。外資エアライン面接対策の発信で、競合が有料化している情報も積極的にGIVEする方針で運用。少しずつ信頼が積み上がり、個別相談会の参加率も大きく伸びました。「データ」と「情報」を区別する発信の考え方が、結果につながったと感じています。</p><div class="wname"><span class="ava sm"><img src="assets/people/aya.jpg" alt="Ayaさん" loading="lazy" width="88" height="88" /></span>Ayaさん</div></div>
       <div class="wcard reveal"><div class="wres">2人のクリエイターと契約</div><p>一度は「子育てが忙しい」と断られましたが、しばらくして相手から再び連絡がありました。1回目の面談では話を聞くことに集中し、添削ライブで方向性を固めてから、2回目に提案して契約へ。一度断られても終わりではないことを学びました。</p><div class="wname"><span class="ava sm"><img src="assets/people/kanna.jpg" alt="Kannaさん" loading="lazy" width="88" height="88" /></span>Kannaさん</div></div>
       <div class="wcard reveal"><div class="wres">3人のクリエイターと契約</div><p>プロ野球選手向けの英語コーチなどと契約。時間が取れずに悩んでいたクリエイターには、編集や運用まで担う形で提案し直し、レベニューシェア50％で合意しました。</p><div class="wname"><span class="ava sm"><img src="assets/people/kai.jpg" alt="Kaiさん" loading="lazy" width="88" height="88" /></span>Kaiさん</div></div>
@@ -1409,6 +1414,14 @@ src="https://www.facebook.com/tr?id=1665016335272219&ev=PageView&noscript=1"
     });
   });
 
+  // Testimonials: 残りの実績カードを展開
+  document.querySelectorAll('[data-more]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var box = document.getElementById(btn.getAttribute('data-more'));
+      box.hidden = false; btn.parentNode.remove();
+      box.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); });
+    });
+  });
   // Scroll reveal
   var io = new IntersectionObserver(function(entries){
     entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
