@@ -1,5 +1,5 @@
 // Meta Conversions API relay — receives browser beacons and forwards to Graph API
-// with server-side signals (IP / User-Agent / fbp / fbc) for better match quality.
+// with server-side signals (IP / User-Agent / fbp / fbc / hashed IP geo + external_id) for better match quality.
 // Requires env var META_CAPI_TOKEN (Vercel → Settings → Environment Variables).
 // Browser pixel sends the same event_id, so Meta dedupes the two channels.
 //
@@ -10,6 +10,8 @@
 //  - event_source_url is only accepted when it points at this site
 //  - test_event_code is not accepted from the client
 //  - upstream error text is never echoed to the caller
+
+const crypto = require('crypto');
 
 const PIXEL_ID = '1665016335272219';
 const GRAPH = 'https://graph.facebook.com/v21.0';
@@ -55,6 +57,44 @@ function pickSourceUrl(raw) {
   } catch (e) { return SITE_URL; }
 }
 
+// JIS X 0401 prefecture codes (Vercel's x-vercel-ip-country-region for JP) -> romanized names
+const JP_PREFS = [
+  'hokkaido', 'aomori', 'iwate', 'miyagi', 'akita', 'yamagata', 'fukushima', 'ibaraki',
+  'tochigi', 'gunma', 'saitama', 'chiba', 'tokyo', 'kanagawa', 'niigata', 'toyama',
+  'ishikawa', 'fukui', 'yamanashi', 'nagano', 'gifu', 'shizuoka', 'aichi', 'mie',
+  'shiga', 'kyoto', 'osaka', 'hyogo', 'nara', 'wakayama', 'tottori', 'shimane',
+  'okayama', 'hiroshima', 'yamaguchi', 'tokushima', 'kagawa', 'ehime', 'kochi', 'fukuoka',
+  'saga', 'nagasaki', 'kumamoto', 'oita', 'miyazaki', 'kagoshima', 'okinawa',
+];
+
+// Meta normalization: lowercase, no spaces / punctuation
+function normalize(v) { return v.toLowerCase().replace(/[^\p{L}\p{N}]/gu, ''); }
+
+function headerValue(req, name) {
+  const raw = String(req.headers[name] || '');
+  try { return decodeURIComponent(raw).slice(0, MAX_STR_LEN); } catch (e) { return raw.slice(0, MAX_STR_LEN); }
+}
+
+function sha256(v) { return crypto.createHash('sha256').update(v).digest('hex'); }
+
+// Hashed user_data keys Meta needs for attribution. The LP collects no email / phone
+// (visitors go on to LINE), so send the approximate location Vercel derives from the IP,
+// plus the _fbp browser ID as external_id.
+function matchKeys(req, fbp) {
+  const country = normalize(headerValue(req, 'x-vercel-ip-country'));
+  const region = normalize(headerValue(req, 'x-vercel-ip-country-region'));
+  const plain = {
+    ct: normalize(headerValue(req, 'x-vercel-ip-city')),
+    st: country === 'jp' ? (JP_PREFS[Number(region) - 1] || '') : region,
+    zp: normalize(headerValue(req, 'x-vercel-ip-postal-code')),
+    country: country,
+    external_id: fbp || '',
+  };
+  const out = {};
+  for (const k of Object.keys(plain)) if (plain[k]) out[k] = sha256(plain[k]);
+  return out;
+}
+
 module.exports = async (req, res) => {
   if (req.method !== 'POST') { res.status(405).json({ error: 'POST only' }); return; }
 
@@ -74,6 +114,7 @@ module.exports = async (req, res) => {
   if (!eventName || !eventId) { res.status(400).json({ error: 'invalid event' }); return; }
 
   const ip = String(req.headers['x-forwarded-for'] || '').split(',')[0].trim();
+  const fbp = shortString(body.fbp, MAX_STR_LEN);
   const payload = {
     data: [{
       event_name: eventName,
@@ -84,8 +125,9 @@ module.exports = async (req, res) => {
       user_data: {
         client_ip_address: ip || undefined,
         client_user_agent: shortString(req.headers['user-agent'], 512),
-        fbp: shortString(body.fbp, MAX_STR_LEN),
+        fbp: fbp,
         fbc: shortString(body.fbc, 512),
+        ...matchKeys(req, fbp),
       },
       custom_data: pickCustomData(body.custom_data),
     }],
