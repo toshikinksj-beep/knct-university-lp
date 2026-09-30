@@ -1502,6 +1502,19 @@ src="https://www.facebook.com/tr?id=1665016335272219&ev=PageView&noscript=1"
       var loc = el.dataset.loc || (el.closest('.sticky-cta') ? 'sticky_bar' : el.closest('.final') ? 'final_cta' : el.closest('.hero') ? 'hero' : 'other');
       var attr = window.knctAttr || 'organic';
       var attrFirst = window.knctAttrFirst || attr;
+      // Metaの識別子（_fbp/_fbc Cookie）もLステップへ渡す。流入経路のパラメータに残り、
+      // 友だち追加・面談予約をサーバーからMetaへ送る時に広告クリックと結び付けられる。
+      // Pixelが後からCookieを作ることがあるので、クリック時点で読み直す。
+      try {
+        var u = new URL(el.href);
+        ['_fbp', '_fbc'].forEach(function(c){
+          var m = document.cookie.match(new RegExp('(?:^|; )' + c + '=([^;]+)'));
+          if (m) u.searchParams.set(c.slice(1), decodeURIComponent(m[1]).slice(0, 500));
+        });
+        // Webサイトのイベントとして送るにはブラウザ情報（UA）も必要
+        u.searchParams.set('ua', navigator.userAgent.slice(0, 300));
+        el.href = u.toString();
+      } catch(e) {}
       try { if (window.gtag) gtag('event', 'line_click', { location: loc, attribution: attr, attribution_first: attrFirst }); } catch(e) {}
       try { if (window.va) va('event', { name: 'line_click', data: { location: loc, attribution: attr } }); } catch(e) {}
       try {
