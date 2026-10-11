@@ -5,7 +5,8 @@
 //
 // Hardening (2026-09-19 security audit):
 //  - only requests originating from this site (Origin / Referer) are relayed
-//  - event_name is restricted to the events index.html actually emits
+//  - event_name is restricted to the events index.html / thankyou.html actually emit
+//  - /thankyou URLs are sent without ?query / #hash (the booking time and name ride there)
 //  - custom_data is reduced to known keys with bounded string values
 //  - event_source_url is only accepted when it points at this site
 //  - test_event_code is not accepted from the client
@@ -17,7 +18,7 @@ const PIXEL_ID = '1665016335272219';
 const GRAPH = 'https://graph.facebook.com/v21.0';
 const SITE_URL = 'https://joinknct.com/';
 
-const ALLOWED_EVENTS = new Set(['PageView', 'VideoPlay', 'Lead']);
+const ALLOWED_EVENTS = new Set(['PageView', 'VideoPlay', 'Lead', 'Schedule']);
 const CUSTOM_KEYS = ['video_id', 'area', 'content_name', 'content_category'];
 const MAX_ID_LEN = 64;
 const MAX_STR_LEN = 100;
@@ -53,7 +54,9 @@ function pickSourceUrl(raw) {
   if (typeof raw !== 'string' || raw.length > MAX_URL_LEN) return SITE_URL;
   try {
     const u = new URL(raw);
-    return isAllowedOrigin(u.origin) ? u.href : SITE_URL;
+    if (!isAllowedOrigin(u.origin)) return SITE_URL;
+    if (/^\/thankyou(\.html)?\/?$/.test(u.pathname)) { u.search = ''; u.hash = ''; }
+    return u.href;
   } catch (e) { return SITE_URL; }
 }
 
